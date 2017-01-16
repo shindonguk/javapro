@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Inventory</title>
+
+<script type="text/javascript">
+//포션 재고량
+var potion1Cnt = 0;
+var potion2Cnt = 0;
+var potion3Cnt = 0;
+//강화권 재고량
+var upgrade3Cnt = 0;
+var upgrade5Cnt = 0;
+var upgrade7Cnt = 0;
+//스크롤 재고량
+var scroll1Cnt = 0;
+var scroll2Cnt = 0;
+
+//포션들의 heal값을 출력
+function potion1(heal){
+	//사용시 재고량 감소
+	if(heal == 100 && potion1Cnt >= 1){potion1Cnt--;}
+	document.getElementById("potion1").innerHTML = potion1Cnt;
+	//재고량 0 일시 사용 제한
+	if(potion1Cnt == 0){alert("물약 없음");}
+	else{
+		var swordhp = parent.hunting.swordhp;
+		var hpbar=parent.hunting.document.getElementById("swordhp");
+		var max = parent.weapon.maxHp;
+	//현재체력+힐량이 최대 체력 보다 클경우 현재체력=최대체력
+		if((swordhp+heal)>=max){
+		parent.hunting.swordhp = max;
+		hpbar.style.width = max+"px";
+		}
+		else {
+			parent.hunting.swordhp += heal;
+			hpbar.style.width = swordhp+"px";
+		}
+	}
+}
+
+function potion2(heal){
+	if(heal == 200 && potion2Cnt >= 1){potion2Cnt--;}
+	document.getElementById("potion2").innerHTML = potion2Cnt;
+	
+	if(potion2Cnt == 0){alert("물약 없음");}
+	else{
+		var swordhp = parent.hunting.swordhp;
+		var hpbar=parent.hunting.document.getElementById("swordhp");
+		var max = parent.weapon.maxHp;
+	
+		if((swordhp+heal)>=max){
+		parent.hunting.swordhp = max;
+		hpbar.style.width = max+"px";
+		}
+		else {
+			parent.hunting.swordhp += heal;
+			hpbar.style.width = swordhp+"px";
+		}
+	}
+}
+
+function potion3(heal){
+	if(heal == 300 && potion3Cnt >= 1){potion3Cnt--;}
+	document.getElementById("potion3").innerHTML = potion3Cnt;
+	
+	if(potion3Cnt == 0){alert("물약 없음");}
+	else{
+		var swordhp = parent.hunting.swordhp;
+		var hpbar=parent.hunting.document.getElementById("swordhp");
+		var max = parent.weapon.maxHp;
+	
+		if((swordhp+heal)>=max){
+		parent.hunting.swordhp = max;
+		hpbar.style.width = max+"px";
+		}
+		else {
+			parent.hunting.swordhp += heal;
+			hpbar.style.width = swordhp+"px";
+		}
+	}
+}
+
+function upgrade3(level){
+	if(level == 3 && upgrade3Cnt >= 1){upgrade3Cnt--;}
+	document.getElementById("upgrade3").innerHTML = upgrade3Cnt;
+	if(upgrade3Cnt == 0){alert("강화권 없음");}
+	else{parent.weapon.level = 3;}
+}
+
+</script>
+<style type="text/css">
+.tg {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.tg td {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	padding: 10px 5px;
+	border-style: groove;
+	border-width: 1px;
+	overflow: hidden;
+	word-break: normal;
+	background-color:;
+	background-image:url('./imgs/gra2.jpg');
+	color: white;
+}
+
+.tg th {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	padding: 10px 5px;
+	border-style: groove;
+	border-width: 1px;
+	overflow: hidden;
+	word-break: normal;
+	background-color: silver;
+	background-image:url('./imgs/gra2.jpg');
+	color: white;
+}
+
+.button{
+background-image: url('./imgs/gra2.jpg');
+color:white;
+font-weight:700;
+
+
+}
+</style>
+</head>
+<body bgcolor="black" style="background-image: url('...../imgs/bg.jpg');"center">
+	<div align="center">
+	
+<!-- <h1>상점</h1> -->
+
+		<table class="tg" style="table-layout: fixed; width: 115px">
+			<colgroup>
+				<col style="width: 41px">
+				<col style="width: 110px">
+				<col style="width: 90px">
+				<col style="width: 90px">
+			</colgroup>
+			<tr>
+				<th class="tg-yw4l" colspan="2"   align="center" >Item</th>
+				<th class="tg-yw4l" align="center" >재고량</th>
+			</tr>
+			
+			<!-- 1번째 줄 -->
+			<tr align="center">
+				<td class="tg-yw4l"><input type="image"
+					src="./imgs/potion_icon.jpg" width="30px" height="30px"></td>
+				<td class="tg-yw4l"><b>100 회복 물약</b></td>
+				<td class="tg-yw4l"><font color=white><b id="potion1">0</b></font></td>
+				<td> <input onclick="potion1(100)"
+						type="button" width="15px" height="15px" value="사용" class="button"></td>		
+						
+			</tr>
+			
+			<!-- 2번째 줄 -->
+			<tr align="center">
+				<td class="tg-yw4l"><input type="image"
+					src="./imgs/potion_icon.jpg" width="30px" height="30px"></td>
+				<td class="tg-yw4l"><b>200 회복 물약</b></td>
+				<td class="tg-yw4l"><font color=white><b id="potion2">0</b></font></td>
+				<td> <input onclick="potion2(200)"
+						type="button" width="15px" height="15px" value="사용" class="button"></td>		
+						
+			</tr>
+			
+			<!-- 3번째 줄 -->
+			<tr align="center">
+				<td class="tg-yw4l"><input type="image"
+					src="./imgs/potion_icon.jpg" width="30px" height="30px"></td>
+				<td class="tg-yw4l"><b>300 회복 물약</b></td>
+				<td class="tg-yw4l"><font color=white><b id="potion3">0</b></font></td>
+				<td> <input onclick="potion3(300)"
+						type="button" width="15px" height="15px" value="사용" class="button"></td>		
+						
+			</tr>
+			
+			<!-- 4번째 줄 -->
+			<tr align="center">
+				<td class="tg-yw4l"><input type="image"
+					src="./imgs/upgrade.png" width="30px" height="30px"></td>
+				<td class="tg-yw4l"><b>무기 3강 강화</b></td>
+				<td class="tg-yw4l"><font color=white><b id="upgrade3">0</b></font></td>
+				<td> <input onclick="upgrade3(3)"
+						type="button" width="15px" height="15px" value="사용" class="button"></td>		
+						
+			</tr>
+
+			<!-- 5번째 줄 -->
+			<tr align="center">
+				<td class="tg-yw4l"><input type="image"
+					src="./imgs/upgrade2.png" width="30px" height="30px"></td>
+				<td class="tg-yw4l"><b>무기 5강 강화</b></td>
+				<td class="tg-yw4l"> <font color="white"><b id="upgrade5">0</b></font></td> 
+				<td> <input onclick="upgrade5(5)"
+						type="button" width="15px" height="15px" value="사용" class="button"></td>
+			</tr>
+
+			<!-- 6번째 줄 -->
+			<tr align="center">
+				<td class="tg-yw4l"><input type="image"
+					src="./imgs/upgrade3.png" width="30px" height="30px"></td>
+				<td class="tg-yw4l"><b>무기 7강 강화</b></td>
+				<td class="tg-yw4l"> <font color="white"><b id="upgrade7">0</b></font> </td>
+				<td> <input onclick="upgrade7(7)"
+						type="button" width="15px" height="15px" value="사용" class="button"></td>
+			</tr>
+
+			<!-- 7번째 줄 -->
+			<tr align="center">
+				<td class="tg-yw4l"><input type="image"
+					src="./imgs/scroll1.png" width="30px" height="30px"></td>	
+				<td class="tg-yw4l"><b>스크롤1</b></td>
+				<td class="tg-yw4l"> <font color="white"><b id="scroll1">0</b></font></td>
+				<td> <input onclick="scroll1()"
+						type="button" width="15px" height="15px" value="사용" class="button"></td>
+			</tr>
+
+
+			<!-- 8번째 줄 -->
+			<tr align="center">
+				<td class="tg-yw4l"><input type="image"
+					src="./imgs/scroll2.png" width="30px" height="30px"></td>
+				<td class="tg-yw4l"><b>스크롤2</b></td>
+				<td class="tg-yw4l"> <font color="white"><b id="scroll2">0</b></font></td>
+				<td> <input onclick="scroll1()"
+						 type="button" width="15px" height="15px" value="사용" class="button" ></td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>

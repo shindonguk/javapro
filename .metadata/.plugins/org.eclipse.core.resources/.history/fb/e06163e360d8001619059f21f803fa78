@@ -1,0 +1,33 @@
+package javastart.D01_inherit;
+	abstract class Robot01{
+		String kind;
+		int attpt;
+		public Robot01(){
+			
+		}
+		public void attack(){
+			
+		}
+		public abstract void spattack();
+	}
+
+public class B01_Robot {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Robot01 r1 = new Mv01();
+		Robot01 r2 = new Atom01();
+		while(true){
+			// defend() : ÇöÀç °´Ã¼ÀÇ Ã¼·ÂÀ» return
+			if( r2.defend(r1.attack())<=0){
+				System.out.println(r1.getKind()+"½Â!!");
+				break;
+			}
+			if( r1.defend(r2.attack())<=0){
+				System.out.println(r2.getKind()+"½Â!!");
+				break;			
+			}
+		}
+
+	}
+
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script>
+    localStorage.clear();
+    console.log("length : " + localStorage.length);
+</script>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,22 @@
+
+/*화면 배경*/
+
+	body{width:600px;  background:url('img/RESIZE.png') no-repeat; background-size:cover;}
+
+/*테이블 스타일*/
+	
+	table {border:1px; align:"center";}
+	table td {border:1px solid silver;}
+	table th {border:1px solid silver;}
+		
+
+/*플레이어 말*/
+
+	
+	#div02{padding:3px 0 0 0;}
+	#div03{padding:3px 0 0 0;}
+	#div04{padding:3px 0 0 0;}
+	
+	
+	#area{width:300px;height:300px;position:relative;}
+	#div01{position:absolute;}

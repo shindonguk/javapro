@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			html, body {
+				height: 100%;
+				overflow: hidden
+			}
+
+			.container {
+				height: 80%;
+				width: 80%;
+				position: absolute;
+				top: 10%;
+				left: 10%;
+			}
+
+			.div1 {
+				background-color: #eeffee;
+				height: 15%
+			}
+
+			.div2 {
+				background-color: #ffddee;
+				height: 35%
+			}
+
+			.div3 {
+				background-color: #ddffbb;
+				height: 15%
+			}
+
+			.div4 {
+				background-color: #ffddaa;
+				height: 35%
+			}
+
+			.dt {
+				width: 100%;
+				height: 100%;
+				text-align: center;
+			}
+
+			.btn {
+				width: 100%;
+				height: 100%;
+			}
+
+			.bty {
+				width: 100px;
+				height: 100%;
+			}
+		</style>
+		<script>
+			var level = 3;
+			//몇 자리를 받을건지 알수 있는 변수
+			var rand = 0;
+			//랜덤 숫자를 받는 변수
+			var pass = 0;
+			//중복 체크시 확인 변수
+			var cnt01 = 0;
+			//랜덤값 생성시 개수 카운트
+			var table = [];
+			//결과값 저장 배열
+			var ran = [];
+			//랜덤 생성된 숫자 배열
+			var inp = [];
+			//사용자가 입력하는 배열
+			var num = [0, 3, 6, 1, 4, 7, 2, 5, 8];
+			//테이블배열 저장시 순서 배열
+
+			//처음 화면이 띄어지면 실행해야할 펑션
+			window.onload = function() {
+
+				//level 값을 받으면 바로 level 의 개수 만큼 숫자를 ran배열에 하나씩 저장해준다.
+				while (true) {
+					//forans 안에서 Math.random()으로 랜덤값을 생성해준다
+					rand = parseInt(Math.random() * 9);
+					//pass 의 디폴트 값은 1로 한다.
+					pass = 1;
+					//ran 의 배열이 없으면 통과(1) 시켜준다.
+					if (ran.length == 0) {
+						pass = 1;
+						//ran 의 배열이 있고 중복값이 있으면 걸러(0)준다.
+					} else {
+						//ran 의 배열의 길이만큼 for문을 돌려서 중복값을 확인해준다.
+						for (var a1 = 0; a1 < ran.length; a1++) {
+							if (ran[a1] == rand) {
+								pass = 0;
+								break;
+							}
+						}
+					}
+					//pass가 통과(1)이면 값을 ran 배열에 넣어준다.
+					if (pass == 1) {
+						ran[cnt01] = rand;
+						//배열의 몇번째에 들어가는지 카운트 해준다.
+						cnt01++;
+					}
+					//설정한 자릿수 만큼 랜덤 값이 들어가면 무한루프를 빠져나온다.
+					if (level == cnt01) {
+						break;
+					}
+				}
+				//상단에 랜덤값을 보이게 하였지만 이미지 수정하면서 이부분은 ???로 채워야 되요!!
+				//document.getElementById("rannum").innerHTML = ran;
+			};
+
+
+
+			var inCnt = 0;
+			//사용자가 입력한 자릿수 카운트
+			var repeatCheck = 0;
+			//중복 확인 변수
+
+			// 0~9 까지의 숫자 버튼을 누르면 처리해야할 펑션
+			function pbin(obj) {
+				//repeatCheck 의 디폴트값은 0으로 한다.
+				repeatCheck = 0;
+				
+				//for 문으로 현재 누른값이 inp 배열(값을 넣는곳)에 들어가 있는지 검사한다.
+				for (var i = 0; i < inp.length; i++) {
+					//inp 에 중복 값이 있으면 걸러(1)준다.
+					if (inp[i] == obj.value) {
+						repeatCheck = 1;
+					}
+				}
+				//inp에 중복값이 없고 자릿수만큼 inp 배열이 차지 않았을경우 값은 inp 배열에 집어넣어 준다.
+				if (repeatCheck == 0 && inCnt != level) {
+					inp[inCnt] = obj.value;
+					inCnt++;
+					document.getElementById("input").innerHTML = inp;
+					//inp에 중복값이 없고 inp 배열이 다 찼을경우에 경고창을 띄어준다.
+				} else if (repeatCheck == 0) {
+					alert("더이상 쓰실 수 없습니다.");
+					//inp에 중복값이 있으면 경고창을 띄어준다.
+				} else if (repeatCheck == 1) {
+					alert("중복값은 적으실 수 없습니다.");
+				}
+			}
+
+			//지우기 버튼을 눌렀을경우 처리해야할 펑션
+			function pbdel() {
+				//inCnt 가 0이 아닐때(inp 배열에 값이 없을때) 만 실행된다.
+				if (inCnt != 0) {
+					//사용자가 입력한 자릿수 카운트를 하나 빼주고 inp 배열 뒤에서 하나를 삭제해준다.
+					inCnt--;
+					inp.splice(inCnt, 1);
+					document.getElementById("input").innerHTML = inp;
+					//input은 입력한 숫자 출력하는곳
+				}
+			}
+
+			//다시쓰기 버튼을 눌렀을경우 처리해야할 펑션
+			function pbre() {
+				//inp 배열을 전부 삭제하고 inCnt를 초기화 해준다.
+				inp.splice(0, inp.length);
+				inCnt = 0;
+				document.getElementById("input").innerHTML = "";
+			}
+
+			var show = "";
+			//결과 배열에 저장할 값을 모아주는 변수
+			var cnt03 = 0;
+			//결과 배열 순서 카운트 및 횟수 카운트
+			var aball = 0;
+			//볼 총 개수
+			var ball = 0;
+			//볼 개수
+			var str = 0;
+			//스트라이크 개수
+			var end = 0;
+			//끝났음을 알려주는 변수
+
+			//확인 버튼을 눌렀을경우 처리해야할 펑션
+			function pby() {
+				//inp 배열이 자릿수만큼 차있지 않을경우 경고창을 표시해주고 차있을 경우 나머지를 실행해준다.
+				if (inp.length != level) {
+					alert("값을 전부 입력해 주세요!!");
+				} else {
+					//cnt03 은 배열을 검색 해야 함으로 1을 더해서 show에 넣어준다.
+					show += cnt03 + 1 + ". ";
+					//배열에 있는 숫자 들을 show에 추가해준다
+					for (var a3 = 0; a3 < inp.length; a3++) {
+						//배열의 마지막 값이 아니면 뒤에 , 를 찍어준다.
+						if (level - 1 != a3) {
+							show += inp[a3] + ",";
+						} else {
+							show += inp[a3] + "";
+						}
+					}
+					//ran 배열과 inp 배열에서 동일한 숫자가 있으면 aball을 카운트 해준다,
+					for (var a4 = 0; a4 < level; a4++) {
+						for (var a5 = 0; a5 < level; a5++) {
+							if (ran[a4] == inp[a5]) {
+								aball++;
+							}
+						}
+					}
+					//ran 배열과 inp 배열에서 숫자가 동일하고 위치도 동일하면 str을 카운트 해준다.
+					for (var a6 = 0; a6 < level; a6++) {
+						if (ran[a6] == inp[a6]) {
+							str++;
+						}
+					}
+					//ball 의 개수는 aball-str 개수이다.
+					ball = aball - str;
+					//입력 숫자와 볼,스트라이크 사이의 공백
+					show += "   ";
+					//ball 값이 있으면 show에 값을 추가한다.
+					if (ball != 0) {
+						show += ball + "B";
+					}
+					//str 값이 있으면 show에 값을 추가한다.
+					if (str != 0) {
+						show += str + "S";
+					}
+					//ball과 str 에 값이 없으면 X값을 show에 추가한다.
+					if (ball == 0 && str == 0) {
+						show += "X";
+					}
+					//end 조건이 0이고 str 값이 level 만큼이면 경고창을 띄우고 종료(1) 시킨다.
+					if (end == 0 && str == level) {
+						alert("축하합니다!!\n맞췄습니다!!");
+						end = 1;
+					}
+					//end 조건이 0이고 9번다 틀렸으면 경고창을 띄우고 종료(1) 시킨다.
+					if (end == 0 && cnt03 == 8) {
+						alert("실패ㅠㅠ\n나중에 다시 도전하세요!!");
+						end = 1;
+					}
+					//테이블 배열에 show 값을 넣어준다.
+					table[cnt03] = show;
+					document.getElementsByTagName("td")[num[cnt03]].innerHTML = show;
+					//변수들을 초기화 시켜준다.
+					show = "";
+					aball = 0;
+					ball = 0;
+					str = 0;
+					//inp 배열을 초기화 시켜준다.
+					pbre();
+					//결과 배열 순서 및 횟수를 카운트 해준다.
+					cnt03++;
+					document.getElementById("cnt").innerHTML = (cnt03 + 1) + "회";
+					//만약 종료(1)조건이면 화면을 리로드 해준다.
+					if (end == 1) {
+						location.reload();
+					}
+
+				}
+			}
+		</script>
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="div1" id="rannum">
+				랜덤숫자
+			</div>
+			<div class="div2">
+				<table class="dt">
+					<tr>
+						<td id="out01">1</td>
+						<td id="out04">4</td>
+						<td id="out07">7</td>
+					</tr>
+					<tr>
+						<td id="out02">2</td>
+						<td id="out05">5</td>
+						<td id="out08">8</td>
+					</tr>
+					<tr>
+						<td id="out03">3</td>
+						<td id="out06">6</td>
+						<td id="out09">9</td>
+					</tr>
+				</table>
+			</div>
+			<div class="div3">
+				<table class="dt">
+					<tr>
+						<td id="cnt" width="30%">회</td>
+						<td id="input" width="30%">입력숫자</td>
+						<td width="40%">
+						<button id="pby" onclick="pby()" class="btn">
+							확인
+						</button></td>
+					</tr>
+				</table>
+			</div>
+			<div class="div4">
+				<table class="dt">
+					<tr>
+						<td>
+						<button id="pb00" class="btn" onclick="pbin(this)" value=0>
+							0
+						</button></td>
+						<td>
+						<button id="pb01" class="btn" onclick="pbin(this)" value=1>
+							1
+						</button></td>
+						<td>
+						<button id="pb02" class="btn" onclick="pbin(this)" value=2>
+							2
+						</button></td>
+						<td>
+						<button id="pb03" class="btn" onclick="pbin(this)" value=3>
+							3
+						</button></td>
+						<td>
+						<button id="pb04" class="btn" onclick="pbin(this)" value=4>
+							4
+						</button></td>
+						<td>
+						<button id="pbdel" class="btn" onclick="pbdel()">
+							지우기
+						</button></td>
+					</tr>
+					<tr>
+						<td>
+						<button id="pb05" class="btn" onclick="pbin(this)" value=5>
+							5
+						</button></td>
+						<td>
+						<button id="pb06" class="btn" onclick="pbin(this)" value=6>
+							6
+						</button></td>
+						<td>
+						<button id="pb07" class="btn" onclick="pbin(this)" value=7>
+							7
+						</button></td>
+						<td>
+						<button id="pb08" class="btn" onclick="pbin(this)" value=8>
+							8
+						</button></td>
+						<td>
+						<button id="pb09" class="btn" onclick="pbin(this)" value=9>
+							9
+						</button></td>
+						<td>
+						<button id="pbre" class="btn" onclick="pbre()">
+							다시쓰기
+						</button></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

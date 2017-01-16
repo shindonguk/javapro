@@ -1,0 +1,14 @@
+window.onload=function(){
+	var val1 = prompt("첫번째 값","입력 란");
+	var val2 = prompt("두번째 값","입력 란");
+	document.getElementsById("firval")[0].innerHTML="첫번째 값:"+val1;
+	document.getElementsById("secval")[0].innerHTML="두번째 값:"+val2;
+	document.getElementsById("res")[0].innerHTML=val1+"*"+val2+"="+(val1*val2);
+}
+
+
+
+<h1 align="center">구구단</h1><br>
+<h2 align="center" id="firval">첫번째값</h2><h2></h2><br>
+<h2 align="center" id="secval">두번째값</h2><h2></h2><br> 
+<h1 align="center">결과: </h2><h2 id="res"></h2> 

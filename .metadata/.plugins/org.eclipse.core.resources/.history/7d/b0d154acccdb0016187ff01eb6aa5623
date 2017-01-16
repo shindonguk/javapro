@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	var tds=document.getElementsByTagName("td");
+	for(var idx in tds){
+		tds[idx].onmouseover=call1;
+		tds[idx].onmouseout=call2;
+	}
+	var a =0;
+	function call1() {
+		
+		a++
+	}
+</script>
+</head>
+<body>
+<center>
+<table border width="400" height="200">
+	<tr>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+</table>
+</body>
+</html>

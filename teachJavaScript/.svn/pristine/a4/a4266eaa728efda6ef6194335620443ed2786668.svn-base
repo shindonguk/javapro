@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<frameset cols="25%,50%,25%">
+	<frameset rows="25%,50%,25%">
+		<frame src="hw05_red.html"/>
+		<frame src="hw05_green.html"/>
+		<frame src="hw05_blue.html"/>
+	</frameset>
+	<frameset rows="25%,50%,25%">
+		<frame src="hw05_orange.html"/>
+		<frame src="hw05_red.html" name="main00"/>
+		<frame src="hw05_navy.html"/>
+	</frameset>
+	<frameset rows="25%,50%,25%">
+		<frame src="hw05_yellow.html"/>
+		<frame src="hw05_white.html"/>
+		<frame src="hw05_purple.html"/>
+	</frameset>
+</frameset>
+</html>

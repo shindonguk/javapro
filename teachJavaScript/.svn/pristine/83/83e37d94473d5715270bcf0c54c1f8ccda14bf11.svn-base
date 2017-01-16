@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script>
+    var first = localStorage.getItem("1");
+    var second = localStorage.getItem("2");
+    var third = localStorage.getItem("3");
+
+    console.log(first);
+    console.log(second);
+    console.log(third);
+
+    
+</script>
+<body>
+    
+</body>
+</html>

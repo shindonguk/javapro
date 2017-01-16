@@ -1,0 +1,10 @@
+package javastart.B01_object;
+
+public class A02_ObjMethod {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

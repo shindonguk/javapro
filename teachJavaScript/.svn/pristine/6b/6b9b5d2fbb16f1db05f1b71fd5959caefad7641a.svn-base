@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus¢ç">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script>
+  window.onload = function(){
+	
+	var tab="<table align='center' border>";
+	tab+="<tr><th>³¯Â¥</th><th>³¯¾¾</th></tr>"
+	for(var idx in table){
+		tab+="<td>"+table[idx].daily+"</td>";
+		tab+="<td>"+table[idx].Weather+"</td>";
+		tab+="</tr>";
+	}
+	tab+="</table>";
+	document.body.innerHTML=tab;
+
+
+  };
+  /*
+  1. ´Ü°è
+  dailyWeather : ³¯Â¥, ³¯¾¾
+  WeekWeather : dailyWatherÀ» ´ã´Â ¹è¿­°´Ã¼..
+  1/12~1/18±îÁö °´Ã¼¸¦ ´ã°í....
+
+	alert(ÂüÀ¸·Î ´ã±ä°¹¼ö¿Í 3¹øÂ° °´Ã¼ÀÇ ³¯¾¾¸¦ Ãâ·Â)
+
+	
+  2. ´Ü°è : È­¸é¿¡¼­ Å×ÀÌºí·Î list
+	ÁÖ°£ ³¯¾¾ ¿¹º¸..
+	³¯Â¥	 ³¯¾¾
+	@@@		 @@@@
+	@@@		 @@@@
+	@@@		 @@@@
+	@@@		 @@@@
+
+  */
+	var dailyWeather={};
+	dailyWeather.daily="1/12";
+	dailyWeather.Weather="¸¼À½";
+
+	var table=[];
+	table.push(dailyWeather);
+	dailyWeather={};
+	dailyWeather.daily="1/13";
+	dailyWeather.Weather="¸¹Àº ´«";
+	table[1]=dailyWeather;
+	
+
+	dailyWeather={};
+	dailyWeather.daily="1/16";
+	dailyWeather.Weather="¸¼À½";
+	table[2]=dailyWeather;
+
+
+	dailyWeather={};
+	dailyWeather.daily="1/14";
+	dailyWeather.Weather="Èå¸²";
+	table[3]=dailyWeather;
+
+
+	dailyWeather={};
+	dailyWeather.daily="1/15";
+	dailyWeather.Weather="¸¼À½";
+	table[4]=dailyWeather;
+	
+
+
+	dailyWeather={};
+	dailyWeather.daily="1/16";
+	dailyWeather.Weather="¸¼À½";
+	table[5]=dailyWeather;
+
+
+	dailyWeather={};
+	dailyWeather.daily="1/17";
+	dailyWeather.Weather="Èå¸²";
+	table[6]=dailyWeather;
+
+
+	dailyWeather={};
+	dailyWeather.daily="1/18";
+	dailyWeather.Weather="¸¼Àº µÚ Èå¸²";
+	table[7]=dailyWeather;
+
+
+	alert("³¯¾¾¿¹º¸ : "+table[2].daily+" "+table[2].Weather);
+
+
+
+  </script>
+ </head>
+ <body>
+  
+
+
+ </body>
+</html>

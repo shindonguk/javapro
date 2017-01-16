@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		//var greeting = "Hello!! Good day!!";
+		//문자열에서 지원하는 메서드...
+		//소문자 변환/대문자 변환.
+
+		//alert(greeting.toLowerCase());
+		//alert(greeting.toUpperCase());
+		//문자열 부분 처리..
+		//substring(index) : 해당 index이후 , 문자 잘라서 출력..
+		//substring(index, 까지) : ex) substring(8, 12)  <== 9번째부터 12번째 글자 출력   
+		//index 0부터 , 두번째 값은 1부터 카운트.
+		//Hello!!
+		//0123456 index
+		//1234567 순서
+
+		//alert(greeting.substring(8));
+		//alert(greeting.substring(8,12));
+		//replace("변경할문자열","변경될 문자열");
+		//alert(greeting.replace("o","i"));
+		//전체 문자열을 변경 .. 정규식..
+		//alert(greeting.replace(/o/g,"i"));
+
+		//구분자로 데이터를 배열로 만들려고 할 때
+		//split("구분자");
+		/*	
+		 var list = greeting.split("o");
+		
+		 for(var idx in list)
+		 {
+		 alert(list[idx]);
+		 }*/
+
+		/*
+		 확인예제...
+
+		 입력데이터 : [1,홍길동M,70,80,90] [등록]
+		
+		 등록된 데이터 
+		 번호 이름	성별	국어	영어	수학	
+		 1	홍길동	남자	70 		80	 	90	
+
+		 */
+	};
+	
+	
+var cnt=0;	
+var b = ["","",];
+var c= ["",];
+var d= ["",];
+	function view() 
+	{
+		var aa=document.getElementById("aa");
+		
+		var a1 = aa.value;
+		
+		var a2="";
+		var a3="";
+		var a4="";
+		var a5="";
+		a5=a1.replace("M","남");
+		a4=a5.replace("F","여");
+	
+		
+		c[cnt]=a4.substring(2, 5);
+		d[cnt]=a4.substring(5, 6);
+		
+		cnt++;
+		var list = a4.split(",");
+		
+		//console.log(list);
+		for (var idx=0;idx<5;idx++) {
+			b[(idx+((cnt-1)*5))] = list[idx];
+		}
+		
+		var show ='<input type="text" id="aa"></input>';
+		show+='<input type="button" onclick="view()">제출</input>'; 
+		show+="<center><h1>등록된 데이터<h1>";
+		show += "<table border='1'>";
+		show += "	<tr><td>번호</td><td>이름</td><td>성별</td><td>국어</td><td>영어</td><td>수학</td></tr>";
+		for(var a=1;a<=cnt;a++)
+		{
+		show += "	<tr><td>"+b[((a-1)*5)]+"</td><td>"+c[a-1]+"</td><td>"+d[a-1]+"</td><td>"+b[((a-1)*5)+2]+"</td><td>"+b[3+((a-1)*5)]+"</td><td>"+b[4+((a-1)*5)]+"</td></tr>";
+		}
+		show += "</table>";
+		
+		document.body.innerHTML = show;
+	}
+
+</script>
+</head>
+<body>
+<input type="text" id="aa"></input>
+<input type="button" onclick="view()">제출</input>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Welcome to Weapon Master</title>
+
+<style>
+
+#weapon {position:absolute; top: 0; left:0; width:75%; height:100%; border: none;}
+#hunting {position:absolute; top: 0; left:0; width: 0%; height:100%; border:none;}
+#gold {position:absolute; top:0; right:0; width: 25%; height:10%; border: none;}
+#inven {position:absolute; top:10%; right:0; width: 25%; height:90%; border: none;}
+#market {position:absolute; top:10%; right:0; width: 0%; height:90%; border: none;}
+
+</style>
+
+<script>
+
+
+function goHunting(){
+	//weapon을 보이지 않게 하고 hunting화면을 확대한다 
+	var wpon = document.getElementById("weapon");
+	var hunt = document.getElementById("hunting");
+	wpon.style.width = "0%";
+	hunt.style.width = "75%";
+}
+
+function goWeapon(){
+	//hunting을 보이지 않게 하고 weapon화면을 확대한다 
+	var wpon = document.getElementById("weapon");
+	var hunt = document.getElementById("hunting");
+	hunt.style.width = "0%";
+	wpon.style.width = "75%";
+}
+
+function goInven(){
+	//weapon을 보이지 않게 하고 hunting화면을 확대한다 
+	var inven = document.getElementById("inven");
+	var market = document.getElementById("market");
+	inven.style.width = "25%";
+	market.style.width = "0%";
+}
+function goMarket(){
+	//weapon을 보이지 않게 하고 hunting화면을 확대한다 
+	var inven = document.getElementById("inven");
+	var market = document.getElementById("market");
+	inven.style.width = "0%";
+	market.style.width = "25%";
+}
+
+
+</script>
+
+
+</head>
+<iframe id="weapon" src="weapon.html" name="weapon"></iframe>
+<iframe id="hunting" src="hunting.html" name="hunting"></iframe>
+<iframe id="gold" src="gold.html" name="gold"></iframe>
+<iframe id="inven" src="inven.html" name="inven"></iframe>
+<iframe id="market" src="market.html" name="marekt"></iframe> 
+</html>
+

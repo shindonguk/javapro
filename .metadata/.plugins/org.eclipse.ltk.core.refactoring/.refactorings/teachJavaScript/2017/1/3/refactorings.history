@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;teachJavaScript/trunk/javastart/WebContent/a00_homework2/a02_team/CHU&apos; to &apos;a2.CHU&apos;" description="Rename resource &apos;CHU&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="trunk/javastart/WebContent/a00_homework2/a02_team/CHU" name="a2.CHU" stamp="1484558923235" updateReferences="true"/>
+</session>

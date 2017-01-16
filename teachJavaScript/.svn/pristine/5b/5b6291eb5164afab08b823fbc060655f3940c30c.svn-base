@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+window.onload = function(){
+}
+
+var store = window.localStorage;
+var cart = JSON.parse(store.getItem("cart"));
+alert("개수 : "+cart.length + ", 첫번째 물건명 : " + cart[0].name);
+</script>
+</head>
+<body>
+	<center>
+		<h1>데이터 로딩</h1>
+	</center>
+</body>
+</html>

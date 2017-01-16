@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+  <script type="text/javascript">
+ 
+	window.onload=function(){
+		var tds=document.getElementsByTagName("td");
+		tds.forEach(function(obj,idx){
+			obj.onMouseOver=call;
+		});
+	};
+
+	function call(){
+			this.bgColor="blue";
+		}
+
+	}
+	function change01(){
+		call();
+		// 클릭한 부분만 없어짐..
+		this.innerHTML="";
+		this.bgColor="";	}
+
+  </script>
+ </head>
+ <body><center>
+<table border width="400" height="200">
+	<tr><td ></td><td ></td><td ></td></tr>
+	<tr><td ></td><td ></td><td ></td></tr>
+	<tr><td ></td><td ></td><td ></td></tr>
+</table>
+ </body>
+</html>

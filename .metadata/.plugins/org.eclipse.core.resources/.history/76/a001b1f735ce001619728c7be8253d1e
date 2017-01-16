@@ -1,0 +1,127 @@
+package javastart.B01_object;
+
+import java.util.Scanner;
+
+//person 이라는 틀을 만든다.
+class person{
+	String name;
+	int age;
+}
+class product{	
+	String name = "망치";	
+	int price;//물건의 단가
+	int pcnt;//물건의 개수
+	int sum;//물건의 계
+	
+}
+/*
+ * -------1단계---------
+ * 물건 3개에 데이터를 할당하고, 
+ * 아래의 형식으로 출력하세요.
+ * 	 현제고 리스트
+ * no	물건명	단가		갯수		계
+ * 
+ * -------2단계---------
+ * 
+ * scanner로 값을 받아
+ * 점심식사를 주문하고, 주문된 내용을 결제처리하는 내용
+ * 		
+ * 메뉴
+ * 1.짜장면 - 4500
+ * 2.짬뽕 - 4000
+ * 3.탕수육 - 15000
+ * 
+ * 주문 번호 입력:
+ * 주문 수량 입력:
+ * 
+ * 0을 눌렀을때 현제 주문 내용을 list하고 총 비용 계산처리
+ * 
+ */
+//ex> product 물건명 데이터를 선언한 후에 main에서 호출하세요.
+public class A01_objbasic {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * 만들어진 틀에서 person실제 메모리에 올리게 처리
+		 */
+		/*person p1 = new person();
+		p1.name = "홍길동";
+		person p2 = new person();
+		p2.name = "동길홍";
+		p1.age = 26;
+		p2.age = p1.age;
+		product pr1 = new product(); */
+/*		System.out.println("이름1: "+p1.name);
+		System.out.println("이름2: "+p2.name);
+		System.out.println("나이1: "+p1.age);
+		System.out.println("나이2: "+p2.age);
+		System.out.println("물건: "+pr1.name);*/
+	
+		product pr1 = new product();
+		int a = 1;
+		pr1.pcnt = 4;
+		pr1.price = 5000;
+		pr1.sum = pr1.pcnt * pr1.price;
+		System.out.println("--------과제1---------");
+		System.out.println("no\t물건명\t단가\t갯수\t계");
+				System.out.print((a++)+"\t");
+				System.out.print(pr1.name+"\t");
+				System.out.print(pr1.pcnt+"\t");
+				System.out.print(pr1.price+"\t");
+				System.out.print(pr1.sum+"\t");
+				
+			
+		System.out.println();
+		System.out.println("--------과제2---------");
+				Scanner n = new Scanner(System.in);
+				Scanner s = new Scanner(System.in);	
+				int pay = 0;
+				int num = 0;
+				int val = 0;
+				String[] list = new String[2];
+				String menew = "";	
+				
+				for(;;){
+					if(menew==""){ 
+						 
+					}else{
+						System.out.println("번호\t메뉴이름\t가격");
+						System.out.println(num+"\t"+menew+"\t"+(pay*val));
+						menew ="";
+					}
+					 System.out.print("메뉴를 선택해주세요:");
+					 num = n.nextInt();
+					 if(num!=0){System.out.print("수량을 써주세요 :");
+					 val = n.nextInt();}
+					 
+					 
+					 switch(num){
+					case 0:
+						System.out.println(memo[0]+"\t"+memo[1]+"\t"+(pay*val));
+						break;
+					case 1:
+						 System.out.println("짜장면을 고르셨습니다.");
+						 menew = "짜장면";
+						 pay = 4000;
+						 break;
+					case 2:
+						 System.out.println("짬뽕을 고르셨습니다.");
+						 menew = "짬뽕";
+						 pay = 4500;
+						 break;
+					case 3:
+						 System.out.println("탕수육을 고르셨습니다.");
+						 menew = "탕수육";
+						 pay = 18000;
+						 break;	 
+					default:
+						 System.out.println("주문번호가 틀렸습니다.");
+						 break;	
+					list[] = {Integer.toString(num),menew,pay};
+					
+					 }
+				}	
+	}
+}
+

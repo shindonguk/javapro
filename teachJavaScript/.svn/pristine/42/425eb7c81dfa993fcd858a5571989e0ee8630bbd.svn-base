@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Inventory</title>
+
+<script type="text/javascript">
+
+/*<tr>
+<!-- 스크롤1: 재고 id=scroll1 -->
+<td><img src="./imgs/scroll1.png" value="사용"/><br>
+스크롤1<br><br>
+					
+<button onclick="scroll1()">사용하기</button><br>
+재고 <font id="scroll1">0</font></td>
+
+<!-- 스크롤2: 재고 id=scroll2 -->
+<td><img src="./imgs/scroll2.png" value="사용"/><br>
+스크롤2<br><br>
+					
+<button onclick="scroll1()">사용하기</button><br>
+재고 <font id="scroll2">0</font></td>
+</tr>
+*/
+
+//포션 재고량
+var potion1Cnt = 0;
+var potion2Cnt = 0;
+//강화권 재고량
+var upgrade1Cnt = 0;
+var upgrade2Cnt = 0;
+//스크롤 재고량
+var scroll1Cnt = 0;
+var scroll2Cnt = 0;
+
+//포션들의 heal값을 출력
+function potion1(heal){
+	//물약 재고 0일시 물약 없음 표시
+	if(potion1Cnt == 0){alert("물약 없음");}
+	//사용시 재고량 감소
+	if(heal == 100 && potion1Cnt >= 1){
+		potion1Cnt--;
+		document.getElementById("potion1").innerHTML = potion1Cnt;
+	
+		var swordhp = parent.hunting.swordhp;
+		var hpbar=parent.hunting.document.getElementById("swordhp");
+		var max = parent.weapon.maxHp;
+		//현재체력+힐량이 최대 체력 보다 클경우 현재체력=최대체력
+		if((swordhp+heal)>=max){
+			parent.hunting.swordhp = max;
+			hpbar.style.width = max+"px";
+		}
+		else {
+			parent.hunting.swordhp += heal;
+			hpbar.style.width = swordhp+"px";
+		}
+	}
+}
+
+function potion2(heal){
+	if(potion2Cnt == 0){alert("물약 없음");}
+	if(heal == 200 && potion2Cnt >= 1){
+		potion2Cnt--;
+		document.getElementById("potion2").innerHTML = potion2Cnt;
+		
+		var swordhp = parent.hunting.swordhp;
+		var hpbar=parent.hunting.document.getElementById("swordhp");
+		var max = parent.weapon.maxHp;
+
+		if((swordhp+heal)>=max){
+			parent.hunting.swordhp = max;
+			hpbar.style.width = max+"px";
+		}
+		else {
+			parent.hunting.swordhp += heal;
+			hpbar.style.width = swordhp+"px";
+		}
+	}
+}
+
+
+
+function upgrade1(level){
+	if(upgrade1Cnt == 0){alert("강화권 없음");}
+	if(level == 3 && upgrade1Cnt >= 1){
+		upgrade1Cnt--;
+		document.getElementById("upgrade1").innerHTML = upgrade1Cnt;
+		parent.weapon.level = 10;
+		parent.weapon.success();
+	}
+}
+
+function upgrade2(level){
+	if(upgrade2Cnt == 0){alert("강화권 없음");}
+	if(level == 5 && upgrade2Cnt >= 1){
+		upgrade2Cnt--;
+		document.getElementById("upgrade2").innerHTML = upgrade2Cnt;
+		parent.weapon.level = 5;
+		parent.weapon.success();
+	}
+}
+
+</script>
+
+<style type="text/css">
+
+
+button{background-image: url("./imgs/grd2.png"); color: white; width: 60%; height: 30%; font-size:15px;}
+table td {background-image: url("./imgs/grd.png"); border: 1px solid gray; text-align: center; width:25%; height: 100%; color: white; padding-top: 15px; padding-bottom: 15px;}
+
+</style>
+
+</head>
+<body bgcolor="black">
+
+	
+<!-- <h1>상점</h1> -->
+
+		<table>
+		<tr>
+			<!-- 100회복 물약: 재고 id=potion1-->
+			<td><img src="./imgs/potion_icon.png" value="사용"/><br />
+				100 회복 물약 <br><br>
+								
+				<button onclick="potion1(100)">사용하기</button><br>
+				<img src="./imgs/gold.png"/> 재고 <font id="potion1">0</font></td>
+			
+			<!-- 200회복 물약: 재고 id=potion2 -->
+			<td><img src="./imgs/potion_icon.png" value="사용"/><br />
+				200 회복 물약 <br><br>
+								
+				<button onclick="potion2(200)">사용하기</button><br>
+				<img src="./imgs/gold.png"/> 재고 <font id="potion2">0</font></td>
+		</tr>
+		<tr>
+			<!-- 무기10강 강화권: 재고 id=upgrade1 -->
+			<td><img src="./imgs/upgrade.png" value="사용"/><br>
+			무기 10강 강화권<br><br>
+								
+			<button onclick="upgrade1(3)">사용하기</button><br>
+			<img src="./imgs/gold.png"/> 재고 <font id="upgrade1">0</font></td>
+			
+			<!-- 무기5강강화: 재고 id=upgrade2 -->
+			<td><img src="./imgs/upgrade2.png" value="사용"/><br>
+			무기 5강 강화권<br><br>
+								
+			<button onclick="upgrade2(5)">사용하기</button><br>
+			<img src="./imgs/gold.png"/> 재고 <font id="upgrade2">0</font></td>
+		</tr>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="1" hostname="Cloud" id="Cloud Foundry" name="Cloud Foundry" runtime-id="Cloud Foundry" server-type="org.cloudfoundry.appcloudserver.10" server-type-id="org.cloudfoundry.appcloudserver.10" start-timeout="600" stop-timeout="60" timestamp="1">
+    <list key="modules" value0="javastart::org.eclipse.jst.jee.server:javastart::jst.web::3.0"/>
+  </server>
+  <server auto-publish-setting="1" hostname="Cloud" id="Cloud Foundry (2)" name="Cloud Foundry (2)" runtime-id="Cloud Foundry" server-type="org.cloudfoundry.appcloudserver.10" server-type-id="org.cloudfoundry.appcloudserver.10" start-timeout="600" stop-timeout="60" timestamp="1">
+    <list key="modules" value0="javastart::org.eclipse.jst.jee.server:javastart::jst.web::3.0"/>
+  </server>
+  <server auto-publish-setting="1" hostname="Cloud" id="Cloud Foundry (3)" name="Cloud Foundry (3)" runtime-id="Cloud Foundry" server-type="org.cloudfoundry.appcloudserver.10" server-type-id="org.cloudfoundry.appcloudserver.10" start-timeout="600" stop-timeout="60" timestamp="1">
+    <list key="modules" value0="javastart::org.eclipse.jst.jee.server:javastart::jst.web::3.0"/>
+  </server>
+  <server auto-publish-setting="1" hostname="Cloud" id="Cloud Foundry (4)" name="Cloud Foundry (4)" runtime-id="Cloud Foundry" server-type="org.cloudfoundry.appcloudserver.10" server-type-id="org.cloudfoundry.appcloudserver.10" start-timeout="600" stop-timeout="60" timestamp="1">
+    <list key="modules" value0="javastart::org.eclipse.jst.jee.server:javastart::jst.web::3.0"/>
+  </server>
+  <server hostname="localhost" id="J2EE Preview at localhost" name="J2EE Preview at localhost" runtime-id="J2EE Preview" server-type="org.eclipse.jst.server.preview.server" server-type-id="org.eclipse.jst.server.preview.server" start-timeout="240" stop-timeout="240" timestamp="1">
+    <list key="modules" value0="javastart::org.eclipse.jst.jee.server:javastart::jst.web::3.0"/>
+  </server>
+</servers>

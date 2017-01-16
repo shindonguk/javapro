@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+var getgold=0;
+var usegold=0;
+var sellgold=0;
+var bank=0;
+
+function goldSum1(){
+	//사냥에서 획득한 골드를 bank에 합산한다.
+	var getgold = parent.hunting.getgold;
+	bank+= getgold;
+	document.getElementById("gold").innerHTML=bank;
+}
+function goldSum2(){
+	//무기판매로 획득한 골드를 bank에 합산한다.
+	var sellgold = parent.weapon.sellprice[parent.weapon.level-1];
+	bank+= sellgold;
+	document.getElementById("gold").innerHTML=bank;
+}
+
+//상점에서 구매한 골드 차감
+function goldMinus(){
+	var usegold = parent.market.usegold;
+	if((bank-usegold) < 0){alert("금액 부족");}
+	else{
+			bank-= usegold;
+			document.getElementById("gold").innerHTML=bank;
+	
+		// 구매 물품 재고량 증가
+		if(usegold == 50){
+			parent.inven.potion1Cnt++; 
+			parent.inven.document.getElementById("potion1").innerHTML=parent.inven.potion1Cnt;
+		}
+		if(usegold == 100){
+			parent.inven.potion2Cnt++;
+			parent.inven.document.getElementById("potion2").innerHTML=parent.inven.potion2Cnt;
+		}
+		if(usegold == 150){
+			parent.inven.potion3Cnt++;
+			parent.inven.document.getElementById("potion3").innerHTML=parent.inven.potion3Cnt;
+		}
+		if(usegold == 2000){
+			parent.inven.upgrade3Cnt++;
+			parent.inven.document.getElementById("upgrade3").innerHTML=parent.inven.upgrade3Cnt;
+		}
+		if(usegold == 5000){
+			parent.inven.upgrade5Cnt++;
+			parent.inven.document.getElementById("upgrade5").innerHTML=parent.inven.upgrade5Cnt;
+		}
+		if(usegold == 10000){
+			parent.inven.upgrade7Cnt++;
+			parent.inven.document.getElementById("upgrade7").innerHTML=parent.inven.upgrade7Cnt;
+		}
+		if(usegold == 15000){
+			parent.inven.scroll1Cnt++;
+			parent.inven.document.getElementById("scroll1").innerHTML=parent.inven.scroll1Cnt;
+		}
+		if(usegold == 20000){
+			parent.inven.scroll2Cnt++;
+			parent.inven.document.getElementById("scroll2").innerHTML=parent.inven.scroll2Cnt;
+		}
+	}
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+<button onclick="parent.goInven()">인벤토리</button></a>
+<button onclick="parent.goMarket()">상점</button><br>
+보유골드 <font id="gold">0</font>
+
+</body>
+
+</html>

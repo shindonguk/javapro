@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	var title01 = document.getElementById("title01");
+	// 객체지정.onclick=처리할 함수 내용(){};
+	title01.onclick=function(){
+	alert(this.innerHTML);
+	this.style.background="yellow";
+	
+	};
+	var title02 = document.getElementById("title02");
+	// 객체지정.onclick=외부에 정의된 함수호출(()-생략)
+	title02.onclick=show;
+};
+/*
+ * 마우스 관련 이벤트
+ 	onClick="함수"
+ */
+
+function call() {
+	alert("버튼 클릭 호출");
+}
+
+</script>
+</head>
+<body>
+<center>
+<input type="button" value="클릭클릭!!" onclick="javascript:call();"><br>
+<h1 id="title01">안녕하세요</h1> 
+</center>
+
+</body>
+</html>

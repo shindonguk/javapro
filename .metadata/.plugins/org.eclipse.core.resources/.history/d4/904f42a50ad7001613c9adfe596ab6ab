@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window onload=function(){
+		
+	};
+	/*
+	1) json(*)
+		var obj={};
+	2) 함수형
+		function 객체명(입력값1, 입력값2){
+			this.속성1 = 입력값1;
+			this.속성1 = 입력값2;
+	}
+	var 객체참조 = new 객체명(입력값1, 입력값2);
+	
+	*/
+
+	function student(name, kor, math, eng) {
+		this.name=name;
+		this.kor=kor;
+		this.mat=mat;
+		this.eng=eng;
+		}
+	var stu01 = new student("홍길동",75,80,90);
+	alert(stu01.name+"의 평균:"+(stu01.kor+stu01.math+stu01.eng)/3)
+		
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+package javastart.C02_static;
+
+/*
+ * 1.final
+ * 	1) 변수가 아닌 상수 즉, 데이터를 변경하지 못할 메모리를 설정할 때 활용한다.
+ * 		대문자로 선언한다. final int Mony = 40;
+ * */
+
+
+public class A04_final {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

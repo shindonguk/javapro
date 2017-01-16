@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	
+}
+
+function call() {
+	alert("버튼 클릭 호출");
+}
+
+</script>
+</head>
+<body>
+<center>
+<input type="button" value="클릭클릭!!"> 
+</center>
+
+</body>
+</html>

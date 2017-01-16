@@ -1,0 +1,7 @@
+package javastart.D01_inherit;
+
+ interface SSuck {
+	 
+	 void color
+
+}

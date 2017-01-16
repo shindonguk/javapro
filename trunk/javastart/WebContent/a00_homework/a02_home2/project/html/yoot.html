@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script>
+
+  var yut00=["do.png","ge.png","ger.png","yoot.png","mo.png"];
+
+
+	  function game()
+  	{
+	  var a=0;	  
+		var y=Math.floor(Math.random()*10000);
+		
+		if(y<1536)
+			{
+			a=0;
+			}
+		
+		else if(y<4992)
+			{
+			a=1;
+			}
+		
+		else if(y<8448)
+			{
+			a=2;
+			}
+		
+		else if(y<9744)
+			{
+			a=3;
+			}
+		
+		else
+			{
+			a=4;
+			}
+		var yyut=yut00[a];
+		
+		
+		var output = document.getElementById("output");
+		output.src="../imgs/"+yyut;
+	}
+  
+  </script>
+ </head>
+ <body>
+
+ <input type="image"src="../imgs/yut_04.png" onclick="game()">
+ <input type="image" id="output" src="../imgs/mo.png"/>
+ 
+
+
+ </body>
+</html>

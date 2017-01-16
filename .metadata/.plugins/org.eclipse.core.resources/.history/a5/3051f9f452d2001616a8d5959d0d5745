@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+
+<!--테이블 스타일-->
+	<style>
+		table {border:1px; align="center"; position:absolute; top:80px; left:200px;}
+		table td {border:1px solid silver; background-image: ;}
+		table th {border:1px solid silver;}
+	</style>
+
+<!--플레이어 말-->
+	<style type="text/css" >
+		#div01{padding:3px 0 0 0; position: fixed;}
+		#div02{padding:3px 0 0 0;}
+		#div03{padding:3px 0 0 0;}
+		#div04{padding:3px 0 0 0;}
+    </style>
+
+<!--주사위-->
+	<script type="text/javascript">
+		var p1p=0;
+		var p2p=0;
+		var p3p=0;
+		var p4p=0; //플레이어 위치값
+		var a =0 ;
+		function delay()
+		
+		function game(){
+			var R= Math.random();
+			var dice1=document.getElementById("dice");
+			var dice=parseInt((R*6)+1);
+			dice1.innerHTML=dice; 			// 주사위 값 확인
+			
+			//***주사위 플레이어 순서데로 입력
+			if(a==0){ //player01 순서
+				ths=document.getElementById(p1p); // p1p는 숫자값 = th의 id 값도 숫자로 되어 있음
+				ths.innerHTML=p1p;				  // 비어있을 th 칸에 원래 숫자값을 입력
+				p1p+=dice;						  // 주사위 나온 값을 더함
+				if(p1p>=55){p1p=55; alert("player01 WIN!");} // 결승점 통과 했을 경우, 알림.
+				else{}
+				ths=document.getElementById(p1p); // 새로운 id에 해당하는 th 정보 
+				ths.innerHTML=document.getElementById("div01").outerHTML;
+				a++;
+				if(p1p==p2p){p2p=0; //위치 값이 같은 말 처음으로 이동
+					ths=document.getElementById(p2p); 
+					ths.innerHTML=document.getElementById("div02").outerHTML;}
+				else if(p1p==p3p){p3p=0;
+					ths=document.getElementById(p3p); 
+					ths.innerHTML=document.getElementById("div03").outerHTML;}
+				else if(p1p==p4p){p4p=0;
+					ths=document.getElementById(p4p); 
+					ths.innerHTML=document.getElementById("div04").outerHTML;}
+				else{}
+			}
+
+			else if(a==1){ //player02 순서
+				ths=document.getElementById(p2p);
+				ths.innerHTML=p2p;
+				p2p+=dice;
+				if(p2p>=55){p2p=55; alert("player02 WIN!");}
+				else{}
+			    ths=document.getElementById(p2p);
+			    ths.innerHTML=document.getElementById("div02").outerHTML;
+			    a++;
+				if(p2p==p3p){p3p=0;
+					ths=document.getElementById(p3p); 
+					ths.innerHTML=document.getElementById("div03").outerHTML;}
+				else if(p2p==p4p){p4p=0;
+					ths=document.getElementById(p4p); 
+					ths.innerHTML=document.getElementById("div04").outerHTML;}
+				else if(p2p==p1p){p1p=0;
+					ths=document.getElementById(p1p); 
+					ths.innerHTML=document.getElementById("div01").outerHTML;}
+				else{}
+			}
+			
+			else if(a==2){ //player03 순서
+				ths=document.getElementById(p3p);
+			  	ths.innerHTML=p3p;
+			 	p3p+=dice;
+				if(p3p>=55){p3p=55; alert("player03 WIN!");}
+				else{}
+           		ths=document.getElementById(p3p);
+            	ths.innerHTML=document.getElementById("div03").outerHTML;
+            	a++;
+				if(p3p==p4p){p4p=0;
+					ths=document.getElementById(p4p); 
+					ths.innerHTML=document.getElementById("div04").outerHTML;}
+				else if(p3p==p1p){p1p=0;
+					ths=document.getElementById(p1p); 
+					ths.innerHTML=document.getElementById("div01").outerHTML;}
+				else if(p3p==p2p){p2p=0;
+					ths=document.getElementById(p2p); 
+					ths.innerHTML=document.getElementById("div02").outerHTML;}
+				else{}
+			}
+			
+			else if(a==3){ //player04 순서
+				ths=document.getElementById(p4p);
+			 	ths.innerHTML=p4p;
+			 	p4p+=dice;
+				if(p4p>=55){p4p=55; alert("player04 WIN!");}
+				else{}
+             	ths=document.getElementById(p4p);
+              	ths.innerHTML=document.getElementById("div04").outerHTML;
+              	a=0;
+				if(p4p==p1p){p1p=0;
+					ths=document.getElementById(p1p); 
+					ths.innerHTML=document.getElementById("div01").outerHTML;}
+				else if(p4p==p2p){p1p=0;
+					ths=document.getElementById(p2p); 
+					ths.innerHTML=document.getElementById("div02").outerHTML;}
+				else if(p4p==p3p){p2p=0;
+					ths=document.getElementById(p3p); 
+					ths.innerHTML=document.getElementById("div03").outerHTML;}
+				else{}						 
+			}
+		};
+	</script>
+
+ </head>
+ 
+ <body>
+
+  <h1 align="center"> 프로젝트 마블 </h1>
+
+  <button align='center' onclick="game()">주사위 던지기</button>
+  <a align="center" id="dice">값</a>
+
+  <div id="carall">
+	<div id="div01"><img  width="45xp">1</div>
+	<div id="div02"><img  width="45px">2</div>
+	<div id="div03"><img  width="45px">3</div>
+	<div id="div04"><img  width="45px">4</div>
+  </div>
+
+  <table height=500px width=600px align="center" cellspacing=0>
+  <tr height=9%>
+	<td id="p1" name=player colspan=3>P01</td>
+	<td id="p2" name=player colspan=3>P02</td>
+	<td id="p3" name=player colspan=3>P03</td>
+	<td id="p4" name=player colspan=3>P04</td>
+  </tr>
+  <tr height=50px>
+	<th id=0 width=50px>start</th>
+	<th id=1 width=50px>1</th>
+	<th id=2 width=50px>2</th>
+	<th id=3 width=50px>3</th>
+	<th id=4 width=50px>4</th>
+	<th id=5 width=50px>5</th>
+	<th id=6 width=50px>6</th>
+	<th id=7 width=50px>7</th>
+	<th id=8 width=50px>8</th>
+	<th id=9 width=50px>9</th>
+	<th id=10 width=50px>10</th>
+	<td rowspan=8></td>
+  </tr>
+  <tr height=9%>
+  	<td rowspan=8></td>
+	<td colspan=9></td>
+	<th id=11>11</th>
+  </tr>
+  <tr height=9%>
+	<th id=21>21</th>
+	<th id=20>20</th>
+	<th id=19>19</th>
+	<th id=18>18</th>
+	<th id=17>17</th>
+	<th id=16>16</th>
+	<th id=15>15</th>
+	<th id=14>14</th>
+	<th id=13>13</th>
+	<th id=12>12</th>
+  </tr>
+  <tr height=9%>
+	<th id=22>22</th>
+	<td colspan=9></td>
+  </tr>
+  <tr height=9%>
+	<th id=23>23</th>
+	<th id=24>24</th>
+	<th id=25>25</th>
+	<th id=26>26</th>
+	<th id=27>27</th>
+	<th id=28>28</th>
+	<th id=29>29</th>
+	<th id=30>30</th>
+	<th id=31>31</th>
+	<th id=32>32</th>
+  </tr>
+  <tr height=9%>
+	<td colspan=9></td>
+	<th id=33>33</th>
+  </tr>
+  <tr height=9%>
+	<th id=43>43</th>
+	<th id=42>42</th>
+	<th id=41>41</th>
+	<th id=40>40</th>
+	<th id=39>39</th>
+	<th id=38>38</th>
+	<th id=37>37</th>
+	<th id=36>36</th>
+	<th id=35>35</th>
+	<th id=34>34</th>
+  </tr>
+  <tr height=9%>
+	<th id=44>44</th>
+	<td colspan=9></td>
+  </tr>
+  <tr height=9%>
+	<th id=45>45</th>
+	<th id=46>46</th>
+	<th id=47>47</th>
+	<th id=48>48</th>
+	<th id=49>49</th>
+	<th id=50>50</th>
+	<th id=51>51</th>
+	<th id=52>52</th>
+	<th id=53>53</th>
+	<th id=54>54</th>
+	<th id=55 width=50px>WIN</th>
+  </tr>
+  <tr height=9%><td colspan=12></td></tr>
+  </table>
+
+ </body>
+</html>

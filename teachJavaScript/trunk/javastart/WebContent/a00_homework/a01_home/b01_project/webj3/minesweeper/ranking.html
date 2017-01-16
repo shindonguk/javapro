@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>RANKING</title>
+
+<style>
+
+      @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+      @import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+      @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+      @import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+      @import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+      @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+      @import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+      .hn {font-family: 'Hanna';}
+      .nbs {font-family: 'Nanum Brush Script';}
+      .ng {font-family: 'Nanum Gothic';}
+      .ngc {font-family: 'Nanum Gothic Coding';}
+      .nm {font-family: 'Nanum Myeongjo';}
+      .nps {font-family: 'Nanum Pen Script';}
+
+.rank      {font-size:60px; font-family: 'Nanum Pen Script';}
+.number    {font-size:70px; color:#333; font-family: 'Nanum Pen Script';}
+.name      {font-size:35px; color:#333; font-weight:500; font-family:'Nanum Pen Script';}
+.sec       {font-size:33px; color:#333; font-family:'Nanum Pen Script';}
+
+.topNumber    {font-size:70px; color:white; font-family: 'Nanum Pen Script';}
+.topName      {font-size:35px; color:white; font-weight:500; font-family:'Nanum Pen Script';}
+.topSec       {font-size:33px; color:white; font-family:'Nanum Pen Script';}
+
+.list      {position:absolute; margin-top:20px; text-align:center;}
+.rankTable {border-spacing:0px; width:250px}
+.btn        { font-size:30px; font-family: 'Nanum Pen Script';
+              color: white; text-align:center; background:#333333}
+
+
+</style>
+<script>
+
+
+window.onload=function(){
+    var easy = JSON.parse(localStorage.getItem("1"));
+    var normal = JSON.parse(localStorage.getItem("2"));
+    var hard = JSON.parse(localStorage.getItem("3"));
+
+    if(easy) {
+        drawTable(sortData(easy), 1);
+    }
+    if(normal) {
+        drawTable(sortData(normal), 2);
+    }
+    if(hard) {
+        drawTable(sortData(hard), 3);
+    }
+
+}
+
+function drawRankTable(rankList, level) {
+        rankList = JSON.parse(localStorage.getItem(level));
+        rankList = sortData(rankList);
+        drawTable(rankList, level);
+}
+
+//버블소트 입니다... ㅎㅎ;;
+function sortData(rankList){
+    var temp = {
+        name : "",
+        sec : 0
+        };
+    //자리변경 위한 임시 객체
+
+    //버블소트(올림차순)
+    for(var i=0; i<rankList.length; i++){
+        for(var j=0; j<rankList.length-1; j++){
+            if(rankList[j].sec > rankList[j+1].sec){
+                temp = rankList[j];
+                rankList[j] = rankList[j+1];
+                rankList[j+1] = temp; 
+            }
+        }
+    }
+    return rankList;
+}
+
+
+
+//랭킹테이블을 그리는 메서드. 6위까지만 띄웁니다.
+function drawTable(rankList, level){
+    var rankTable = document.getElementById("rankTable"+level);
+
+/*
+	while(rankTable.rows.length > 1){
+		rankTable.deleteRow(rankTable.rows.length-1);
+	}
+*/
+
+
+    for(var i=0; i< Math.min(rankList.length, 5); i++){
+
+        var row = rankTable.insertRow(i+1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        
+        var minite = parseInt(rankList[i].sec / 60);
+        var second = rankList[i].sec % 60;
+
+        cell1.innerHTML = "<font class='number'>"+ (i+1) +"</font>";
+        cell2.innerHTML = "<font class='name'> "+rankList[i].name+"</font><br> "
+                         +"<font class='sec'> "+leadingZeros(minite,2)+" : "+leadingZeros(second,2);
+
+        if(rankList[i].name == localStorage.getItem("name")){
+            cell1.bgColor = "#333333";
+            cell1.color = "#000000";
+            cell2.style = "border:2px solid #333333;";
+            cell1.innerHTML = "<font class='topNumber'>"+ (i+1) +"</font>";
+
+        }
+        
+    }
+}
+
+
+//숫자를 2자리수로 맞추어 주는 메서드.
+function leadingZeros(n, digits) {
+    var zero = '';
+    n = n.toString();
+
+    if (n.length < digits) {
+    for (var i = 0; i < digits - n.length; i++)
+        zero += '0';
+    }
+    return zero + n;
+}
+
+function move() {
+    document.location.href = "minesweeper.html";
+}
+
+</script>
+</head>
+
+<body>
+<div align="left">
+    <input type="button" class="btn" id="mainMenu" value="게임화면" onclick="move();" style="width:100px; height:40px;" >
+</div>
+
+
+<center class="rank">RANKING</center>
+<hr size="2" color="#777">
+<!--
+<input type="button" id="1"   value="초급"  onclick="loadButtonClick(this.id);">
+<input type="button" id="2"   value="중급" onclick="loadButtonClick(this.id);">
+<input type="button" id="3"   value="고급"   onclick="loadButtonClick(this.id);">
+<hr>
+-->
+<div class="list" style="left:10%">
+
+<font class="name">초급</font>
+<br><br>
+
+
+<table class="rankTable" id="rankTable1" align="center">
+    <tr>
+        <td width="50px">　　</td>
+        <td>　　　　　　　</td>
+    </tr>
+</table>
+
+</div>
+
+
+<div class="list" style="left:42%">
+
+<font class="name">중급</font>
+<br><br>
+
+
+<table class="rankTable"  id="rankTable2" align="center">
+    <tr>
+        <td width="50px">　　</td>
+        <td>　　　　　　　</td>
+    </tr>
+</table>
+
+</div>
+
+
+<div class="list" style="left:75%">
+
+<font class="name">고급</font>
+<br><br>   
+
+
+<table class="rankTable"  id="rankTable3" align="center">
+    <tr>
+        <td width="80px">　　　　　</td>
+        <td>　　　　　　　　　　</td>
+    </tr>
+</table>
+
+</div>
+
+</body>
+
+</html>
+

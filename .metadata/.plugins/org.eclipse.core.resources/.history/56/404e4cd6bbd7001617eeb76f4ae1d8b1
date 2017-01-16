@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>joindone.html</title>
+<script src="../script/script.js">
+//email 도메인 처리
+function domain1(val1, doname1) {
+	if(val1.value == "frwr"){
+		doname1.removeAttribute('readonly'); //속성 지우기
+		doname1.value == "";
+		doname1.focus();
+	}else{
+		doname1.value = val1.value;	
+		//값을 수정할 수 없게 처리
+		// input 객체의 roadonly)(읽기전용)
+		doname1.setAttribute('readonly', 'readonly')
+		//                  값			속성
+	}
+} 
+//선택한 객체의 배경색을 변경하는 함수
+/*function idcl(name1,x){
+	if(x == 1){
+		name1.style.backgroundColor = "yellow";
+	}else
+		name1.style.backgroundColor = "white";
+
+}*/
+
+/*function idc2(name2){
+	
+	if(){
+		name1.value == "user_id";
+		document.name1.style.backgroundColor = "#000000";
+	}
+}
+*/
+//email 됨
+/*
+function domain1(ddom, value2) {	//만약에 직접입력을 선택한 경우
+	if(ddom.value == ""){			//선택값을 표시할 경우 input 객체에
+		value2.value = ""; 			//압력된 값을 지우고
+		value2.focus();               //focus 포커스를 맞춰준다.
+	}else {                           //선택값을 input 객체에 표시하고
+		value2.value = ddom.value;  //값을 수정 할 수 없게 처리
+	}
+
+}
+
+function idcl(name1,x) {
+	switch(x){
+	case 'in': name1.style.backgroundColor = "yellow";
+	break;
+	case 'out' : name1.style.backgroundColor = "white";
+	break;
+	}
+	
+}*/
+
+
+
+//비밀번호 일치 여부 확인함수
+// onkeydown = pw2(this, msg)
+function pwchk(pw2, pw2msg){
+	//첫번째 비밀번호 객체
+	var pw = document.inmember.user_pw;
+	
+	if(pw.value != pw2.value){
+		pw2msg.innerHTML = "비밀번호가 일치하지 않습니다.";
+	}else{
+		pw2msg.innerHTML = "";
+	}
+	/*var pw1 = document.inmember.user_pw
+	var pw2 = document.inmember.user_pw2
+	if(pw1 != pw2){
+		alert("비밀번호를 올바르게 서주세요");
+	}return pw2;*/
+}
+
+
+function success(){
+	var ids = document.inmember.user_id;
+	var pass1 = document.inmember.user_pw;
+	var pass2 = document.inmember.user_pw2;
+	var names = document.inmember.user_name;
+	var emails = document.inmember.user_email;
+	var domain = document.inmember.user_domain;
+	var list = document.inmember.listbox;
+	var brth = document.inmember.user_brth;   
+	var gen = document.inmember.gender;
+	
+	if(ids.value == ""){
+		alert("아이디를 써주세요");
+		return false;
+	}else if(pass1.value == ""){
+		alert("비밀번호를 써주세요");
+		return false;
+	}else if(pass2.value == ""){
+		alert("다시 비밀번호를 써주세요");
+		return false;
+	}else if(names.value == ""){
+		alert("이름을 넣어주세요.");
+		return false;
+	}else if(emails.value == ""){
+		alert("이메일을 넣어주세요.");
+		return false;
+	}else if(domain.value == ""){
+		alert("이메일주소를 넣어주세요.");
+		return false;
+	}else if(gen.value == ""){
+		alert("성별을 선택해주세요.");
+		return false;
+	}
+	return true;
+}
+
+/*
+function
+function
+function
+function termschk() {
+	var agree = document.chkterms.slave;
+	if(agree. = true){
+		 document.chkterms.submit();
+		else{
+			alert("회원약관에 동의 해 주세여!");
+		}
+	}
+}else if(brth.value == ""){
+	alert("이메일주소를 넣어주세요.");
+
+
+/*
+ if(조건문1){
+	 조건문1이 true인 경우 처리할 내용
+ }else if(조건문2){
+	 조건문2가 true인 경우 처리할 내용
+ }else if(조건문2){
+	 조건문3이 true인 경우 처리할 내용
+ }else{
+	 위의 모든 조건이 false인 경우 처리할 내용
+ }
+
+ function joinchk(){
+	var frm = document.joinfrm;
+	var id = frm.
+	//만약에 아이디가 입력되지 않았다면
+	//if(id.value == 0){} 
+	if(id.value.length == 0){
+		//입력 안내 메시지 출력
+		alert("아이디를 입력해주세요!");
+		return false
+	} //그렇지 않다면
+	    //폼데이터 전송
+	 
+ }
+ if(조건문1){
+	 조건문1이 true인 경우 처리할 내용
+ }else if(조건문2){
+	 조건문2가 true인 경우 처리할 내용
+ }else if(조건문2){
+	 조건문3이 true인 경우 처리할 내용
+ }else{
+	 위의 모든 조건이 false인 경우 처리할 내용
+ }
+ */
+</script>
+</head>
+<body>
+<h2>회원가입</h2>
+<form method="get" name="inmember" 
+      action="joindone.html" enctype="multipart">
+<button formaction="terms.html">약관동의</button>
+<button style="background-color:gray;">정보입력</button>
+<button type="submit" onclick="return success()" formaction="joinsuccess.html"
+name = "ok1">가입완료</button><br>	  
+
+
+<fieldset>
+	<legend>필수항목</legend>
+<div style="top: 50%; width: 50%">
+<table>  
+	<tr>
+		<td>ID</td>
+		<td><input type="text" name="user_id"
+   		maxlength="10" size="12" onfocus="idcl(this,1)" onblur="idcl(this,2)"></td>
+   	</tr>
+   	<tr>
+   		<td>PW</td>
+	  	<td><input type="password" name="user_pw" 
+	  	maxlength="20" size="12" onfocus="idcl(this,1)" onblur="idcl(this,2)"> </td>
+    </tr>
+    <tr>	 
+    	<td>PW 확인</td>
+    	<td><input type="password" name="user_pw2" 
+    	onkeyup="pwchk(this, msg)"
+     	maxlength="20" size="12">
+     	<span id="msg"></span>
+     	<!--<input name="pw_check">  -->
+     	</td>
+    </tr>
+    <tr>
+    	<td>이름</td>
+    	<td><input type="text" name="user_name"></td>
+    </tr>
+    <tr>
+    	<td>이메일</td>
+    	<td><input type="text" name="user_email">@
+    	   <input type="text" name="user_domain">
+    	 <select name="listbox" 
+    	 onchange="domain1(this,user_domain);"> 
+    	 <!-- this.value 이것의 선택값을 가져와라 -->
+  <option value="frwr">직접입력</option>
+  <option value="naver.com">naver.com</option>
+  <option value="daum.net">daum.net</option>
+  <option value="gmail.com">google.co.kr</option>
+  <option value="nate.com">nate.com</option>
+		</select>
+		</td>
+    </tr>
+   
+   	<tr>	  
+   		<td>성별</td>
+     	<td><input type="radio" name="gender" value="m" id="male">
+			<label for="male">남자</label>
+			<input type="radio" name="gender" value="f" id="female">
+			<label for="female">여자</label>
+			</td>
+	</tr>
+</table>
+</div>
+</fieldset>    		 
+    		 
+<fieldset>
+	<legend>선택항목</legend>
+<table>
+	<tr>
+		<td>사진</td>
+		<td><input type="file" name="photo"></td>	
+	</tr>
+	 <tr> 
+   		 <td>연</td>
+   		 <td><select name = "datetime">
+   		 <option value= "a">
+   	
+   		 </select>
+   		 <!--  <td> <input type="datetime">
+   		 <select name="datelist">
+  <option value="선택">선택</option> 		 
+  <option value="mon1">1월</option>
+  <option value="mon2">2월</option>
+  <option value="mon3">3월</option>
+  <option value="mon4">4월</option>
+  <option value="mon5">5월</option>
+  <option value="mon6">6월</option>
+  <option value="mon7">7월</option>
+  <option value="mon8">8월</option>
+  <option value="mon9">9월</option>
+  <option value="mon10">10월</option>
+  <option value="mon11">11월</option>
+  <option value="mon12">12월</option>	
+  </td>-->
+   	</tr>
+</table>
+	</fieldset>
+
+</form>
+</body>
+</html>

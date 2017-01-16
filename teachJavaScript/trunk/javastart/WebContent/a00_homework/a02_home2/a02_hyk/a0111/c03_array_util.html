@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function(){
+	
+};
+
+var account = {};
+account.name ="홍길동";
+var accounts=[];
+//배열에 객체 입력1
+accounts.push(account);
+account = {};	// 자바에서  new와 같음..!!*****
+account.name = "김길동";
+// 배열에 객체 입력2
+accounts[1] = account;
+accounts.push(account);
+accounts.push(account);
+accounts.push(account);
+accounts.push(account);
+accounts.push(account);
+accounts.push(account);
+//alert("배열의 갯수:" +accounts.length);
+for(var idx in accounts){
+	//alert(accounts[idx].name);
+}
+
+// 3번 for 형식 
+// 배열.forEach(함수(단위객체, index명, 배열)){});
+
+var array = [1,2,3,4,5,6,7,8,9,10];
+//총계
+var sum = 0;
+var output = "";
+array.forEach(function(element, index){
+	sum += element;
+	output += index + ". " + element + " --> " + sum +"\n";
+});
+//alert(output);
+
+/*
+ * 필터 사용하기
+ */
+var filterData = array.filter(function(element, index){
+	return element <= 5;	// 필터 조건
+});
+//alert(filterData);
+
+/*
+ * 배열객체.slice(index, 순서)
+ */
+//alert(array.slice(1,3));
+
+
+
+/*
+ * --------------------------------------------------------------------------------
+ */
+
+/*
+1단계
+	구매 물건명과 구매가격 입력 처리.
+	물건명 : [ ]가격 : [ ] [구매] list forEach 활용
+		현재 구매 현황
+	NO	물건명	가격
+	1	@@@		3000
+	2	@@@		2000
+	3	@@@		1000
+	
+	검색 select[] - 전체, 구매명, 가격이상, 가격이하
+		[      ] 검색
+*/
+
+var Items = [];
+var Apple = {};
+Apple.name = "사과";
+Apple.price = 1000;
+
+var Pear = {};
+Pear.name = "배";
+Pear.price = 3000;
+
+var Peach = {};
+Peach.name = "복숭아";
+Peach.price = 2000;
+
+var Halabong = {};
+Halabong.name = "한라봉";
+Halabong.price = 4000;
+
+var Watermelon = {};
+Watermelon.name = "수박";
+Watermelon.price = 10000;
+
+Items.push(Pear);
+Items.push(Apple);
+Items.push(Peach);
+Items.push(Halabong);
+Items.push(Watermelon);
+
+function search(){
+	var outputData = document.getElementById("outputData");
+	var option = document.frm.searchItem.value;
+	var txtBox = document.getElementById("txtBox").value;
+	var strResult = "";
+	var cntOption1 = 0;
+	var cntOption2 = 0;
+	var cntOption3 = 0;
+	
+	strResult += "<table width='300'><tr><th>NO</th><th>물건명</th><th>가격</th><tr>";
+	Items.forEach(function(element, index){
+		if(option=='all'){
+			strResult+="<tr>";
+			strResult+="<td>"+(parseInt(index)+1)+"</td>";
+			strResult+="<td>"+Items[index].name+"</td>";
+			strResult+="<td>"+Items[index].price+"</td>";
+			strResult+="</tr>";
+		} else if(option == 'name'){
+			if(Items[index].name == txtBox){
+				strResult+="<tr>";
+				strResult+="<td>"+(++cntOption1)+"</td>";
+				strResult+="<td>"+Items[index].name+"</td>";
+				strResult+="<td>"+Items[index].price+"</td>";
+				strResult+="</tr>";
+			}
+		} else if(option == "over"){
+			if(Items[index].price >= txtBox){
+				strResult+="<tr>";
+				strResult+="<td>"+(++cntOption2)+"</td>";
+				strResult+="<td>"+Items[index].name+"</td>";
+				strResult+="<td>"+Items[index].price+"</td>";
+				strResult+="</tr>";
+			}
+		} else {
+			if(Items[index].price <= txtBox){
+				strResult+="<tr>";
+				strResult+="<td>"+(++cntOption3)+"</td>";
+				strResult+="<td>"+Items[index].name+"</td>";
+				strResult+="<td>"+Items[index].price+"</td>";
+				strResult+="</tr>";
+			}
+		}
+	});
+	strResult+="</table>";
+	outputData.innerHTML = strResult;
+}
+</script>
+</head>
+<body>
+<form name="frm">
+	<input type="text" id="txtBox" width="300px">
+	<select name="searchItem">
+		<option value="all">전체</option>
+		<option value="name">구매명</option>
+		<option value="over">가격이상</option>
+		<option value="under">가겨이하</option>
+	</select>
+	<input type="button" value="검색" onclick="search();">
+</form>
+<div id="outputData"></div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+package javastart.D01_inherit;
+/*
+ * 상속: is a(is a kind of)관계로 상위에 있는 클래스를 
+ * 하위에 있는 클래스가 접근제어자 범위 안에서 재활용 하게 한다.
+ * cf)접근제어자 범위가 벗어나면 쓸 수 없게 된다.
+ * 	has a 관계: 클래스내에서 다른 클래스 호출하여 포함 관계를 의미한다.
+ */
+
+class Father{
+	private String name;
+	int age;
+	public void setDate(String name, int age) {
+		this.name = name;
+		this.age = age;
+		
+	}
+	public void show(){
+		System.out.println("아버지 클래스");
+		System.out.println("이름: "+name+",\t 나이"+age);
+	}
+}
+public class A01_basic {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

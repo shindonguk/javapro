@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	var tds=document.getElementsByTagName("td");
+	for(var idx in tds){
+		tds.bgColor= "yellow";
+		tds[idx].onmouseover=call1;
+	}
+}
+	var a =0;
+	var color = ["red","orange","yellow","green","blue","navy","purple"]; 
+	function call1() {
+		
+		this.bgColor= color[a++];
+	}
+</script>
+</head>
+<body>
+<center>
+<table border width="400" height="200">
+	<tr>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+</table>
+</body>
+</html>

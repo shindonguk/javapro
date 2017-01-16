@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hunting</title>
+
+<style>
+body {background-image: url("./imgs/map1.jpg"); background-repeat: no-repeat;
+background-repeat: no-repeat;}
+body img {height:100%; width:auto;}
+
+h3 {color: white;}
+table {color: white;}
+
+#monster {position:absolute; bottom: 0; margin-left: 10%; width:45%;}
+#monster img {height:auto; width:100%;}
+
+#effect {position:absolute; bottom: 20%; margin-left: 15%;}
+
+#hunt img {position:absolute; right: 15%; bottom: 0; height: 60%; width: auto;}
+
+</style>
+
+<script>
+//몬스터 체력 및 공격력 정의(시작레벨1)
+var bosslev = 1; 
+var bosshpArray=[400,550,700,850,1000,1300,1500,2000]
+var bosshp=bosshpArray[bosslev-1];
+var bossdmgArray=[100,110,120,130,140,150,160,170,180]
+var bossdmg=bossdmgArray[bosslev-1];
+//사용자 체력 및 공격력 정의
+var maxhp = parent.weapon.maxHp;
+var swordhp = maxhp;
+var swordatt= parent.weapon.weaponAtt;
+//보상
+var getgold = 0;
+//시간
+var time = 500;
+
+
+//사냥이 시작되는 순간 타이머 작동
+function timer(){
+		var timeobj = document.getElementById("time");
+		if(swordhp>0){
+			timeobj.style.width=--time+"px";
+			if(time==0){alert("시간이 종료되었습니다."+getgold+"골드를 획득하셨습니다.");
+			parent.gold.goldSum1(); 
+   			parent.goWeapon();
+   			//타이머 종료
+			timerStop();
+			}
+		}
+}
+
+//타이머 시작
+function timerStart(){
+	timer1 = setInterval(timer,50);
+	bossAtt1 = setInterval(bossAtt,parseInt(10*Math.random()*500));
+}
+//타이머 종료
+function timerStop(){
+	clearInterval(timer1);
+	clearInterval(bossAtt1);
+}
+
+function reset(){
+	//사용자 체력 리셋
+	swordhp = maxhp = parent.weapon.maxHp;
+	swordatt= parent.weapon.weaponAtt;
+	//보스 리셋
+	bosslev=1;
+	bosshp = bosshpArray[bosslev - 1];
+	//시간 리셋
+	time = 500;
+	//획득 골드 리셋
+	getgold = 0;
+	//swordatt를 설정해준다
+	document.getElementById("swordatt").innerHTML=swordatt;
+	//swordhp를 설정해준다
+	document.getElementById("swordhp").style.width = swordhp+"px"; 
+	document.getElementById("swordhp").style.background="#2F9D27";
+	//bosshp를 설정해준다
+	document.getElementById("bosshp").style.width = bosshp+"px";
+	document.getElementById("bosshp").style.background="#2F9D27";
+	document.getElementById("monster").innerHTML="<img src='./imgs/mon1.png'>";
+	//얻은 골드를 초기표시
+	document.getElementById("gold").innerHTML=getgold;
+
+}
+
+//다음 보스
+function nextBoss(){
+	bosslev++;
+	bosshp=bosshpArray[bosslev-1];
+	document.getElementById("bosshp").style.width= bosshp+"px";
+	document.getElementById("bosshp").style.background="#2F9D27";
+	document.getElementById("monster").innerHTML="<img src=./imgs/mon"+bosslev+".png>";
+	}
+	
+//사용자 공격 (몬스터 데미지) 및 보상 확인
+function attack(){
+	//공격력에 맞춰 데미지를 무작위로 정한다
+	var damage = parseInt(swordatt*Math.random());
+
+	//데미지에 따른 보상획득 및 출력
+	getgold += parseInt(Math.random()*damage)+1;
+    document.getElementById("gold").innerHTML=getgold;
+	
+  //공격에 따른 이펙트 출력
+	document.getElementById("effect").innerHTML="<img src='./imgs/blood.png'>"
+	setTimeout(function (){
+	document.getElementById("effect").innerHTML="";}, 50);
+    
+    //데미지에 따른 몬스터 HP 차감 
+	var boss = document.getElementById("bosshp");
+    boss.style.width = (bosshp-=damage)+"px";
+   
+    //몬스터 HP에 따른 색상변화
+    if(bosshp>=350){boss.style.background="#2F9D27"};
+    if(bosshp>=150 && bosshp<=350){boss.style.background="yellow"};
+    if(bosshp<=150 && bosshp>=0){boss.style.background="red"};
+    
+    //사냥 완료 후 다음 몬스터로 리셋하기 및 처치 보상
+    if(bosshp<=0){
+    	nextBoss();
+    	getgold+=500;
+    	document.getElementById("gold").innerHTML=getgold;
+    	}
+}
+
+//몬스터 공격 (사용자 데미지) 계산
+function bossAtt(){
+		//몬스터 공격력 정의 
+		var mondmg = parseInt(bossdmg*Math.random())+1;
+		//공격에 따른 사용자 HP 차감 
+		if(time>0){
+		var swordobj = document.getElementById("swordhp");
+	    swordobj.style.width = (swordhp-=mondmg)+"px";}
+		
+	    //사용자 HP에 따른 색상변화
+	    if(swordhp>=350){swordobj.style.background="#2F9D27"};
+	    if(swordhp>=150 && swordhp<=350){swordobj.style.background="yellow"};
+	    if(swordhp<=150 && swordhp>=0){swordobj.style.background="red"};
+	   
+	    //사냥종료
+	    if(swordhp <= 0) {
+	    	alert("사망하였습니다."+getgold+"골드를 획득하셨습니다.");
+	    	parent.gold.goldSum1();
+	    	parent.goWeapon();
+	    	//타이머 종료
+	    	timerStop();
+	    }
+}
+
+</script> 
+ 
+ </head>
+ <body bgcolor="black" style="padding-top: 5%">
+ <form name=frm >
+ <!-- 체력 -->
+   <h3>SWORD HP</h3>
+   <div style="border:1px solid #000; width:1000px; height:30px; "> 
+   <div id="swordhp" style="height:100%; width:100%; background-color:#2F9D27;"></div> 
+   </div><p>
+   <input type="text" name="potion" style="display: none;">
+   
+   <h3>BOSS HP</h3>
+   <div style="border:1px solid #000; width:1000px; height:30px; "> 
+   <div id="bosshp" style="height:100%; width:0%; background-color:#2F9D27;"></div> 
+   </div><p>
+   
+   <h3>TIME</h3>
+   <div style="border:1px solid #000; width:500px; height:15px; "> 
+   <div id="time" style="height:100%; width:0%; background-color:#2F9D27;"></div> 
+   </div><p>
+   
+<!-- 골드 -->
+   <table>
+   <tr><th>총 획득골드 :</th><th id="gold"></th><th>G</th></tr>
+   </table>
+
+
+<!-- 무기공격력 -->
+
+	<h3>현재 공격력 : <font id="swordatt"></font></h3>
+
+
+
+<!-- 몬스터 -->
+<div id="monster" onclick="attack()">
+</div>
+
+<!-- 공격효과 -->
+<div id="effect">
+</div>
+
+
+
+<!-- 공격 -->
+
+<div id="hunt">
+<img src="./imgs/hunting_hand.png" />
+</div>
+
+</body>
+</form>
+</html>

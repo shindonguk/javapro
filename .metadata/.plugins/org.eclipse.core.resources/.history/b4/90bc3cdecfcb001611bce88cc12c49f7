@@ -1,0 +1,13 @@
+package javastart.a02_operator;
+
+public class A03_space {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 *  \t :탭간격처리 
+		 */
+		System.out.println("no\t국어\t영어\t수학\t총점\t평균\t");
+	}
+
+}

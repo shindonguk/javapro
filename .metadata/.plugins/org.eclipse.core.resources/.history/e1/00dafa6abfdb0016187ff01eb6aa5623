@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=function{
+		
+	}
+	
+	/*
+	이벤트: 마우스, 키보드 등으로 특정 모션으로 해당 처리 함수를 호출하여 동적인 처리를 가능하게 하는 기능
+	
+	1.화면 로딩과 화면 닫힐때
+		body onLoad
+	*/
+	function welcome() {
+		alert("시작합니다.");
+		
+	}
+</script>
+</head>
+<body onload="javascript:welcome">
+
+</body>
+</html>

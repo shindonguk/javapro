@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<style type="text/css">
+body{
+background:url("../imgs/Project_Ground.jpeg") no-repeat;
+}
+
+
+
+</style>
+
+<script>
+var garo1=[220,577,577,577,577,577,490,402,315,227,140,140,140,140,140,140,227,315,402,489,595,577,505,431,358,285,212,140,227,315,402,489,595,140,212,285,358,431,505,613]
+var sero1=[50,494,408,318,232,146,146,146,146,146,146,232,318,408,494,581,581,581,581,581,600,146,218,290,364,437,509,581,581,581,581,581,600,146,218,290,364,437,509,619]
+ 
+var garo2=[320,577,577,577,577,577,490,402,315,227,140,140,140,140,140,140,227,315,402,489,595,577,505,431,358,285,212,140,227,315,402,489,595,140,212,285,358,431,505,613]
+var sero2=[50,494,408,318,232,146,146,146,146,146,146,232,318,408,494,581,581,581,581,581,600,146,218,290,364,437,509,581,581,581,581,581,600,146,218,290,364,437,509,619]
+ 
+var garo3=[420,577,577,577,577,577,490,402,315,227,140,140,140,140,140,140,227,315,402,489,595,577,505,431,358,285,212,140,227,315,402,489,595,140,212,285,358,431,505,613]
+var sero3=[50,494,408,318,232,146,146,146,146,146,146,232,318,408,494,581,581,581,581,581,600,146,218,290,364,437,509,581,581,581,581,581,600,146,218,290,364,437,509,619]
+ 
+var garo4=[520,577,577,577,577,577,490,402,315,227,140,140,140,140,140,140,227,315,402,489,595,577,505,431,358,285,212,140,227,315,402,489,595,140,212,285,358,431,505,613]
+var sero4=[50,494,408,318,232,146,146,146,146,146,146,232,318,408,494,581,581,581,581,581,600,146,218,290,364,437,509,581,581,581,581,581,600,146,218,290,364,437,509,619]
+ 
+var garo5=[220,577,577,577,577,577,490,402,315,227,140,140,140,140,140,140,227,315,402,489,595,577,505,431,358,285,212,140,227,315,402,489,595,140,212,285,358,431,505,613]
+var sero5=[680,494,408,318,232,146,146,146,146,146,146,232,318,408,494,581,581,581,581,581,600,146,218,290,364,437,509,581,581,581,581,581,600,146,218,290,364,437,509,619]
+ 
+var garo6=[320,577,577,577,577,577,490,402,315,227,140,140,140,140,140,140,227,315,402,489,595,577,505,431,358,285,212,140,227,315,402,489,595,140,212,285,358,431,505,613]
+var sero6=[690,494,408,318,232,146,146,146,146,146,146,232,318,408,494,581,581,581,581,581,600,146,218,290,364,437,509,581,581,581,581,581,600,146,218,290,364,437,509,619]
+ 
+var garo7=[420,577,577,577,577,577,490,402,315,227,140,140,140,140,140,140,227,315,402,489,595,577,505,431,358,285,212,140,227,315,402,489,595,140,212,285,358,431,505,613]
+var sero7=[690,494,408,318,232,146,146,146,146,146,146,232,318,408,494,581,581,581,581,581,600,146,218,290,364,437,509,581,581,581,581,581,600,146,218,290,364,437,509,619]
+ 
+var garo8=[520,577,577,577,577,577,490,402,315,227,140,140,140,140,140,140,227,315,402,489,595,577,505,431,358,285,212,140,227,315,402,489,595,140,212,285,358,431,505,613]
+var sero8=[690,494,408,318,232,146,146,146,146,146,146,232,318,408,494,581,581,581,581,581,600,146,218,290,364,437,509,581,581,581,581,581,600,146,218,290,364,437,509,619]
+
+
+
+var g= [0,0,0,0,0,0,0,0];
+var s =[0,0,0,0,0,0,0,0];
+var i1=1;
+var score1=0;
+var score2=0;
+function pp()
+{
+	var r= Math.random();	
+	i1= parseInt(r*5+1);
+	alert(i1);
+}
+	
+function aa()
+{
+	var a_1=0;
+	
+	if(g[a_1]==5)
+	{g[a_1]=21;}
+	if(s[a_1]==5)
+	{s[a_1]=21;}
+	if(g[a_1]==15)
+	{g[a_1]=34;}
+	if(s[a_1]==15)
+	{s[a_1]=34;}
+	if(g[a_1]==16)
+	{g[a_1]=35;}
+	if(s[a_1]==16)
+	{s[a_1]=35;}
+	if(g[a_1]==17)
+	{g[a_1]=36;}
+	if(s[a_1]==17)
+	{s[a_1]=36;}
+	if(g[a_1]==18)
+	{g[a_1]=37;}
+
+	if(s[a_1]==18)
+	{s[a_1]=37;}
+	if(g[a_1]==19)
+	{g[a_1]=38;}
+	if(s[a_1]==19)
+	{s[a_1]=38;}
+	if(g[a_1]==20)
+	{g[a_1]=39;}
+	if(s[a_1]==20)
+	{s[a_1]=39;}
+
+	if(g[a_1]==32)
+	{g[a_1]=39;}
+	if(g[a_1]==10)
+	{g[a_1]=33;}
+	if(g[a_1]==24)
+	{g[a_1]=36;}
+	if(s[a_1]==24)
+	{s[a_1]=36;}
+	if(g[a_1]==32)
+	{g[a_1]=39;}
+
+if(s[a_1]==32)
+{s[a_1]=39;}
+if(s[a_1]==10)
+	{s[a_1]=33;}
+if(s[a_1]==32)
+{s[a_1]=39;}
+
+		if(g[a_1]>40)	
+		{
+		score1++;
+		}
+	
+	g[0]+=i1;
+	s[0]+=i1;
+	var div='<img style="position: absolute; left: '+80+'px; top: '+10+ 'px;" src="../imgs/1팀.png"  >';
+    	div+='<img style="position: absolute; left: '+(garo1[g[0]]-20)+'px; top: '+(sero1[s[0]]-20)+'px;" src="../imgs/1팀말1-2.png" onclick="aa()" >';
+    	div+='<img style="position: absolute; left: '+(garo2[g[1]]-20)+'px; top: '+(sero2[s[1]]-20)+'px;" src="../imgs/1팀말2-2.png" onclick="aa2()" >';
+    	div+='<img style="position: absolute; left: '+(garo3[g[2]]-20)+'px; top: '+(sero3[s[2]]-20)+'px;" src="../imgs/1팀말3-2.png" onclick="aa3()" >';
+    	div+='<img style="position: absolute; left: '+(garo4[g[3]]-20)+'px; top: '+(sero4[s[3]]-20)+'px;" src="../imgs/1팀말4-2.png" onclick="aa4()" >';
+
+    	div+='<img style="position: absolute; left: '+80+'px; top: '+660+ 'px;" src="../imgs/2팀말.png"  >';
+    	div+='<img style="position: absolute; left: '+(garo5[g[4]]-20)+'px; top: '+(sero5[s[4]]-20)+'px;" src="../imgs/2팀말1-2.png" onclick="aa5()" >';
+    	div+='<img style="position: absolute; left: '+(garo6[g[5]]-20)+'px; top: '+(sero6[s[5]]-20)+'px;" src="../imgs/2팀말2-2.png" onclick="aa6()" >';
+    	div+='<img style="position: absolute; left: '+(garo7[g[6]]-20)+'px; top: '+(sero7[s[6]]-20)+'px;" src="../imgs/2팀말3-2.png" onclick="aa7()" >';
+    	div+='<img style="position: absolute; left: '+(garo8[g[7]]-20)+'px; top: '+(sero8[s[7]]-20)+'px;" src="../imgs/2팀말4-2.png" onclick="aa8()" >';
+    	div+='<input type="button" value="윳" onclick="pp()" id="bb" style="position: absolute; left: 700px; top: 670px;"></input>';
+	document.body.innerHTML=div;
+}
+
+function aa2()
+{
+	var a_1=1;
+	
+	if(g[a_1]==5)
+	{g[a_1]=21;}
+if(s[a_1]==5)
+	{s[a_1]=21;}
+if(g[a_1]==15)
+	{g[a_1]=27;}
+if(s[a_1]==15)
+	{s[a_1]=27;}
+if(g[a_1]==16)
+{g[a_1]=28;}
+if(s[a_1]==16)
+{s[a_1]=28;}
+if(g[a_1]==17)
+{g[a_1]=29;}
+if(s[a_1]==17)
+{s[a_1]=29;}
+if(g[a_1]==18)
+{g[a_1]=30;}
+
+if(s[a_1]==18)
+{s[a_1]=30;}
+if(g[a_1]==19)
+{g[a_1]=31;}
+if(g[a_1]==32)
+{g[a_1]=39;}
+if(g[a_1]==10)
+	{g[a_1]=33;}
+if(g[a_1]==24)
+	{g[a_1]=36;}
+if(s[a_1]==24)
+{s[a_1]=36;}
+if(g[a_1]==32)
+{g[a_1]=39;}
+if(s[a_1]==19)
+{s[a_1]=31;}
+if(s[a_1]==32)
+{s[a_1]=39;}
+if(s[a_1]==10)
+	{s[a_1]=33;}
+if(s[a_1]==32)
+{s[a_1]=39;}
+
+if(g[a_1]==20)
+{g[a_1]=39;}
+if(s[a_1]==20)
+{s[a_1]=39;}
+
+		if(g[a_1]>40)	
+		{
+		score1++;
+		}
+	
+	g[1]+=i1;
+	s[1]+=i1;
+	
+	var div='<img style="position: absolute; left: '+80+'px; top: '+10+ 'px;" src="../imgs/1팀.png"  >';
+    	div+='<img style="position: absolute; left: '+(garo1[g[0]]-20)+'px; top: '+(sero1[s[0]]-20)+'px;" src="../imgs/1팀말1-2.png" onclick="aa()" >';
+    	div+='<img style="position: absolute; left: '+(garo2[g[1]]-20)+'px; top: '+(sero2[s[1]]-20)+'px;" src="../imgs/1팀말2-2.png" onclick="aa2()" >';
+    	div+='<img style="position: absolute; left: '+(garo3[g[2]]-20)+'px; top: '+(sero3[s[2]]-20)+'px;" src="../imgs/1팀말3-2.png" onclick="aa3()" >';
+    	div+='<img style="position: absolute; left: '+(garo4[g[3]]-20)+'px; top: '+(sero4[s[3]]-20)+'px;" src="../imgs/1팀말4-2.png" onclick="aa4()" >';
+
+    	div+='<img style="position: absolute; left: '+80+'px; top: '+660+ 'px;" src="../imgs/2팀말.png"  >';
+    	div+='<img style="position: absolute; left: '+(garo5[g[4]]-20)+'px; top: '+(sero5[s[4]]-20)+'px;" src="../imgs/2팀말1-2.png" onclick="aa5()" >';
+    	div+='<img style="position: absolute; left: '+(garo6[g[5]]-20)+'px; top: '+(sero6[s[5]]-20)+'px;" src="../imgs/2팀말2-2.png" onclick="aa6()" >';
+    	div+='<img style="position: absolute; left: '+(garo7[g[6]]-20)+'px; top: '+(sero7[s[6]]-20)+'px;" src="../imgs/2팀말3-2.png" onclick="aa7()" >';
+    	div+='<img style="position: absolute; left: '+(garo8[g[7]]-20)+'px; top: '+(sero8[s[7]]-20)+'px;" src="../imgs/2팀말4-2.png" onclick="aa8()" >';
+    	div+='<input type="button" value="윳" onclick="pp()" id="bb" style="position: absolute; left: 700px; top: 670px;"></input>';
+	document.body.innerHTML=div;
+}
+
+function aa3()
+{
+	var a_1=2;
+	
+	if(g[a_1]==5)
+	{g[a_1]=21;}
+if(s[a_1]==5)
+	{s[a_1]=21;}
+if(g[a_1]==15)
+	{g[a_1]=27;}
+if(s[a_1]==15)
+	{s[a_1]=27;}
+if(g[a_1]==16)
+{g[a_1]=28;}
+if(s[a_1]==16)
+{s[a_1]=28;}
+if(g[a_1]==17)
+{g[a_1]=29;}
+if(s[a_1]==17)
+{s[a_1]=29;}
+if(g[a_1]==18)
+{g[a_1]=30;}
+
+if(s[a_1]==18)
+{s[a_1]=30;}
+if(g[a_1]==19)
+{g[a_1]=31;}
+if(g[a_1]==32)
+{g[a_1]=39;}
+if(g[a_1]==10)
+	{g[a_1]=33;}
+if(g[a_1]==24)
+	{g[a_1]=36;}
+if(s[a_1]==24)
+{s[a_1]=36;}
+if(g[a_1]==32)
+{g[a_1]=39;}
+if(s[a_1]==19)
+{s[a_1]=31;}
+if(s[a_1]==32)
+{s[a_1]=39;}
+if(s[a_1]==10)
+	{s[a_1]=33;}
+if(s[a_1]==32)
+{s[a_1]=39;}
+
+if(g[a_1]==20)
+{g[a_1]=39;}
+if(s[a_1]==20)
+{s[a_1]=39;}
+		if(g[a_1]>40)	
+		{
+		score1++;
+		}
+	
+	g[2]+=i1;
+	s[2]+=i1;
+	var div='<img style="position: absolute; left: '+80+'px; top: '+10+ 'px;" src="../imgs/1팀.png"  >';
+    	div+='<img style="position: absolute; left: '+(garo1[g[0]]-20)+'px; top: '+(sero1[s[0]]-20)+'px;" src="../imgs/1팀말1-2.png" onclick="aa()" >';
+    	div+='<img style="position: absolute; left: '+(garo2[g[1]]-20)+'px; top: '+(sero2[s[1]]-20)+'px;" src="../imgs/1팀말2-2.png" onclick="aa2()" >';
+    	div+='<img style="position: absolute; left: '+(garo3[g[2]]-20)+'px; top: '+(sero3[s[2]]-20)+'px;" src="../imgs/1팀말3-2.png" onclick="aa3()" >';
+    	div+='<img style="position: absolute; left: '+(garo4[g[3]]-20)+'px; top: '+(sero4[s[3]]-20)+'px;" src="../imgs/1팀말4-2.png" onclick="aa4()" >';
+
+    	div+='<img style="position: absolute; left: '+80+'px; top: '+660+ 'px;" src="../imgs/2팀말.png"  >';
+    	div+='<img style="position: absolute; left: '+(garo5[g[4]]-20)+'px; top: '+(sero5[s[4]]-20)+'px;" src="../imgs/2팀말1-2.png" onclick="aa5()" >';
+    	div+='<img style="position: absolute; left: '+(garo6[g[5]]-20)+'px; top: '+(sero6[s[5]]-20)+'px;" src="../imgs/2팀말2-2.png" onclick="aa6()" >';
+    	div+='<img style="position: absolute; left: '+(garo7[g[6]]-20)+'px; top: '+(sero7[s[6]]-20)+'px;" src="../imgs/2팀말3-2.png" onclick="aa7()" >';
+    	div+='<img style="position: absolute; left: '+(garo8[g[7]]-20)+'px; top: '+(sero8[s[7]]-20)+'px;" src="../imgs/2팀말4-2.png" onclick="aa8()" >';
+    	div+='<input type="button" value="윳" onclick="pp()" id="bb" style="position: absolute; left: 700px; top: 670px;"></input>';
+	document.body.innerHTML=div;
+}
+
+function aa4()
+{
+	var a_1=3;
+	
+	if(g[a_1]==5)
+	{g[a_1]=21;}
+if(s[a_1]==5)
+	{s[a_1]=21;}
+if(g[a_1]==15)
+	{g[a_1]=27;}
+if(s[a_1]==15)
+	{s[a_1]=27;}
+if(g[a_1]==16)
+{g[a_1]=28;}
+if(s[a_1]==16)
+{s[a_1]=28;}
+if(g[a_1]==17)
+{g[a_1]=29;}
+if(s[a_1]==17)
+{s[a_1]=29;}
+if(g[a_1]==18)
+{g[a_1]=30;}
+
+if(s[a_1]==18)
+{s[a_1]=30;}
+if(g[a_1]==19)
+{g[a_1]=31;}
+if(g[a_1]==32)
+{g[a_1]=39;}
+if(g[a_1]==10)
+	{g[a_1]=33;}
+if(g[a_1]==24)
+	{g[a_1]=36;}
+if(s[a_1]==24)
+{s[a_1]=36;}
+if(g[a_1]==32)
+{g[a_1]=39;}
+if(s[a_1]==19)
+{s[a_1]=31;}
+if(s[a_1]==32)
+{s[a_1]=39;}
+if(s[a_1]==10)
+	{s[a_1]=33;}
+if(s[a_1]==32)
+{s[a_1]=39;}
+
+if(g[a_1]==20)
+{g[a_1]=39;}
+if(s[a_1]==20)
+{s[a_1]=39;}
+
+		if(g[a_1]>40)	
+		{
+		score1++;
+		}
+	
+	g[3]+=i1;
+	s[3]+=i1;
+	var div='<img style="position: absolute; left: '+80+'px; top: '+10+ 'px;" src="../imgs/1팀.png"  >';
+    	div+='<img style="position: absolute; left: '+(garo1[g[0]]-20)+'px; top: '+(sero1[s[0]]-20)+'px;" src="../imgs/1팀말1-2.png" onclick="aa()" >';
+    	div+='<img style="position: absolute; left: '+(garo2[g[1]]-20)+'px; top: '+(sero2[s[1]]-20)+'px;" src="../imgs/1팀말2-2.png" onclick="aa2()" >';
+    	div+='<img style="position: absolute; left: '+(garo3[g[2]]-20)+'px; top: '+(sero3[s[2]]-20)+'px;" src="../imgs/1팀말3-2.png" onclick="aa3()" >';
+    	div+='<img style="position: absolute; left: '+(garo4[g[3]]-20)+'px; top: '+(sero4[s[3]]-20)+'px;" src="../imgs/1팀말4-2.png" onclick="aa4()" >';
+
+    	div+='<img style="position: absolute; left: '+80+'px; top: '+660+ 'px;" src="../imgs/2팀말.png"  >';
+    	div+='<img style="position: absolute; left: '+(garo5[g[4]]-20)+'px; top: '+(sero5[s[4]]-20)+'px;" src="../imgs/2팀말1-2.png" onclick="aa5()" >';
+    	div+='<img style="position: absolute; left: '+(garo6[g[5]]-20)+'px; top: '+(sero6[s[5]]-20)+'px;" src="../imgs/2팀말2-2.png" onclick="aa6()" >';
+    	div+='<img style="position: absolute; left: '+(garo7[g[6]]-20)+'px; top: '+(sero7[s[6]]-20)+'px;" src="../imgs/2팀말3-2.png" onclick="aa7()" >';
+    	div+='<img style="position: absolute; left: '+(garo8[g[7]]-20)+'px; top: '+(sero8[s[7]]-20)+'px;" src="../imgs/2팀말4-2.png" onclick="aa8()" >';
+    	div+='<input type="button" value="윳" onclick="pp()" id="bb" style="position: absolute; left: 700px; top: 670px;"></input>';
+	document.body.innerHTML=div;
+}
+
+function aa5()
+{
+	var a_1=4;
+	
+	if(g[a_1]==5)
+	{g[a_1]=21;}
+if(s[a_1]==5)
+	{s[a_1]=21;}
+if(g[a_1]==15)
+	{g[a_1]=27;}
+if(s[a_1]==15)
+	{s[a_1]=27;}
+if(g[a_1]==16)
+{g[a_1]=28;}
+if(s[a_1]==16)
+{s[a_1]=28;}
+if(g[a_1]==17)
+{g[a_1]=29;}
+if(s[a_1]==17)
+{s[a_1]=29;}
+if(g[a_1]==18)
+{g[a_1]=30;}
+
+if(s[a_1]==18)
+{s[a_1]=30;}
+if(g[a_1]==19)
+{g[a_1]=31;}
+if(g[a_1]==32)
+{g[a_1]=39;}
+if(g[a_1]==10)
+	{g[a_1]=33;}
+if(g[a_1]==24)
+	{g[a_1]=36;}
+if(s[a_1]==24)
+{s[a_1]=36;}
+if(g[a_1]==32)
+{g[a_1]=39;}
+if(s[a_1]==19)
+{s[a_1]=31;}
+if(s[a_1]==32)
+{s[a_1]=39;}
+if(s[a_1]==10)
+	{s[a_1]=33;}
+if(s[a_1]==32)
+{s[a_1]=39;}
+
+if(g[a_1]==20)
+{g[a_1]=39;}
+if(s[a_1]==20)
+{s[a_1]=39;}
+
+		if(g[a_1]>40)	
+		{
+		score1++;
+		}
+	
+	g[4]+=i1;
+	s[4]+=i1;
+	var div='<img style="position: absolute; left: '+80+'px; top: '+10+ 'px;" src="../imgs/1팀.png"  >';
+	div+='<img style="position: absolute; left: '+(garo1[g[0]]-20)+'px; top: '+(sero1[s[0]]-20)+'px;" src="../imgs/1팀말1-2.png" onclick="aa()" >';
+	div+='<img style="position: absolute; left: '+(garo2[g[1]]-20)+'px; top: '+(sero2[s[1]]-20)+'px;" src="../imgs/1팀말2-2.png" onclick="aa2()" >';
+	div+='<img style="position: absolute; left: '+(garo3[g[2]]-20)+'px; top: '+(sero3[s[2]]-20)+'px;" src="../imgs/1팀말3-2.png" onclick="aa3()" >';
+	div+='<img style="position: absolute; left: '+(garo4[g[3]]-20)+'px; top: '+(sero4[s[3]]-20)+'px;" src="../imgs/1팀말4-2.png" onclick="aa4()" >';
+
+	div+='<img style="position: absolute; left: '+80+'px; top: '+660+ 'px;" src="../imgs/2팀말.png"  >';
+	div+='<img style="position: absolute; left: '+(garo5[g[4]]-20)+'px; top: '+(sero5[s[4]]-20)+'px;" src="../imgs/2팀말1-2.png" onclick="aa5()" >';
+	div+='<img style="position: absolute; left: '+(garo6[g[5]]-20)+'px; top: '+(sero6[s[5]]-20)+'px;" src="../imgs/2팀말2-2.png" onclick="aa6()" >';
+	div+='<img style="position: absolute; left: '+(garo7[g[6]]-20)+'px; top: '+(sero7[s[6]]-20)+'px;" src="../imgs/2팀말3-2.png" onclick="aa7()" >';
+	div+='<img style="position: absolute; left: '+(garo8[g[7]]-20)+'px; top: '+(sero8[s[7]]-20)+'px;" src="../imgs/2팀말4-2.png" onclick="aa8()" >';
+	div+='<input type="button" value="윳" onclick="pp()" id="bb" style="position: absolute; left: 700px; top: 670px;"></input>';
+	document.body.innerHTML=div;
+}
+
+function aa6()
+{
+	var a_1=5;
+	
+	if(g[a_1]==5)
+	{g[a_1]=21;}
+if(s[a_1]==5)
+	{s[a_1]=21;}
+if(g[a_1]==15)
+	{g[a_1]=27;}
+if(s[a_1]==15)
+	{s[a_1]=27;}
+if(g[a_1]==16)
+{g[a_1]=28;}
+if(s[a_1]==16)
+{s[a_1]=28;}
+if(g[a_1]==17)
+{g[a_1]=29;}
+if(s[a_1]==17)
+{s[a_1]=29;}
+if(g[a_1]==18)
+{g[a_1]=30;}
+
+if(s[a_1]==18)
+{s[a_1]=30;}
+if(g[a_1]==19)
+{g[a_1]=31;}
+if(g[a_1]==32)
+{g[a_1]=39;}
+if(g[a_1]==10)
+	{g[a_1]=33;}
+if(g[a_1]==24)
+	{g[a_1]=36;}
+if(s[a_1]==24)
+{s[a_1]=36;}
+if(g[a_1]==32)
+{g[a_1]=39;}
+if(s[a_1]==19)
+{s[a_1]=31;}
+if(s[a_1]==32)
+{s[a_1]=39;}
+if(s[a_1]==10)
+	{s[a_1]=33;}
+if(s[a_1]==32)
+{s[a_1]=39;}
+
+if(g[a_1]==20)
+{g[a_1]=39;}
+if(s[a_1]==20)
+{s[a_1]=39;}
+		if(g[a_1]>40)	
+		{
+		score1++;
+		}
+	
+	g[5]+=i1;
+	s[5]+=i1;
+	var div='<img style="position: absolute; left: '+80+'px; top: '+10+ 'px;" src="../imgs/1팀.png"  >';
+	div+='<img style="position: absolute; left: '+(garo1[g[0]]-20)+'px; top: '+(sero1[s[0]]-20)+'px;" src="../imgs/1팀말1-2.png" onclick="aa()" >';
+	div+='<img style="position: absolute; left: '+(garo2[g[1]]-20)+'px; top: '+(sero2[s[1]]-20)+'px;" src="../imgs/1팀말2-2.png" onclick="aa2()" >';
+	div+='<img style="position: absolute; left: '+(garo3[g[2]]-20)+'px; top: '+(sero3[s[2]]-20)+'px;" src="../imgs/1팀말3-2.png" onclick="aa3()" >';
+	div+='<img style="position: absolute; left: '+(garo4[g[3]]-20)+'px; top: '+(sero4[s[3]]-20)+'px;" src="../imgs/1팀말4-2.png" onclick="aa4()" >';
+
+	div+='<img style="position: absolute; left: '+80+'px; top: '+660+ 'px;" src="../imgs/2팀말.png"  >';
+	div+='<img style="position: absolute; left: '+(garo5[g[4]]-20)+'px; top: '+(sero5[s[4]]-20)+'px;" src="../imgs/2팀말1-2.png" onclick="aa5()" >';
+	div+='<img style="position: absolute; left: '+(garo6[g[5]]-20)+'px; top: '+(sero6[s[5]]-20)+'px;" src="../imgs/2팀말2-2.png" onclick="aa6()" >';
+	div+='<img style="position: absolute; left: '+(garo7[g[6]]-20)+'px; top: '+(sero7[s[6]]-20)+'px;" src="../imgs/2팀말3-2.png" onclick="aa7()" >';
+	div+='<img style="position: absolute; left: '+(garo8[g[7]]-20)+'px; top: '+(sero8[s[7]]-20)+'px;" src="../imgs/2팀말4-2.png" onclick="aa8()" >';
+	div+='<input type="button" value="윳" onclick="pp()" id="bb" style="position: absolute; left: 700px; top: 670px;"></input>';
+	document.body.innerHTML=div;
+}
+
+function aa7()
+{
+	var a_1=6;
+	
+	if(g[a_1]==5)
+	{g[a_1]=21;}
+if(s[a_1]==5)
+	{s[a_1]=21;}
+if(g[a_1]==15)
+	{g[a_1]=27;}
+if(s[a_1]==15)
+	{s[a_1]=27;}
+if(g[a_1]==16)
+{g[a_1]=28;}
+if(s[a_1]==16)
+{s[a_1]=28;}
+if(g[a_1]==17)
+{g[a_1]=29;}
+if(s[a_1]==17)
+{s[a_1]=29;}
+if(g[a_1]==18)
+{g[a_1]=30;}
+
+if(s[a_1]==18)
+{s[a_1]=30;}
+if(g[a_1]==19)
+{g[a_1]=31;}
+if(g[a_1]==32)
+{g[a_1]=39;}
+if(g[a_1]==10)
+	{g[a_1]=33;}
+if(g[a_1]==24)
+	{g[a_1]=36;}
+if(s[a_1]==24)
+{s[a_1]=36;}
+if(g[a_1]==32)
+{g[a_1]=39;}
+if(s[a_1]==19)
+{s[a_1]=31;}
+if(s[a_1]==32)
+{s[a_1]=39;}
+if(s[a_1]==10)
+	{s[a_1]=33;}
+if(s[a_1]==32)
+{s[a_1]=39;}
+
+if(g[a_1]==20)
+{g[a_1]=39;}
+if(s[a_1]==20)
+{s[a_1]=39;}
+
+		if(g[a_1]>40)	
+		{
+		score1++;
+		}
+	
+	g[6]+=i1;
+	s[6]+=i1;
+	var div='<img style="position: absolute; left: '+80+'px; top: '+10+ 'px;" src="../imgs/1팀.png"  >';
+	div+='<img style="position: absolute; left: '+(garo1[g[0]]-20)+'px; top: '+(sero1[s[0]]-20)+'px;" src="../imgs/1팀말1-2.png" onclick="aa()" >';
+	div+='<img style="position: absolute; left: '+(garo2[g[1]]-20)+'px; top: '+(sero2[s[1]]-20)+'px;" src="../imgs/1팀말2-2.png" onclick="aa2()" >';
+	div+='<img style="position: absolute; left: '+(garo3[g[2]]-20)+'px; top: '+(sero3[s[2]]-20)+'px;" src="../imgs/1팀말3-2.png" onclick="aa3()" >';
+	div+='<img style="position: absolute; left: '+(garo4[g[3]]-20)+'px; top: '+(sero4[s[3]]-20)+'px;" src="../imgs/1팀말4-2.png" onclick="aa4()" >';
+
+	div+='<img style="position: absolute; left: '+80+'px; top: '+660+ 'px;" src="../imgs/2팀말.png"  >';
+	div+='<img style="position: absolute; left: '+(garo5[g[4]]-20)+'px; top: '+(sero5[s[4]]-20)+'px;" src="../imgs/2팀말1-2.png" onclick="aa5()" >';
+	div+='<img style="position: absolute; left: '+(garo6[g[5]]-20)+'px; top: '+(sero6[s[5]]-20)+'px;" src="../imgs/2팀말2-2.png" onclick="aa6()" >';
+	div+='<img style="position: absolute; left: '+(garo7[g[6]]-20)+'px; top: '+(sero7[s[6]]-20)+'px;" src="../imgs/2팀말3-2.png" onclick="aa7()" >';
+	div+='<img style="position: absolute; left: '+(garo8[g[7]]-20)+'px; top: '+(sero8[s[7]]-20)+'px;" src="../imgs/2팀말4-2.png" onclick="aa8()" >';
+	div+='<input type="button" value="윳" onclick="pp()" id="bb" style="position: absolute; left: 700px; top: 670px;"></input>';
+	document.body.innerHTML=div;
+}
+
+function aa8()
+{
+	var a_1=7;
+	
+	if(g[a_1]==5)
+	{g[a_1]=21;}
+if(s[a_1]==5)
+	{s[a_1]=21;}
+if(g[a_1]==15)
+	{g[a_1]=27;}
+if(s[a_1]==15)
+	{s[a_1]=27;}
+if(g[a_1]==16)
+{g[a_1]=28;}
+if(s[a_1]==16)
+{s[a_1]=28;}
+if(g[a_1]==17)
+{g[a_1]=29;}
+if(s[a_1]==17)
+{s[a_1]=29;}
+if(g[a_1]==18)
+{g[a_1]=30;}
+
+if(s[a_1]==18)
+{s[a_1]=30;}
+if(g[a_1]==19)
+{g[a_1]=31;}
+if(g[a_1]==32)
+{g[a_1]=39;}
+if(g[a_1]==10)
+	{g[a_1]=33;}
+if(g[a_1]==24)
+	{g[a_1]=36;}
+if(s[a_1]==24)
+{s[a_1]=36;}
+if(g[a_1]==32)
+{g[a_1]=39;}
+if(s[a_1]==19)
+{s[a_1]=31;}
+if(s[a_1]==32)
+{s[a_1]=39;}
+if(s[a_1]==10)
+	{s[a_1]=33;}
+if(s[a_1]==32)
+{s[a_1]=39;}
+
+if(g[a_1]==20)
+{g[a_1]=39;}
+if(s[a_1]==20)
+{s[a_1]=39;}
+
+		if(g[a_1]>40)	
+		{
+		score1++;
+		}
+	
+	g[7]+=i1;
+	s[7]+=i1;
+	var div='<img style="position: absolute; left: '+80+'px; top: '+10+ 'px;" src="../imgs/1팀.png"  >';
+	div+='<img style="position: absolute; left: '+(garo1[g[0]]-20)+'px; top: '+(sero1[s[0]]-20)+'px;" src="../imgs/1팀말1-2.png" onclick="aa()" >';
+	div+='<img style="position: absolute; left: '+(garo2[g[1]]-20)+'px; top: '+(sero2[s[1]]-20)+'px;" src="../imgs/1팀말2-2.png" onclick="aa2()" >';
+	div+='<img style="position: absolute; left: '+(garo3[g[2]]-20)+'px; top: '+(sero3[s[2]]-20)+'px;" src="../imgs/1팀말3-2.png" onclick="aa3()" >';
+	div+='<img style="position: absolute; left: '+(garo4[g[3]]-20)+'px; top: '+(sero4[s[3]]-20)+'px;" src="../imgs/1팀말4-2.png" onclick="aa4()" >';
+
+	div+='<img style="position: absolute; left: '+80+'px; top: '+660+ 'px;" src="../imgs/2팀말.png"  >';
+	div+='<img style="position: absolute; left: '+(garo5[g[4]]-20)+'px; top: '+(sero5[s[4]]-20)+'px;" src="../imgs/2팀말1-2.png" onclick="aa5()" >';
+	div+='<img style="position: absolute; left: '+(garo6[g[5]]-20)+'px; top: '+(sero6[s[5]]-20)+'px;" src="../imgs/2팀말2-2.png" onclick="aa6()" >';
+	div+='<img style="position: absolute; left: '+(garo7[g[6]]-20)+'px; top: '+(sero7[s[6]]-20)+'px;" src="../imgs/2팀말3-2.png" onclick="aa7()" >';
+	div+='<img style="position: absolute; left: '+(garo8[g[7]]-20)+'px; top: '+(sero8[s[7]]-20)+'px;" src="../imgs/2팀말4-2.png" onclick="aa8()" >';
+	div+='<input type="button" value="윳" onclick="pp()" id="bb" style="position: absolute; left: 700px; top: 670px;"></input>';
+	document.body.innerHTML=div;
+}
+
+
+
+
+</script>
+
+
+
+
+
+<script type="../script/jooyung.js"></script>
+
+
+</head>
+<body>
+
+<img style="position: absolute; left: 80px; top: 10px;" src="../imgs/1팀.png" >
+<img style="position: absolute; left: 200px; top: 30px;" src="../imgs/1팀말1-2.png" onclick="aa()" >
+<img style="position: absolute; left: 300px; top: 30px;" src="../imgs/1팀말2-2.png" onclick="aa2()">
+<img style="position: absolute; left: 400px; top: 30px;" src="../imgs/1팀말3-2.png" onclick="aa3()">
+<img style="position: absolute; left: 500px; top: 30px;" src="../imgs/1팀말4-2.png" onclick="aa4()">
+
+<img style="position: absolute; left: 80px; top: 660px;" src="../imgs/2팀말.png" >
+<img style="position: absolute; left: 200px; top: 670px;" src="../imgs/2팀말1-2.png" onclick="aa5()">
+<img style="position: absolute; left: 300px; top: 670px;" src="../imgs/2팀말2-2.png" onclick="aa6()">
+<img style="position: absolute; left: 400px; top: 670px;" src="../imgs/2팀말3-2.png" onclick="aa7()">
+<img style="position: absolute; left: 500px; top: 670px;" src="../imgs/2팀말4-2.png" onclick="aa8()">
+
+<input type="button" value="윳" onclick="pp()" id="bb" style="position: absolute; left: 700px; top: 670px;"></input>
+
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+package javastart.B02_object;
+import java.util.Calendar;
+class Schedule{
+	//날짜
+	String date;
+	//시간
+	int time1; //시작
+	int time2; //끝
+	//일정내용
+	String memo;
+	//소요시간
+	int delate;
+	
+	Schedule(String memo, String date, int time1,int time2){
+		this.date=date;
+		this.time1=time1;
+		this.time2=time2;
+		this.memo=memo;
+	}
+	void showCur(){
+		delate = time2-time1;
+		System.out.println(memo+"\t"+date+"\t"+time1+"\t"+delate);
+	}
+	
+}
+	
+public class plane {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Calendar day = Calendar.getInstance();
+		int t = day.get(Calendar.HOUR_OF_DAY);
+		Schedule[] plan= {new Schedule("안녕하세요","2016/1/4",t,16),
+				          new Schedule("반가워요","2015/5/4",t,16),
+				          new Schedule("잘있어요","2011/4/4",t,16),
+				          new Schedule("다시만나요","2013/6/4",t,2),
+				          new Schedule("아침해가 뜨면","2010/7/4",t,16)
+		};
+		for(int a=0; a<plan.length;a++){
+			plan[a].showCur();
+		}
+		
+		/*	Calendar day = Calendar.getInstance();
+		String a = "";
+		System.out.println("시간(0~23): " + day.get(Calendar.YEAR));
+		System.out.println("시간(0~23): " + day.get(Calendar.HOUR_OF_DAY));
+		a+=day.get(Calendar.DATE)+"일"+day.get(Calendar.HOUR_OF_DAY);
+		System.out.println("시간(0~23): " + a);
+		*/
+
+		/*
+		 * 확인예제
+		 * 1단계
+		 * 
+		 * 	월간 계획표 작성.
+		 * 	Schedule
+		 * 		속성: 일정내용, 날짜, 시간(언제), 소요시간
+		 * 		매서드: showSchedule() 계획내용, 날짜/시간, 소요시간 출력
+		 * 	계획 5개를 배열로 만들어 해당 매서드를 호출하는 순간 출력되게 처리.
+		 * 
+		 * 2단계	
+		 * 	위 내용에 속성값 우선순의를 입력하여,
+		 * 	초기에는 우선순위를 임의로 넣고 출력할때 우선순위가 높은 것부터 출력하게 처리
+		 */
+		//String[] shedule
+		
+	}
+
+}

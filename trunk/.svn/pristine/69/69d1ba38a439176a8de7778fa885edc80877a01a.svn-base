@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>윷놀이 게임</title>
+<script type="text/javascript">
+function startOver(){
+	document.getElementsByTagName("h2")[0].style.color = "yellow";
+	document.getElementsByTagName("h2")[0].style.fontWeight = "bold";
+}
+function startOut(){
+	document.getElementsByTagName("h2")[0].style.color = "white";
+}
+</script>
+<style>
+h2:hover {
+	color:yellow;
+}
+</style>
+</head>
+<body background="../imgs/ground2.jpg">
+	
+<h1 style="color:white;margin-top:100px;" align="center">윷놀이 게임</h1>
+<a href="choice.html">
+<h2 style="color:white;text-decoration:none;" align="center" onmouseover="startOver();" onmouseout="startOut();">시작</h2>
+</a>
+</body>
+</html>

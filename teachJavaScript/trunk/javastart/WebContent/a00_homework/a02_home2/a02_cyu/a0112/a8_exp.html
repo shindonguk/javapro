@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+window.onload=function()
+{
+};
+weekWeather = [];
+dailyWather = {};
+
+dailyWather.day = "1/12";
+dailyWather.wather = "눈후갬";
+weekWeather.push(dailyWather);
+dailyWather = {};
+dailyWather.day = "1/13";
+dailyWather.wather = "흐린후갬";
+weekWeather.push(dailyWather);
+dailyWather = {};
+dailyWather.day = "1/14";
+dailyWather.wather = "맑음";
+weekWeather.push(dailyWather);
+dailyWather = {};
+dailyWather.day = "1/15";
+dailyWather.wather = "맑음";
+weekWeather.push(dailyWather);
+dailyWather = {};
+dailyWather.day = "1/16";
+dailyWather.wather = "맑음";
+weekWeather.push(dailyWather);
+dailyWather = {};
+dailyWather.day = "1/17";
+dailyWather.wather = "구름조금";
+weekWeather.push(dailyWather);
+dailyWather = {};
+dailyWather.day = "1/18";
+dailyWather.wather = "구름조금";
+weekWeather.push(dailyWather);
+alert("날짜 총 갯수"+weekWeather.length+" : 2일후 날씨 "+weekWeather[2].wather);
+
+ function view() 
+	{
+		var show="<h1>주간 날씨 예보<h1>";
+		show += "<table border='1'>";
+		show += "<tr><td>날짜</td><td>날씨</td></tr>";
+		weekWeather.forEach(function(element, index,weekWeather)
+				{
+					show += "<tr><td>"+weekWeather[index].day+"</td><td>"+weekWeather[index].wather+"</td></tr>";
+				});
+		show += "</table><br><br>";
+		document.body.innerHTML = show;
+	}	
+</script>
+</head>
+<body>
+<input type="button" value="주간날씨 보기" onclick="view()"></input>
+</body>
+</html>

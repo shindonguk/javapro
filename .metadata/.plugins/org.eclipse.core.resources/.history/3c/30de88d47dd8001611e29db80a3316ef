@@ -1,0 +1,5 @@
+package javastart.D01_inherit;
+
+public interface dduck {
+
+}

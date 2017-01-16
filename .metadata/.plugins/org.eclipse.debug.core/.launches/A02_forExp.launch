@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/javastart/src/javastart/A05_loop/A02_forExp.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="javastart.A05_loop.A02_forExp"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="사과 2000 3 딸기 4000 2 바나나 6000 4 망고 10000 5"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="javastart"/>
+</launchConfiguration>

@@ -1,0 +1,19 @@
+package javastart.C01_ACCESS.A01_friendShip;
+
+import javastart.C01_ACCESS.A01_Hunter;
+
+public class A01_Woodcutter {
+
+	void call(){
+		//A02가 같은 package에 있고,
+		//class옆 접근 제어자가 public 가능
+		//같은 package에 있는 패키지명에 대한 선언 생략
+		javastart.C01_ACCESS.A01_friendShip.A02_deer de;
+		A02_deer d;
+		//다른 package에 있을 때는 패키지명까지 호출해야 한다.
+		javastart.C01_ACCESS.A01_Hunter h1;
+		//다른 package라도 접근 제어자가 public이고, 
+		//import로 해당 클래스를 상위에 선언하면 package명을 생략이 가능하다.
+		A01_Hunter h2;
+	}
+}

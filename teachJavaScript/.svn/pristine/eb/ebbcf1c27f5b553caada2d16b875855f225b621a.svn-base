@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+*{background-color: red; color: white;}
+</style>
+</head>
+<body>
+<h1 align="center"><a href="red.html" target="color">RED</a></h1>
+</body>
+</html>

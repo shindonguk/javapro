@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        window.onload = function() {
+            
+        }
+
+        var accounts = [];
+        var account ={};
+
+        account.name = "홍길동"; 
+        account.age = 11;       
+        accounts.push(account);
+        accounts.push(account);
+        accounts.push(account);
+        accounts.push(account);
+        
+        
+        account.name = "김길동";
+        accounts[1] = account;
+
+        for (var i in accounts) {
+            // console.log(accounts[i].name);
+            // console.log(accounts[i].age);
+        }
+
+        var array = [1,2,3,4,5,6,7,8,9,10];
+
+        var sum = 0;
+        var output = "";
+        array.forEach(function(element, index, array){
+            sum += element;
+            output += index + ". " + element + " --> " + sum  + "\n";
+        });
+        
+
+        var products = [];
+
+        function buy() {
+            var name = document.getElementById("name").value;
+            var price = document.getElementById("price").value;
+
+            var product = {};
+            product.name = name;
+            product.price = price;
+
+            products.push(product);
+
+            showProducts();
+        }
+
+        function showProducts() {
+            var html = "";
+            html += "<table border='1'>";
+            html += "<tr><th>NO</th><th>물건명</th><th>가격</th></tr>";
+
+            products.forEach(function(element, index, products){
+                html += "<tr><td>" + (index + 1) + "</td>";
+                html += "<td>" + products[index].name + "</td>";
+                html += "<td>" + products[index].price + "</td></tr>";
+            });
+
+            html += "</table>";
+
+            document.getElementById("table").innerHTML = html;
+        }
+
+        function search() {
+            var select = document.getElementById("select");
+            var selectedValue = select.options[select.selectedIndex].value;
+
+            switch (selectedValue) {
+            case "all":
+                showProducts();
+                break;
+            case "name":
+                searchName();
+                break;
+            case "priceUp":
+                searchPriceUp();
+                break;
+            case "priceDown":
+                searchPriceDown();
+                break;
+            }
+        }
+        
+        function searchName() {
+            var keyword = document.getElementById("keyword").value;
+
+            var html = "";
+            html += "<table border='1'>";
+            html += "<tr><th>NO</th><th>물건명</th><th>가격</th></tr>";
+
+            products.forEach(function(element, index, products){
+                if (products[index].name == keyword) {
+                    html += "<tr><td>" + (index + 1) + "</td>";
+                    html += "<td>" + products[index].name + "</td>";
+                    html += "<td>" + products[index].price + "</td></tr>";
+                }
+            });
+
+            html += "</table>";
+
+            document.getElementById("table").innerHTML = html;
+        }
+        function searchPriceUp() {
+            var keyword = document.getElementById("keyword").value;
+
+            var html = "";
+            html += "<table border='1'>";
+            html += "<tr><th>NO</th><th>물건명</th><th>가격</th></tr>";
+
+            products.forEach(function(element, index, products){
+                if (parseInt(products[index].price) >= parseInt(keyword)) {
+                    html += "<tr><td>" + (index + 1) + "</td>";
+                    html += "<td>" + products[index].name + "</td>";
+                    html += "<td>" + products[index].price + "</td></tr>";
+                }
+            });
+
+            html += "</table>";
+
+            document.getElementById("table").innerHTML = html;
+        }
+        function searchPriceDown() {
+            var keyword = document.getElementById("keyword").value;
+
+            var html = "";
+            html += "<table border='1'>";
+            html += "<tr><th>NO</th><th>물건명</th><th>가격</th></tr>";
+
+            products.forEach(function(element, index, products){
+                if (parseInt(products[index].price) <= parseInt(keyword)) {
+                    html += "<tr><td>" + (index + 1) + "</td>";
+                    html += "<td>" + products[index].name + "</td>";
+                    html += "<td>" + products[index].price + "</td></tr>";
+                }
+            });
+
+            html += "</table>";
+
+            document.getElementById("table").innerHTML = html;
+        }
+    </script>
+</head>
+<body>
+
+물건명 : <input type="text" id="name"><br>
+가격 : <input type="text" id="price"><br>
+<input type="button" value="구매" onclick="buy();">
+
+
+<div id="table"></div>
+
+
+<select id="select">
+  <option value="all">전체</option>
+  <option value="name">물건명</option>
+  <option value="priceUp">가격이상</option>
+  <option value="priceDown">가격이하</option>
+</select>
+
+<input type="text" id="keyword"><input type="button" value="검색" onclick="search()">
+</table>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ 
+	<link rel="stylesheet" href="style.css" /> <!--배경/테이블/플레이어말 Style CSS 파일-->
+	<script src="script.js"></script>
+
+ </head>
+ 
+ <body>
+
+<!--!!!! 플레이어 선택 !!!!-------------------------------------------------------------------------------------------------------- -->
+
+	<div id="zero">
+
+<!-- 케릭터 선택 SWITCH  -->
+		<div id="pp1" onclick="cars('no1','blue')"><img src="img/p1.png"></div>
+		<div id="pp2" onclick="cars('no2','black')"><img src="img/p2.png"></div>
+		<div id="pp3" onclick="cars('no3','orange')"><img src="img/p3.png"></div>
+		<div id="pp4" onclick="cars('no4','red')" ><img src="img/p4.png"></div>
+
+<!-- 별명입력 TEXT  -->
+		<div><input type="text" id="nickName1" style="width:193px" maxlength="7" ></div>
+		<div><input type="text" id="nickName2" style="width:193px" maxlength="7" ></div>
+		<div><input type="text" id="nickName3" style="width:193px" maxlength="7" ></div>
+		<div><input type="text" id="nickName4" style="width:193px" maxlength="7" ></div>
+
+<!-- 순번 표시 TEXT  -->
+		<div id="no1"></div>
+		<div id="no2"></div>
+		<div id="no3"></div>
+		<div id="no4"></div>
+
+<!-- 선택 및 취소  -->
+		<div id="startImg" onclick="ok()"><img src="img/start1.png"></div>
+		<div id="resetImg" onclick="rechos()"><img src="img/reset1.png"></div>
+ 
+	</div>
+ 
+<!--!!!! 메인게임 !!!!-------------------------------------------------------------------------------------------------------- -->
+
+	<div id="one">
+ <!--캐릭터 선택창-->
+		<div id="select">
+			<button type="button" name="" value="" class="css3button" id="" onclick="chos()">선택 창</button>
+			<button type="button" name="" value="" class="css3button" onclick="start()">시작</button>
+		</div>	
+
+		<h1 align="center"> 재미있는 주사위 레이싱 </h1>
+
+<!--주사위-->
+		<div id="marble">
+			<div id="dImg"><img src="img/4.png"></div>
+			<button align='center' id="btn" onclick="moveCar()">주사위 던지기</button>
+			<a align="center" id="dValue">값</a>
+		</div>
+
+<!--로드이미지-->
+		<div id="mainimg">
+			<img src="img/RESIZEroad.png">
+		</div>
+
+<!--사다리-->
+		<div id="s01"><img src="img/sadari_1.png"></div>
+		<div id="s02"><img src="img/sadari_2.png"></div>
+		<div id="s03"><img src="img/sadari_3.png"></div>
+		<div id="s04"><img src="img/sadari_4.png"></div>
+
+<!--자동차-->
+		<div id="div01"><img src="img/b_car.png" width="45px"></div>
+		<div id="div02"><img src="img/black_car.png" width="45px"></div>
+		<div id="div03"><img src="img/o_car.png" width="45px"></div>
+		<div id="div04"><img src="img/r_car.png" width="45px"></div>
+
+<!--플레이어 전광판-->
+		<div id=score>
+			<table id=scoretable> 
+			<tr><td colspan=3>PLAYER SCORE</td></tr>
+			<tr><td colspan=3>==========</td></tr>
+			<tr><td>P1</td>
+				<td><img src="img/b_car.png" width="45px"></td>
+				<td id=p1Score>: 00</td>	</tr>
+			<tr><td>P2</td>
+				<td><img src="img/black_car.png" width="45px"></td>
+				<td id=p2Score>: 00</td>	</tr>
+			<tr><td>P3</td>
+				<td><img src="img/o_car.png" width="45px"></td>
+				<td id=p3Score>: 00</td>	</tr>
+			<tr><td>P4</td>
+				<td><img src="img/r_car.png" width="45px"></td>
+				<td id=p4Score>: 00</td>	</tr>
+			<tr><td colspan=3>==========</td></tr>
+			</table>
+		</div>
+
+	</div>
+
+<!--!!!! 랭킹정리 !!!!-------------------------------------------------------------------------------------------------------- -->
+
+<!--랭킹페이지 활성화-->
+	<div id="two" name="input">
+
+		<h1 align="center" id="title"> Racing Ranking </h1>
+
+		<table id="ranktable">
+
+			<tr>
+				<th>NO</th>
+				<th>RANKING</th>
+				<th>NAME</th>
+				<th>ITEM</th>
+			</tr>
+			<tr>
+				<td><img src="img/1-1.png"></td>
+				<td><img src="img/gold.png"></td>
+				<td id="rrank1"></td>
+				<td><img src="img/item1.png"></td>
+			</tr>
+			<tr>
+				<td><img src="img/2-1.png"></td>
+				<td><img src="img/sliver.png"></td>
+				<td id="rrank2"></td>
+				<td><img src="img/item2.png"></td>
+			</tr>
+			<tr>
+				<td><img src="img/3-1.png"></td>
+				<td><img src="img/dd.png"></td>
+				<td id="rrank3"></td>
+				<td><img src="img/item3.png"></td>
+			</tr>
+			<tr>
+				<td><img src="img/4-1.png"></td>
+				<td></td>
+				<td id="rrank4"></td>
+				<td></td>
+			</tr>
+	
+		</table>
+	
+		<div id="restartImg"><a href="intro.html"><img src="img/restart.png"></a></div>
+
+	</div>
+
+ </body>
+</html>

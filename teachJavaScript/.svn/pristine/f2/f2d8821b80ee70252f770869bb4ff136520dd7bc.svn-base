@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+var getgold=0;
+var usegold=0;
+var sellgold=0;
+var upgradegold=0;
+var bank=10000000;
+
+window.onload=function(){
+	//초기 골드 값 갱신
+	document.getElementById("gold").innerHTML=bank;
+}
+
+function goldSum1(){
+	//사냥에서 획득한 골드를 bank에 합산한다.
+	var getgold = parent.hunting.getgold;
+	bank+= getgold;
+	document.getElementById("gold").innerHTML=bank;
+}
+function goldSum2(){
+	//무기판매로 획득한 골드를 bank에 합산한다.
+	var sellgold = parent.weapon.sellprice[parent.weapon.level-1];
+	bank+= sellgold;
+	document.getElementById("gold").innerHTML=bank;
+}
+
+//상점에서 구매한 골드 차감
+function goldMinus(){
+	var usegold = parent.market.usegold;
+	if((bank-usegold) < 0){alert("금액 부족");}
+	else{
+			bank-= usegold;
+			document.getElementById("gold").innerHTML=bank;
+	
+		// 구매 물품 재고량 증가
+		if(usegold == 100){
+			parent.inven.potion1Cnt++; 
+			parent.inven.document.getElementById("potion1").innerHTML=parent.inven.potion1Cnt;
+		}
+		if(usegold == 200){
+			parent.inven.potion2Cnt++;
+			parent.inven.document.getElementById("potion2").innerHTML=parent.inven.potion2Cnt;
+		}
+		if(usegold == 4000){
+			parent.inven.upgrade1Cnt++;
+			parent.inven.document.getElementById("upgrade1").innerHTML=parent.inven.upgrade1Cnt;
+		}
+		if(usegold == 16000){
+			parent.inven.upgrade2Cnt++;
+			parent.inven.document.getElementById("upgrade2").innerHTML=parent.inven.upgrade2Cnt;
+		}
+		if(usegold == 15000){
+			parent.inven.scroll1Cnt++;
+			parent.inven.document.getElementById("scroll1").innerHTML=parent.inven.scroll1Cnt;
+		}
+		if(usegold == 20000){
+			parent.inven.scroll2Cnt++;
+			parent.inven.document.getElementById("scroll2").innerHTML=parent.inven.scroll2Cnt;
+		}
+	}
+}
+
+//강화할때 골드 차감
+function goldMinus2(){
+	var upgradegold = parent.weapon.upgradegold;
+	bank-= upgradegold;
+	document.getElementById("gold").innerHTML=bank;
+}
+
+</script>
+
+</head>
+
+<body bgcolor="black">
+<font color="white" size="10px">골드 : <font id="gold">0</font>G</font>
+
+</body>
+
+</html>

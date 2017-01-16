@@ -1,0 +1,14 @@
+package javastart.D01_inherit;
+
+interface Flayway{
+	
+	void fly();
+}
+public class C01_interface {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

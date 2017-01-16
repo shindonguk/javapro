@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+window.onload=function(){
+	
+	//var greeting="Hello, Good day!";
+	// 문자열에서 지원하는 메서드.
+	// 대/소문자 변환
+		//alert(greeting.toLowerCase());
+		//alert(greeting.toUpperCase());
+	
+	// 문자열 부분 처리.
+	// Hello!!
+	// 0123456 index
+	// 1234567 순서
+	//	alert(greeting.substring(0,5)); // 0번째 글자 인덱스부터 시작하여 5번째 글자까지. (5번째 글자는 1부터 시작. 좀 이상해)
+	//	alert(greeting.substring(7,16));
+		
+	// replace("변경할 문자열","변경될 문자열");
+	//	alert(greeting.replace("H","G"));
+	
+	// 구분자로 데이터를 배열로 만들려고 할 때
+	// split("구분자");
+	//var list = greeting.split("o");
+	//for(var idx in list){alert(list[idx]);}
+	
+	// 전체 문자열을 변경 정규식
+	//alert(greeting.replace(/o/g,"i"));
+	
+	
+	/*
+		확인예제
+		
+		입력데이터 : [1,홍길동M,70,80,90] [등록]
+		M = 남자
+		F = 여자
+						  등록된 데이터
+					
+		번호		이름		성별		국어		영어		수학
+		1 		홍길동 	남자 		70 		80 		90
+	*/
+	
+
+	
+	
+};
+function inserting(){
+	var text = document.getElementById("textt");
+	
+	document.getElementById("i1").innerHTML=text.value.substring(0,1);
+	document.getElementById("i2").innerHTML=text.value.substring(2,5);
+	document.getElementById("i3").innerHTML=text.value.substring(5,6);
+	document.getElementById("i4").innerHTML=text.value.substring(7,9);
+	document.getElementById("i5").innerHTML=text.value.substring(10,12);
+	document.getElementById("i6").innerHTML=text.value.substring(13,15);
+
+	//객체 배열로 등록해보면..
+	//객체 배열로 등록했다가, body 초기화 시키고 누를 때 마다 for문.
+}
+
+
+</script>
+
+</head>
+<body>
+
+<input type="text" value="1,홍길동M,70,80,90" id="textt"> 
+<input type="button" onclick="inserting()">
+
+<table border="1">
+<tr><th>번호</th><th>이름</th><th>성별</th><th>국어</th><th>영어</th><th>수학</th></tr>
+<tr><td id="i1"></td><td id="i2"></td><td id="i3"></td><td id="i4"></td><td id="i5"></td><td id="i6"></td></tr>
+</table>
+
+</body>
+</html>

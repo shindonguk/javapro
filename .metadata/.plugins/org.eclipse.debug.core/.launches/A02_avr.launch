@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/javastart/src/javastart/a02_operator/A02_avr.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="javastart.a02_operator.A02_avr"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="1 신동욱 90 90 90 2 동욱신 50 60 100 3-2 정보통신과"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="javastart"/>
+</launchConfiguration>

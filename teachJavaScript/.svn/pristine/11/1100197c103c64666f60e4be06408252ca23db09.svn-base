@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+
+function rainbow(td,color){
+	td.bgColor=color;
+
+}
+
+function out(td){
+	td.bgColor="white";
+}
+
+
+</script>
+
+</head>
+<body>
+<table border width="400" height="700">
+	<tr>
+		<td onmouseover="rainbow(this,'red')" onmouseout="out(this)">red</td>
+	</tr>
+	<tr>
+		<td onmouseover="rainbow(this,'orange')" onmouseout="out(this)">orange</td>
+	</tr>
+	<tr>
+		<td onmouseover="rainbow(this,'yellow')" onmouseout="out(this)">Yellow</td>
+	</tr>
+	<tr>
+		<td onmouseover="rainbow(this,'green')" onmouseout="out(this)">Green</td>
+	</tr>
+	<tr>
+		<td onmouseover="rainbow(this,'blue')" onmouseout="out(this)">Blue</td>
+	</tr>
+	<tr>
+		<td onmouseover="rainbow(this,'navy')" onmouseout="out(this)">Navy</td>
+	</tr>
+	<tr>
+		<td onmouseover="rainbow(this,'purple')" onmouseout="out(this)">Purple</td>
+	</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,39 @@
+package javastart.D01_inherit;
+
+abstract interface Flayway{
+	// 인터페이스는 앞에 abstract가 항상 붙어있다.
+	// 생략가능.
+	void fly();
+}
+//인터페이스를 상속 받는 것은 implements
+class CountryFlying implements Flayway{
+
+	@Override
+	public void fly() {
+		// TODO Auto-generated method stub
+		System.out.println("우리 동네를 나르다!!");
+	}
+	
+}
+class mz{
+	private String name;
+	private Flayway flyway;
+	public mz(){
+		name="mz";
+	}
+	private void attack() {
+		// TODO Auto-generated method stub
+		System.out.println(name+"가 공격하다.");	
+	}
+	public void setFlyway(Flyway flyway){
+		this.flyway=Flayway;
+	}
+}
+public class C01_interface {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

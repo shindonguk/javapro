@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<frameset rows="30%,40%,30%" cols="30%,40%,30%">
+<frame src="red.html"/>
+<frame src="orange.html" />
+<frame src="yellow.html" />
+<frame src="green.html" />
+<frame name="color"/>
+<frame src="white.html" />
+<frame src="blue.html" />
+<frame src="navy.html" />
+<frame src="purple.html"/>
+</frameset>
+
+
+
+
+<body>
+</body>
+</html>

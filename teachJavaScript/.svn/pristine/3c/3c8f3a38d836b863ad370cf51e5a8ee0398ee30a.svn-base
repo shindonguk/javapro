@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function(){
+	var greeting = "Hello!! Good day!!";
+	//alert(greeting.toLowerCase());
+	//alert(greeting.toUpperCase());
+}
+
+function splitString(){
+	var str = document.getElementsByName("txtData")[0].value;
+	var strList = str.split(",");
+		var tagList = document.getElementsByTagName("td");
+	
+	for(var idx=0; idx<strList.length; idx++){
+		tagList[idx].innerHTML = strList[idx];
+	}
+}
+
+</script>
+</head>
+<body>
+
+입력데이터 : <input type="text" name="txtData" width="100" value=""><input type="button" value="등록" onclick="splitString();">
+<table border="1" width="400" height="100">
+	<tr>
+		<th>번호</th>
+		<th>이름</th>
+		<th>성별</th>
+		<th>국어</th>
+		<th>영어</th>
+		<th>수학</th>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+</body>
+</html>

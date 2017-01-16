@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+  <!--
+	var tds;
+	window.onload=function(){
+		tds=document.getElementsByTagName("td");
+		chYellow();
+		tds[0].click();
+	};
+	function change01(){
+		chYellow();
+		this.bgColor="";
+		this.innerHTML="";
+	}
+	function chYellow(){
+		for(var idx in tds){
+			tds[idx].width="50%";
+			tds[idx].bgColor="yellow";
+			tds[idx].innerHTML="<font size='20'>★</font>";
+			tds[idx].onclick=change01;
+		}	
+	}
+  //-->
+  </script>
+ </head>
+ <body><center>
+ <table border width="400" height="200">
+	<tr><td></td><td></td></tr>
+ </table>
+ </body>
+</html>

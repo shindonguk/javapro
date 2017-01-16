@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+		window.onload=function(){
+			
+		};
+		
+		var	dailyWeather={};
+		
+		dailyWeather.date="1/12";
+		dailyWeather.weather="맑음";
+		dailyWeather.weekWeather="";
+		
+		var weekWeather=[];
+		weekWeather.push(dailyWeather);
+
+		dailyWeather={};
+		dailyWeather.date="1/13";
+		dailyWeather.weather="흐림";
+		weekWeather.push(dailyWeather);
+		
+		dailyWeather={};
+		dailyWeather.date="1/14";
+		dailyWeather.weather="비옴";
+		weekWeather.push(dailyWeather);
+		
+		dailyWeather={};
+		dailyWeather.date="1/15";
+		dailyWeather.weather="눈옴";
+		weekWeather.push(dailyWeather);
+		
+		dailyWeather={};
+		dailyWeather.date="1/16";
+		dailyWeather.weather="약간흐림";
+		weekWeather.push(dailyWeather);
+		
+		dailyWeather={};
+		dailyWeather.date="1/17";
+		dailyWeather.weather="맑음";
+		weekWeather.push(dailyWeather);
+		
+		dailyWeather={};
+		dailyWeather.date="1/18";
+		dailyWeather.weather="눈옴";
+		weekWeather.push(dailyWeather);
+		//dailyWeather.cnt=2;
+		
+		weekWeather[2]=dailyWeather;
+		alert("창으로담긴갯수 : "+weekWeather.length);
+		alert("3번째 객체의 날씨 :"+weekWeather[2].weather);
+		
+		//json.stringify(객체)
+		var weekstr = JSON.stringify(weekWeather);
+		var brauger = window.localStorage;
+			brauger.setItem("weekWeather",weekstr);
+			alert("저장완료");
+</script>
+</head>
+<body>
+<!-- 1.단계
+	dailyWeather : 날짜,날씨
+	weekWeather	: dailyWather을 담는 배열객체
+	1/12~1/18까지 객체를 담고 
+	alert(창으로 담긴 갯수와 3번째 객체의 날씨를 출력) -->
+</body>
+</html>

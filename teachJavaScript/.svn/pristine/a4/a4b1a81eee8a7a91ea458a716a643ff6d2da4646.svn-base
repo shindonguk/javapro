@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+<script>
+
+/*
+1단계
+구매 물건명과 구매가격 입력처리
+물건명 : [   ] [가격] : [   ] [구매] list forEach 활용
+
+현재 구매 현황
+NO 물건명 가격
+1   @@@   3000
+2   @@@   2000
+3   @@@   1000
+
+검색 select [    ] - 구매명, 가격이상, 가격이하
+[         ] [검색]
+*/
+
+var buyList = [];
+
+function insertData(inserted_list) {
+	var pName  = mainForm.input_pName.value;
+	var pPrice  = mainForm.input_pPrice.value;
+	var buy = {
+		name  : pName,
+		price : pPrice
+	};
+
+	inserted_list.push(buy);
+	updateTable(inserted_list);
+	
+	document.getElementById("input_pName").value = "";
+	document.getElementById("input_pPrice").value = "";
+}
+
+function updateTable(drawList) {
+	var tb = document.getElementById("tb1");
+	
+	while(tb.rows.length > 1){
+		tb.deleteRow(tb.rows.length-1);
+	}
+
+	
+	drawList.forEach(function(element, index, drawList){
+			var row = tb.insertRow(index+1);
+			var cells = -1;
+
+			var cell = row.insertCell(++cells);
+			cell.innerHTML = (index+1);
+			var cell = row.insertCell(++cells);
+			cell.innerHTML = element.name;
+			var cell = row.insertCell(++cells);
+			cell.innerHTML = element.price;	
+	});
+
+}
+
+function searchTable(sName) {
+	
+	var outList = [];
+	outList = buyList.filter(function(element, index){
+		return (element.name == sName);
+	});
+
+	updateTable(outList);
+
+}
+/*
+function insertData() {
+	var tb = document.getElementById("tb1");
+	var list = mainForm.inputText.value.split(",");
+	
+	var row = tb.insertRow(tb.rows.length);
+	var cells = -1;
+	var cell = row.insertCell(++cells);
+	cell.innerHTML = tb.rows.length-1;
+	
+	for(var element in list){
+		var cell = row.insertCell(++cells);
+
+		if(list[element].trim() == "F"){
+			cell.innerHTML = "여자";
+		}else if(list[element].trim() == "M"){
+			cell.innerHTML = "남자";
+		}else {
+			cell.innerHTML = list[element];
+		}
+	}
+}
+*/
+
+
+</script>
+ 
+ 
+ </head>
+ <body>
+  
+<center>
+	<form name="mainForm" action="">
+		물건명 : <input type="text" id="input_pName" style="width:90px"> &nbsp; &nbsp; 
+		가격 : <input type="text" id="input_pPrice" style="width:90px"> 
+		<input type="button" onclick="insertData(buyList)" value="구매">
+	</form>
+<br><br>
+
+
+<table id="tb1", align="center", style="text-align:center;" border="1px solid">
+	<tr height="40px">
+		<td width="50px">NO</td>
+		<td width="100px">물건명</td>
+		<td width="60px">가격</td>
+
+	</tr>
+</table>
+<br>
+<br>
+<br>
+	<input type="text" id="searchName"> 
+	<input type="button" onclick="searchTable(document.getElementById('searchName').value, buyList);" value="검색">
+</center>
+
+ </body>
+</html>

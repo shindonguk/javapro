@@ -1,0 +1,54 @@
+package javastart.D01_inherit;
+abstract class Robot{
+	private String kind;
+	private int attPt;
+	public Robot(String kind, int attPt){
+		this.kind = kind;
+		this.attPt = attPt;
+	}
+	public void attack(){
+		System.out.println(kind+"가 "+attPt+"로 공격한다!");
+	}
+	public abstract void spAttack();
+}
+class Mv extends Robot{
+	public Mv() {
+		super("메컨더V", 10);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void spAttack() {
+		// TODO Auto-generated method stub
+		System.out.println("@@특수공격@@");
+		super.attack();
+		System.out.println("상어 공격을 하다!\n============");
+	}
+}
+class Atom extends Robot{
+	public Atom() {
+		super("아톰", 10);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void spAttack() {
+		// TODO Auto-generated method stub
+		System.out.println("@@특수공격@@");
+		super.attack();
+		System.out.println("작은 체구로 민첩한 공격을 하다!");
+	}
+}
+public class B02_abstractClassExp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Robot r1 = new Mv();
+		r1.attack();
+		r1.spAttack();
+		Robot r2 = new Atom();
+		r2.attack();
+		r2.spAttack();
+	}
+
+}

@@ -1,0 +1,10 @@
+package javastart.a02_operator;
+
+public class A02_avr {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

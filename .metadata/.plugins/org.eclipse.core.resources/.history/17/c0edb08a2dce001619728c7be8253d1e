@@ -1,0 +1,21 @@
+package javastart.B01_object;
+class Man{
+	String name;
+	int age;
+	void  printAll(){
+		System.out.print("이름은"+name);
+		System.out.print(", 나이는"+name+"살!!");
+	}
+	
+	
+}
+
+
+public class A02_ObjMethod {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	var yello1 = document.getElementById("yello1");
+	yello1.onclick=function(){
+	this.style.background="yellow";
+}
+};	
+
+</script>
+</head>
+<body>
+<table border="1">
+	<tr>
+		<td id="yello1"><h1>yello1</h1></td>
+		<td id="yello2"><h1>yello2</h1></td>
+	</tr>
+	<tr>
+		<td id="star1"><h1>star1</h1></td>
+		<td id="star2"><h1>star2</h1></td>
+	</tr>
+
+</table>
+</body>
+</html>

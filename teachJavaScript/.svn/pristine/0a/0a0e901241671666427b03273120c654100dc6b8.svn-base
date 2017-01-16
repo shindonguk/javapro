@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ <script>
+
+/*
+확인예제
+입력데이터: [1,홍길동M,70,80,90] [등록]
+M --> 남자
+F --> 여자
+
+등록된 데이터
+
+번호	이름	성별	국어	영어	수학
+1		홍길동	남자	70		80		90
+*/
+
+
+function insertData() {
+	var tb = document.getElementById("tb1");
+	var list = mainForm.inputText.value.split(",");
+	
+	var row = tb.insertRow(tb.rows.length);
+	var cells = -1;
+	var cell = row.insertCell(++cells);
+	cell.innerHTML = tb.rows.length-1;
+	
+	for(var element in list){
+		var cell = row.insertCell(++cells);
+
+		if(list[element].trim() == "F"){
+			cell.innerHTML = "여자";
+		}else if(list[element].trim() == "M"){
+			cell.innerHTML = "남자";
+		}else {
+			cell.innerHTML = list[element];
+		}
+	}
+}
+
+
+ </script>
+ 
+ 
+ </head>
+ <body>
+
+
+<center>
+<h2>※ 입력 방법</h2>
+<h4>이름, 성별(M/F), 국어점수, 영어점수, 수학점수</h4>
+<h4>ex) 홍길동, M, 70, 80, 90</h4>
+	<form name="mainForm" action="">
+		<input type="text" id="inputText">
+		<input type="button" onclick="insertData()" value="등록">
+	</form>
+<br><br>
+</center>
+
+<table id="tb1", align="center", style="text-align:center;" border="1px solid">
+	<tr height="40px">
+		<td width="50px">번호</td>
+		<td width="100px">이름</td>
+		<td width="60px">성별</td>
+		<td width="60px">국어</td>
+		<td width="60px">영어</td>
+		<td width="60px">수학</td>
+	</tr>
+</table>
+
+
+
+
+
+</body>
+</html>

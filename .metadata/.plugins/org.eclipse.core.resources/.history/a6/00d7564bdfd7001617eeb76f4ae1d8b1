@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=function(){
+		
+	};
+	var name={};
+	var pay={};
+	var tools=[];
+	var list="";
+	
+	name.name = "망치";
+	name.push()
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

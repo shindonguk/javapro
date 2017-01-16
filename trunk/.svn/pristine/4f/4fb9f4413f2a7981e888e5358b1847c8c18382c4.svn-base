@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body bgcolor="red">
+<a href="a10_2.html" target="hello">빨강</a>
+</body>
+</html>

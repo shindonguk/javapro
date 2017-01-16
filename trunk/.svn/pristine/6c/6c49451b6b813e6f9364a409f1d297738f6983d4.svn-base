@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <frameset rows="25%,50%,25%">
+ 		<frameset cols="25%,50%,25%">
+			<frame src ="c03_blue.html">
+			<frame src="c03_green.html">
+			<frame src="c03_navy.html">
+		</frameset>
+		<frameset cols="25%,50%,25%">
+		<frame src="c03_orange.html">
+		<frame src="c02_main.html" name="color">
+		<frame src="c03_puple.html">
+		</frameset>
+		<frameset cols="25%,50%,25%">
+		<frame src="c03_red.html">
+		<frame src="c03_white.html">
+		<frame src="c03_yello.html" >
+		</frameset>
+	</frameset>
+ </frameset>
+</html>

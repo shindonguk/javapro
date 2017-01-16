@@ -1,0 +1,10 @@
+package javastart.C02_static;
+
+public class A01_basic {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

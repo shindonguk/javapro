@@ -1,0 +1,37 @@
+package javastart.D01_inherit;
+
+interface Duck{
+	void sound();
+}
+
+class RubberDuck implements Duck{
+
+	@Override
+	public void RubberDuck() {
+		// TODO Auto-generated method stub
+		System.out.println("우리 동네를 나르다!!");
+	}
+	
+}
+
+class RubberDuck{
+	
+}
+
+
+public class C02_interface {
+	public static void main(String[] args) {
+		/*
+		 * 추상클래스
+		 * overriding 처리
+		 * Duck
+		 * 		sound();
+		 * 1) RubberDuck
+		 * 			sound();
+		 * 2) NormalDuck
+		 * 			sound();
+		 * 3) RobotDuck
+		 * 			sound();
+		 */
+	}
+}

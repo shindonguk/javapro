@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <script type="text/javascript">
+ <!--
+ var show="<table align='center' border> <tr><th>no</th><th>시간</th><th>일정내용</th><th>비용</th><th>소요시간</th><th>누적시간</th><th>누적비용</th></tr>";
+	window.onload=function(){
+			//alert(dayilyPlans.length);
+	
+		for(var idx=0;idx<dayilyPlans.length;idx++){
+			show+="<tr>";
+			show+="<td align='center'>"+(idx+1)+"</td>";
+			show+="<td align='center'>"+dayilyPlans[idx].hour01+"</td>";
+			show+="<td align='center'>"+dayilyPlans[idx].plans01+"</td>";
+			show+="<td align='center'>"+dayilyPlans[idx].pay01+"원</td>";
+			show+="<td align='center'>"+dayilyPlans[idx].min01+"분</td>";
+			show+="<td align='center'>"+Math.floor(dayilyPlans[idx].getTime()/60)+"시"+(dayilyPlans[idx].getTime()%60) +"분</td>";
+			show+="<td align='center'>"+dayilyPlans[idx].getpay()+"원</td>";
+			show+="</tr>";
+		}
+		document.body.innerHTML=show;
+
+	};
+	/*
+	확인예제 ==>숙제?
+	1단게
+	dailyPlans : 배열객체
+		  plan : 단위객체
+	    속성값 : 시간, 일정내용, 중요도, 비용
+
+								나의 하루 일과
+		no 시간 일정내용  중요도  비용   시간(분)           <누적비용   누적시간>
+		1   6:00  기상      1       0       10 (sum-시간)       sum 비용    sum 시간/3;
+		..
+		5   7:00  버스      2       1200     40
+		..
+		20  23:00  일기및정리  1    0       20
+	*/
+
+	var dayilyPlans = [];
+	dayilyPlans.push({hour01:"7:00",plans01:"기상",min01:20,imp01:1,pay01:0});
+	dayilyPlans.push({hour01:"9:30",plans01:"오전수업",min01:60,imp01:2,pay01:0});
+	dayilyPlans.push({hour01:"13:30",plans01:"점심",min01:40,imp01:3,pay01:5000});
+	dayilyPlans.push({hour01:"14:30",plans01:"오후 수업",min01:30,imp01:2,pay01:0});
+	dayilyPlans.push({hour01:"19:00",plans01:"저녁",min01:35,imp01:4,pay01:6000});
+	dayilyPlans.push({hour01:"23:30",plans01:"취침",min01:00,imp01:1,pay01:0});
+	var msum=0;
+	var psum=0;
+	for (var idx in dayilyPlans ){
+
+		dayilyPlans[idx].getTime= function(){
+			msum +=this.min01; 
+			return msum;
+		}
+		dayilyPlans[idx].getpay= function(){
+			psum += this.pay01;
+			return psum;
+		}
+	}
+
+
+
+ //-->
+ </script>
+ <body>
+
+  </table>
+ </body>
+</html>

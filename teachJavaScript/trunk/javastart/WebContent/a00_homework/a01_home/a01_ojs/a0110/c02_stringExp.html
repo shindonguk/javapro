@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+    /*
+     * 확인예제
+     입력데이터 : [1,홍길동M,70,80,90][등록]
+     M -- > 남자 F --> 여자.
+     등록된 데이터
+     번호 이름 성별 국어 영어 수학
+     1  홍길동 남자 70 80 90 
+     */
+    window.onload = function() {
+
+    }//onload
+    var idValue = "";
+    function submit() {
+
+        var idValue = document.getElementById("data").value;
+        		if(idValue.substring(5,6)=="M"){
+        		    gender = idValue.replace("M", ",남자")
+        		}
+        		if(idValue.substring(5,6)=="F"){
+        		    gender = idValue.replace("F", ",여자")
+        		}
+        alert(idValue.substring(5,6));
+        
+        console.log(gender);
+
+        var list = gender.split(",");
+
+        var show = "<table><tr><td>번호</td><td>이름</td><td>성별</td><td>국어</td><td>영어</td><td>수학</td></tr>";
+        show += "<tr><td>" + list[0] + "</td><td>" + list[1] + "</td><td>"
+                + list[2] + "</td><td>" + list[3] + "</td><td>" + list[4]
+                + "</td><td>" + list[5] + "</td></tr></table>";
+
+        document.getElementById("outputDiv").innerHTML += show;
+    }//submit
+</script>
+</head>
+<body>
+    입력 데이터:
+    <input type="text" id="data" />
+    <input type="button" value="등록" onclick="submit()" />
+    <div id="outputDiv"></div>
+</body>
+</html>

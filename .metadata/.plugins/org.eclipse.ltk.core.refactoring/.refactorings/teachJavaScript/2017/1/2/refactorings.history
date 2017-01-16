@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;javastart/src/javastart.C02_static&apos;&#x0D;&#x0A;- Original project: &apos;teachJavaScript&apos;&#x0D;&#x0A;- Destination element: &apos;javastart/src/javastart.C02_static&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     A02_basicExp.java&#x0D;&#x0A;     A03_basicExp.java" description="Copy files" destination="=javastart/src&lt;javastart.C02_static" element1="trunk/javastart/src/javastart/c02_static/A02_basicExp.java" element2="trunk/javastart/src/javastart/c02_static/A03_basicExp.java" files="2" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1484013877364" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,40 @@
+package javastart.E01_string;
+
+public class A03_stringbuffer {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * stringBuffer: 추가되는 가변문자열 처리
+		 * 
+		 * 매서드 append("추가될 문자열")
+		 * insert(삽입할index,"삽입할 문자열")
+		 * delate(삭제할 시작 index, 삭제할 마지막 순서)
+		 * 
+		 */
+		StringBuffer greesbf = new StringBuffer("hello");
+		greesbf.append("World");
+		System.out.println("추가후 :" +greesbf);
+		greesbf.insert(5,"!!!");
+		System.out.println("특정 위치에 추가 후 :" +greesbf);
+		greesbf.delete(0, 5);
+		System.out.println("특정 위치에 삭제 후 :" +greesbf);
+		
+		
+/*
+ * 애국가 검색
+ * 1 절을 기본 데이터 한후
+ * 2,3,4 절을 추가하고 출력
+ * 문자열 "일세"를 검색후 "입니다"로 변환
+ * "우리"라는 문자열 위치 확인 후, 삭제하고 해당 위치에 
+ * "대한민국"으로 삽입		
+ */
+		StringBuffer korsong = new StringBuffer("동해물과 백두산이 마르고 닳도록, 하느님이 보우하사 우리나라만세.\n");
+		korsong.append("남산위에 저 소나무 철갑을 두른듯, 바람서리 불변함은 우리기상일세.\n");
+		korsong.append("가을 하늘 공활한데, 높고 구름없이 밝은 달은 우리가슴 일편단심일세.\n");
+		korsong.append("이 기상과 이 맘으로 충성을 다하여 괴로우나 즐거우나 나라사랑하세.");
+		System.out.println(	korsong);
+		String korsong2 = korsong.indexOf(일세).equals("1")?"남자":"여자";
+	}
+
+}

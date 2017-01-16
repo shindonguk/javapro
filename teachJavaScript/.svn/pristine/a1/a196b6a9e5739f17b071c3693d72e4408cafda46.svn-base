@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload=function()
+	{
+	
+	};
+	
+ /*
+ 1단계 
+   구매 물건명과 구매 가격 입력처리...
+	물건명 : [ ] 가격 : [ ] [구매]  list forEach 활용
+		
+	
+		현재 구매 현황
+		no	물건명	가격
+		1	~		3000	
+		2	~		2000
+		3	~		1000
+		
+		검색 select[]- 전체, 구매명, 가격이상, 가격이하
+		~~~ [검색]
+ 
+ */
+ 
+
+
+ var b = [];
+var c = [];
+ 
+ function view() 
+	{
+		var aa=document.getElementById("aa");
+		var aa2=document.getElementById("aa2");
+		var bb=document.getElementById("bb");
+		var cc=document.getElementById("cc");
+		
+		
+		if(aa.value!="" && aa2.value!="")
+			{
+			var nom ={};
+			nom.name = aa.value;
+			nom.pri  = aa2.value;
+			b.push(nom);
+			}
+		
+		if(cc.value=="1")
+			{
+			c = b.filter(function(element, index){
+				return element.name == bb.value;
+			});
+			}
+		
+		else if(cc.value=="2")
+			{
+			c = b.filter(function(element, index){
+				return element.pri >= bb.value;
+			});
+			}
+		
+		else if(cc.value=="3")
+			{
+			c = b.filter(function(element, index){
+				return element.pri <= bb.value;
+			});
+			}
+		
+		var show ='<input type="text" id="aa">물건명</input>';
+		show +='<input type="text" id="aa2">가격</input>';
+		show+='<input type="button" onclick="view()"value="제출"></input><br>'; 
+		
+		show+='<input type="text" id="bb"></input>';
+		
+		show+='<select  id="cc" ><option value="1">물건명으로 검색</option>';
+	 	show+='<option value="2">가격이상으로 검색</option>';
+		show+='<option value="3">가격이하로 검색</option></select>';
+		show+='<input type="button" onclick="view()" value="검색하기"></input>';
+		
+		show+="<h1>전체 목록 현황<h1>";
+		show += "<table border='1'>";
+		show += "<tr><td>번호</td><td>물건명</td><td>가격</td></tr>";
+		b.forEach(function(element, index, b)
+				{
+					show += "<tr><td>"+(index+1)+"</td><td>"+b[index].name+"</td><td>"+b[index].pri+"</td></tr>";
+				});
+		show += "</table><br><br>";
+		
+		show+="<h1>검색결과<h1>";
+		show += "<table border='1'>";
+		show += "<tr><td>번호</td><td>물건명</td><td>가격</td></tr>";
+		c.forEach(function(element, index, c)
+				{
+					show += "<tr><td>"+(index+1)+"</td><td>"+c[index].name+"</td><td>"+c[index].pri+"</td></tr>";
+				});
+		show += "</table>";
+		
+		
+		document.body.innerHTML = show;
+	}
+
+</script>
+</head>
+<body>
+
+<input type="text" id="aa">물건명</input>
+<input type="text" id="aa2">가격</input>
+<input type="button" onclick="view()" value="제출"></input><br>
+
+
+<input type="text" id="bb"></input>
+
+ 				<select id="cc" ><option value="1">물건명으로 검색</option>
+			 	<option value="2">가격이상으로 검색</option>
+				<option value="3">가격이하로 검색</option></select>
+<input type="button" onclick="view()" value="검색하기"></input>
+</body>
+</html>

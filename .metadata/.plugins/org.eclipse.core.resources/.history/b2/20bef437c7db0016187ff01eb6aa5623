@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	
+}
+	var yellow1= document.getElementById("tyello1")
+	yello1.onclick=function(){
+	alert(this.innerHTML);
+	this.style.background="yellow";
+	};
+	var yellow2= document.getElementById("tyello2")
+	yello2.onclick=function(){
+	alert(this.innerHTML);
+	this.style.background="yellow";
+	};
+	var str2 = document.getElementById("star2")
+	str2.onclick=function(){
+	alert(this.innerHTML);
+	this.style.background="yellow";
+	};
+	var str2 = document.getElementById("star2")
+	str2.onclick=function(){
+	alert(this.innerHTML);
+	this.style.background="yellow";
+	};
+
+</script>
+</head>
+<body>
+<table border="1">
+	<tr>
+		<td id="tyello1" ><h1 id="yello1" >yello1</h1></td>
+		<td id="tyello2"><h1 id="yello2">yello2</h1></td>
+	</tr>
+	<tr>
+		<td id="star1"><h1>star1</h1></td>
+		<td id="star2"><h1>star2</h1></td>
+	</tr>
+
+</table>
+</body>
+</html>

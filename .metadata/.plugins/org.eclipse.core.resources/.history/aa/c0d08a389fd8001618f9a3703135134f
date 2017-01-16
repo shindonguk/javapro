@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	
+};
+var product={};
+product.name="사과";
+product.cnt=5;
+//장바구니에 물건 담기..: 여러 물건을 담기에 배열 
+var cart=[];
+cart.push(product);
+product={};
+product.name="바나나";
+product.cnt=3;
+cart[1]=product;
+alert("현재 카트에 담긴 물건의 갯수:"+cart.length);
+alert("두번째 물건명과 물건의 갯수:"+cart[1].name+":"+cart[1].cnt)
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

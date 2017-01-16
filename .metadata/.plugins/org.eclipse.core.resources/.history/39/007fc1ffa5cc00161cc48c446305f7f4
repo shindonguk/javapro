@@ -1,0 +1,17 @@
+package javastart.A05_loop;
+
+public class A01_for {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * for(초기값;한계값;증감){
+		 * 		반복처리할 구문
+		 * }
+		 */
+		for(;;){
+			System.out.println("무다!!");
+		}
+	}
+
+}

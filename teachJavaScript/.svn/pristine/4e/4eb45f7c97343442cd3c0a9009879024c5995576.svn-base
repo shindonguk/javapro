@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<frameset cols="20%,60%,20%">
+<frameset rows="20%,60%,20%">
+<frame src="h01_top_left.html" name="topLeft"/>
+<frame src="h01_left.html" name="left"/>
+<frame src="h01_bottom_left.html" name="bottomLeft"/>
+</frameset>
+<frameset rows="20%,60%,20%">
+<frame src="h01_top.html" name="top"/>
+<frame name="main"/>
+<frame src="h01_bottom.html" name="bottom"/>
+</frameset>
+<frameset rows="20%,60%,20%">
+<frame src="h01_top_right.html" name="topRight"/>
+<frame src="h01_right.html" name="right"/>
+<frame src="h01_bottom_right.html" name="bottomRight"/>
+</frameset>
+</frameset>
+</html>

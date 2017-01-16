@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+
+<frameset rows="20%,60%,20%" cols="20%,60%,20%">
+<frame src="red.html" name="red">
+	<frameset cols="30%">
+	<frame src="orange.html" name="orange">
+	</frameset>
+		<frame src="yellow.html" name="yellow">
+			<frameset rows="30%">
+			<frame src="green.html" name="green">
+			</frameset>
+		<frame name="print"/>
+	<frameset rows="30%">
+	<frame src="white.html" name="white"/>
+	</frameset>
+<frame src="blue.html" name="blue"/>
+	<frameset cols="30%">
+	<frame src="navy.html" name="navy"/>
+	</frameset>
+<frame src="purple.html" name="purple"/>
+</frameset>
+
+</html>

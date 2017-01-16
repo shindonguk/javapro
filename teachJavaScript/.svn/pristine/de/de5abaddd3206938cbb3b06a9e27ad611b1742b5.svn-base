@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	//var document.ElementById();
+	//var document.ElementById();
+/* window onload = function (){
+	//var document.ElementById()
+	
+} */
+var onest= 0; 
+var twost= 0;
+var trest= 0;
+var forst= 0;
+//---------- 순서를 고르는 곳
+function chos(d) {
+
+		var orcar = document.getElementById(d);
+		//alert(d);
+		if(onest==0){orcar.innerHTML = "1st"; onest+=d;}else
+		if(twost==0){orcar.innerHTML = "2st"; twost+=d;}else
+		if(trest==0){orcar.innerHTML = "3st"; trest+=d;}else
+		if(forst==0){orcar.innerHTML = "4st"; forst+=d;};
+}
+function clear() {
+	var onest= 0; 
+	var twost= 0;
+	var trest= 0;
+	var forst= 0;
+}
+function ok() {
+	
+}
+
+</script>
+<style type="text/css">
+</style>
+</head>
+<body>
+<form action="">
+
+<!-- 별명입력 TEXT  -->
+<div align="center">
+<table>
+<tr>
+<td><input type="text" id="nicname1" style="width: 120px" maxlength="7" > 
+</td>
+<td><input type="text" id="nicname2" style="width: 120px" maxlength="7" > 
+</td>
+<td><input type="text" id="nicname3" style="width: 120px" maxlength="7" >
+</td>
+<td><input type="text" id="nicname4" style="width: 120px" maxlength="7" >
+</td>
+</tr>
+
+
+
+<!-- 케릭터 선택 SWITCH  -->
+<tr>
+<td><button type="button" onclick="chos(1)" >
+<img src="img/black_car.png"></button></td>
+<td><button type="button" onclick="chos(2)" >
+<img src="img/b_car.png"></button></td>
+<td><button type="button" onclick="chos(3)" >
+<img src="img/r_car.png"></button></td>
+<td><button type="button" onclick="chos(4)" >
+<img src="img/o_car.png"></button></td>
+</tr>
+
+<!-- 순번 표시 TEXT  -->
+<tr>
+<td><span id=1></span></td>
+<td><span id=2></span></td>
+<td><span id=3></span></td>
+<td><span id=4></span></td>
+</tr>
+</table>
+</div>
+<button onclick="clear()">취소</button>
+<button onclick="ok()">선택완료</button>
+</form> 
+</body>
+</html>

@@ -1,0 +1,12 @@
+package javastart.D01_inherit;
+	abstract class Robot{
+		String kind;
+		int attpt;
+		public attack(){
+			
+		}
+	}
+
+public class B01_Robot {
+
+}

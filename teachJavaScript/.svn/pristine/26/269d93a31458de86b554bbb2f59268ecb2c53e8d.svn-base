@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+var cnt=0;
+window.onload=function(){
+	var tds = document.getElementsByTagName("td");
+	
+	
+	for(var idx in tds){
+		tds[idx].bgColor="yellow";
+		tds[idx].onmouseover=call; // 객체.onmouseover : 마우스를 올렸을 때
+		tds[idx].onmouseout=callout; // 화면에서 벗어날 때
+		
+		//tds[idx].onmouseout=callout; // 화면에서 벗어날 때
+	}
+}
+
+
+function call(){
+	var col_list=["red", "Orange", "yellow", "green", "blue", "purple"]
+	this.bgColor=col_list[cnt++%6];
+}
+
+function callout(){
+	
+	this.bgColor="yellow";
+}
+
+
+</script>
+
+
+</head>
+<body>
+
+<table border="1" style="width: 200px; height: 300px">
+
+<tr>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+</tr>
+
+
+
+
+</table>
+
+
+
+
+</body>
+</html>

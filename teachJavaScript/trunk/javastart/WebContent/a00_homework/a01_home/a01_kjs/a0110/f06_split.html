@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+  //  var greeting = "hello!!";
+  //	var list= greeting.split(",");
+  
+  //	for(var idx in list ){
+  		//alert(list[idx]);	
+  	//전체 문자열을 변경.. 정규식..
+  	//greeting.replace(/문자/g,"바꿀문자"));
+  //
+  /*
+  확인 예제..
+  입력데이터 : [1,홍길동M,70,80,90][등록]
+  M --> 남자 F --> 여자.
+			등록된 데이터
+	번호  이름   성별  국어   영어  수학
+	1    홍길동  남자   70     80    90
+toUpperCase()
+  */
+  
+  function import01(obj){
+	var textdata = document.getElementById("data01").value;
+	var gender1 = textdata.replace("F",",여자");
+	var gender2 = gender1.replace("M",",남자");
+	var list = gender2.split(",");
+	var table=document.getElementById("table01");
+	var leng = table.rows.length;
+	var rows = table.insertRow(leng);
+	
+	for(var idx=0;idx<list.length;idx++){
+		rows.insertCell(idx).innerHTML=list[idx]
+	}
+		
+  }
+ // function inputData(){
+//	  data+=document.getElementById("inData").value+"<br>";
+//	  document.getElemetById("outputDiv").innerHTML="<center>"+data;
+//	}
+
+  </script>
+ </head>
+ <body>
+<center>
+<div>
+<input type="text" id="data01"> 
+<button onclick ="import01(this)">등록</button>
+</div>
+
+<table align='center' border="1" id="table01"> 
+	<tr>
+		<th>번호</th>
+		<th>이름</th>
+		<th>성별</th>
+		<th>국어</th>
+		<th>영어</th>
+		<th>수학</th>
+	</tr>
+</table>
+
+
+
+ </body>
+</html>

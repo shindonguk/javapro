@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+var product={}; // 물건 만들기.
+
+// 물건에 속성 지정.
+product.name="사과";
+product.cnt=5;
+// 장바구니에 물건 담기. 여러 물건을 담기에 배열
+var cart = [];
+
+// 카트에 물건 담는 방법1
+cart.push(product);
+
+// 객체가 새롭게 하나 생성. 물건 객체.
+product={};
+
+product.name="바나나"; 			// 물건명을 지정하고 "바나나";
+product.cnt=3;					// 갯수를 저장하고 3;
+
+cart[1]=product;				// 배열 객체[지정한 index번호] = 생성한 객체.
+
+
+
+//alert("현재 카드에 담긴 물건의 갯수 : "+cart.length);
+//alert("첫번째 물건명과 물건의 갯수 :"+cart[0].name+cart[0].cnt);	// 사과 5
+//alert("두번째 물건명과 물건의 갯수 :"+cart[1].name+cart[1].cnt);	// 바나나 3
+
+
+// 객체를 문자열로 변환처리.
+// JSON.stringify(객체)
+
+var cartStr = JSON.stringify(cart);
+//alert(cartStr);
+
+
+var store = window.localStorage;						// 크롬에서만 지원
+store.setItem("cart", cartStr);
+//alert("저장완료");
+
+/*
+ * dailyweather : 날짜, 날씨
+ * 
+ * weekweather : dailyweather 를 담는 배열객체.
+ * 1/12 ~ 1/18 객체를 담고,
+ * alert() 으로 담긴 갯수와 3번째 객체의 날씨와 날짜 출력.
+ */
+
+window.onload=function(){
+	 
+
+var dailyweather={};
+var weekweather=[];
+dailyweather={};
+
+dailyweather.day="1/12";
+dailyweather.feel="맑음";
+weekweather.push(dailyweather); //1
+
+dailyweather={};
+dailyweather.day="1/13";
+dailyweather.feel="흐림";
+weekweather.push(dailyweather); //2
+
+dailyweather={};
+dailyweather.day="1/14";
+dailyweather.feel="하늘이 무너짐";
+weekweather.push(dailyweather); //3
+
+dailyweather={};
+dailyweather.day="1/15";
+dailyweather.feel="ㅠㅠ";
+weekweather.push(dailyweather); //4
+
+dailyweather={};
+dailyweather.day="1/16";
+dailyweather.feel="비옴";
+weekweather.push(dailyweather); //5
+
+dailyweather={};
+dailyweather.day="1/17";
+dailyweather.feel="비옴";
+weekweather.push(dailyweather); //6
+
+dailyweather={};
+dailyweather.day="1/18";
+dailyweather.feel="사람이 날라갈만한 바람이 붐";
+weekweather.push(dailyweather); //7
+
+alert("담긴 갯수 : "+weekweather.length);
+alert("3번째 객체의 날짜와 날씨는 ? "+weekweather[2].day+" "+weekweather[2].feel);
+
+var view='<table border="1"><tr><th>날짜</th><th>날씨</th></tr>';
+
+for(var idx=0; idx<weekweather.length; idx++)
+	{
+	view+='<tr>';
+	view+='<td>'+weekweather[idx].day+'</td>';
+	view+='<td>'+weekweather[idx].feel+'</td>';
+	view+='</tr>';
+	}
+
+view+='</table>';
+
+document.body.innerHTML=view;
+}
+
+</script>
+</head>
+<body>
+
+
+	<center>
+	<a href="A06_Obj_array.html">이동</a>
+
+</body>
+</html>

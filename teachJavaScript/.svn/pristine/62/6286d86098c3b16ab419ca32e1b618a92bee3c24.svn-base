@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>WeaponMaster.html</title>
+<script>
+function closeWindow() {
+	
+	
+	window.open('','_self').close();
+
+}    
+
+
+
+
+
+
+
+
+
+</script>
+
+
+<style> body { background-image:url("imgs/mainbg.jpg"); 
+background-attachment: fixed; background-repeat: no-repeat; 
+background-position: center; } 
+table { background-color: transparent; } 
+td { background-color: transparent; }</style>
+
+</head>
+<body vlink="WHITE"><br>
+	</br><br>
+	</br><br>
+	</br><br>
+	</br><br>
+	</br><br>
+	</br><br>
+	</br><br>
+	</br><br>
+	</br><br>
+	</br>
+  <h1 align="Center" style= "float:right; margin-right:110px; color: white "> <Font Size=7 Color=white >Weapon Master</font></h1><br>
+  </br><br>
+	</br><br>
+	</br><br>
+	</br><br>
+	</br><br>
+	</br><br>
+	</br>
+  <h2 align="Center" style="float:right; margin-right:110px; color: white">
+  <a href="mainframe.html"> <!-- 메인화면 링크 -->
+	Game Start</br></a></h2><br>
+	</br><br>
+	</br><br>
+	</br>
+  <h2 align="center" style="float:right; margin-right:150px; color: white" onclick= closeWindow();>Exit</h2>
+  
+  
+</body>
+</html>

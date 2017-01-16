@@ -1,0 +1,57 @@
+package javastart.F01_api;
+
+import java.sql.Array;
+import java.util.Random;
+
+import javastart.B01_object.ARRAY;
+
+public class A02_Random {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * Random
+		 * nextInt(범위): 1부터 범위까지의 임의의 정수값 return
+		 * nextfloat(범위): 0.0~부터 범위까지의 임의의 실수값 return
+		 * nextBoolean(): 임의의 논리값(true/false)값 return
+		 */
+		
+		
+		Random rand = new Random();
+		// 1~100까지 범위의 임의의 수 return
+		int ranInt=rand.nextInt(100);
+		System.out.println("1~100까지의 임의의 수 return:"+ranInt);
+		float raFlat=rand.nextFloat();
+		System.out.println("1~100까지의 임의의 수 return:"+raFlat);
+		boolean ranBoolean=rand.nextBoolean();
+		System.out.println("1~100까지의 임의의 수 return:"+ranBoolean);
+		/*
+		 * 확인예제
+		 * 1. 1~6까지 임의의 주사위 두개 값 출력 합산
+		 * 2. Boolean을 이용해서 동전 앞/뒷면 임의로 출력하기
+		 * 3. 배열에 값을 할당하고 가위, 바위, 보 임의로 두개 값 출력하기
+		 * 		A:가위 B:바위
+		 */
+		String coins = new String();
+		int[] jjang = {1,2,3};
+		int[] first = new int[3];	
+		
+		int dise1 = rand.nextInt(6);
+		int dise2 = rand.nextInt(6);
+		System.out.println("주사위 숫자 : "+(dise1+dise2));
+		
+		boolean coin =rand.nextBoolean();
+		if(coin == false){ coins ="앞";}else
+		if(coin == true){ coins ="뒤";};
+		System.out.println("앞 & 뒤"+coins);
+		
+		int game=rand.nextInt(2);
+		for(int a=0; a<2; a++){
+			first[a] = jjang[game];
+		}
+			if(first[0]==first[1]){}
+		System.out.println("1~100까지의 임의의 수 return:"+raFlat);
+
+	}
+
+}

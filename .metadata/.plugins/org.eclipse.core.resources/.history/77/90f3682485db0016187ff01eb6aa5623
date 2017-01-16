@@ -1,0 +1,12 @@
+package javastart.E01_string;
+
+public class A01_string {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+/*
+ * string은 객체이면 문자열을 할당할 수 있는 기능을 가지고 있다.
+ */
+	}
+
+}

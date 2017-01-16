@@ -1,0 +1,20 @@
+package javastart.D01_inherit;
+	abstract class larba01{
+		private String kind;
+		public larba01() {
+			this.kind = "¶ó¹Ù";
+		}
+		public larba01(String kind) {
+			this.kind=kind;
+			
+		}
+	}
+
+public class B01_bastractClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <link rel="stylesheet" type="text/css" href="../style/style.css">
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+
+  <title>Document</title>
+
+  <style>
+  body{width:100%; height:780px; background:url('img/intro.gif') no-repeat; background-size:cover; overflow:hidden;}
+  </style>
+
+  <script type="text/javascript">
+  setTimeout("location.href='Marble Game!!!.html'",2500); //자동 페이지 넘기는 기능
+  </script>
+ </head>
+
+ <body>
+	
+ </body>
+</html>

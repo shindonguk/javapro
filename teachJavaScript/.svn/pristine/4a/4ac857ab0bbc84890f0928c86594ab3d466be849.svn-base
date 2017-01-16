@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>윷놀이 게임</title>
+<script src="../script/main.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body>
+<div style="width:1024px; height:768px;background-image:url(../imgs/ground2.jpg);margin-top:-10px;margin-left:-10px;">
+<table border="0" align="center" style="padding-top:190px;">
+	<tr>
+		<td colspan="4" align="center"><img src="../imgs/title.png"></td>
+	</tr>
+	<tr>
+		<td width="200"></td>
+		<td align="center">
+			<img src="../imgs/muzi2.gif" height="150" width="150">
+		</td>
+		<td align="center">
+			<img src="../imgs/lion.gif" height="150" width="150">
+		</td>
+		<td width="200"	></td>
+	</tr>
+	<tr style="margin-top:100px;height:100px;">
+		<td></td>
+		<td>
+			<a href="play.html"><button class="myButton" style="width:100%;height:100%">게임시작</button></a>
+		</td>
+		<td>
+			<button class="myButton" style="width:100%;height:100%" onclick="alertHelp();">도움말</button>
+		</td>
+		<td></td>
+	</tr>
+</table>
+</div>
+</body>
+</html>

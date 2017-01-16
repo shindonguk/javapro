@@ -1,0 +1,25 @@
+package javastart.A05_loop;
+
+public class A01_for {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * for(초기값;한계값;증감){
+		 * 		반복처리할 구문
+		 * }
+		 */
+		for(int a=1;a<10;a++){
+			String b = "*";
+			for(int c=1;c<10;c++){
+				System.out.print(b);
+			}
+		}
+		/*
+		 * 구구단 처리
+		 * 2*1 =2
+		 * 
+		 */
+	}
+
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+  <script type="text/javascript">
+ 
+	window.onload=function(){
+		var tds=document.getElementsByTagName("td");
+		for(var idx in tds){
+			tds[idx].onmouseover=call;
+			tds[idx].onmousleav=call;
+		}
+		
+		/* tds.forEach(function(obj,idx){
+			obj.onMouseOver=call;
+		}); */
+	};
+
+	function call(){
+			this.bgColor="blue";
+		}
+
+  </script>
+ </head>
+ <body><center>
+<table border width="400" height="200">
+	<tr><td ></td><td ></td><td ></td></tr>
+	<tr><td ></td><td ></td><td ></td></tr>
+	<tr><td ></td><td ></td><td ></td></tr>
+</table>
+ </body>
+</html>

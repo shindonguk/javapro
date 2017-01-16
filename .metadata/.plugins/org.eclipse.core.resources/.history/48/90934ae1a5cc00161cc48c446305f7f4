@@ -1,0 +1,10 @@
+package javastart.A05_loop;
+
+public class A01_for {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

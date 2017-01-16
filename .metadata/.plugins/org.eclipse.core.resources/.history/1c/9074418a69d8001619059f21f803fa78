@@ -1,0 +1,18 @@
+package javastart.D01_inherit;
+
+public class C02_interface {
+	public static void main(String[] args) {
+		/*
+		 * 추상클래스
+		 * overriding 처리
+		 * Duck
+		 * 		sound();
+		 * 1) RubberDuck
+		 * 			sound();
+		 * 2) NormalDuck
+		 * 			sound();
+		 * 3) RobotDuck
+		 * 			sound();
+		 */
+	}
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+/* 오디오 테스트 스크립트 	
+function play() { 
+    var audio = document.getElementById('audio1'); 
+    if (audio.paused) { 
+        audio.play(); 
+    }else{ 
+        audio.pause(); 
+        audio.currentTime = 0 
+    } 
+    
+}  
+
+		<tr>
+			<!-- 스크롤1: 재고 id=scroll1 -->
+			<td><img src="./imgs/scroll1.png" value="사용"/><br>
+			스크롤1<br><br>
+								
+			<button onclick="buyscroll1(2000)">구매하기</button><br>
+			<img src="./imgs/gold.png"/> 가격 2000</td>
+			
+			<!-- 스크롤2: 재고 id=scroll2 -->
+			<td><img src="./imgs/scroll2.png" value="사용"/><br>
+			스크롤2<br><br>
+								
+			<button onclick="buyscroll2(2000)">구매하기</button><br>
+			<img src="./imgs/gold.png"/> 가격 2000</td>
+		</tr>
+		
+*/
+
+
+//사용 골드
+var usegold=0;
+//보유 골드
+var bank=parent.gold.bank;
+//포션 구매
+function buypotion1(price){
+	// 가격을 사용 골드로 저장
+	usegold = price; 
+	//사용 골드를 gold.html에서 차감 및 재고량 증가
+	parent.gold.goldMinus();
+}
+function buypotion2(price){
+	usegold = price;
+	parent.gold.goldMinus();
+}
+
+function buyupgrade1(price){
+	usegold = price;
+	parent.gold.goldMinus();
+}
+
+function buyupgrade2(price){
+	usegold = price;
+	parent.gold.goldMinus();
+}
+
+function buyscroll1(price){
+	usegold = price;
+	parent.gold.goldMinus();
+}
+
+function buyscroll2(price){
+	usegold = price;
+	parent.gold.goldMinus();
+}
+</script>
+<style type="text/css">
+
+
+button{background-image: url("./imgs/grd3.png"); color: white; width: 60%; height: 30%; font-size:15px;}
+table td {background-image: url("./imgs/grd.png"); border: 1px solid gray; text-align: center; width:25%; height: 100%; color: white; padding-top: 15px; padding-bottom: 15px;}
+
+</style>
+</head>
+<body bgcolor="black">
+
+	
+<!-- <h1>상점</h1> -->
+
+		<table>
+		<tr>
+			<!-- 100회복 물약-->
+			<td><img src="./imgs/potion_icon.png" value="사용"/><br />
+				100 회복 물약 <br><br>
+								
+				<button onclick="buypotion1(100)" >구매하기</button><br>
+				<img src="./imgs/gold.png"/> 가격 100</td>
+			
+			<!-- 200회복 물약: 재고 id=potion2 -->
+			<td><img src="./imgs/potion_icon.png" value="사용"/><br />
+				200 회복 물약 <br><br>
+								
+				<button onclick="buypotion2(200)">구매하기</button><br>
+				<img src="./imgs/gold.png"/> 가격 200</td>
+		</tr>
+		<tr>
+			<!-- 무기10강 강화권: 재고 id=upgrade1 -->
+			<td><img src="./imgs/upgrade.png" value="사용"/><br>
+			무기 10강 강화권<br><br>
+								
+			<button onclick="buyupgrade1(4000)">구매하기</button><br>
+			<img src="./imgs/gold.png"/> 가격 4000</td>
+			
+			<!-- 무기5강 강화권: 재고 id=upgrade2 -->
+			<td><img src="./imgs/upgrade2.png" value="사용"/><br>
+			무기 5강 강화권<br><br>
+								
+			<button onclick="buyupgrade2(16000)">구매하기</button><br>
+			<img src="./imgs/gold.png"/> 가격 16000</td>
+		</tr>
+
+</body>
+</html>

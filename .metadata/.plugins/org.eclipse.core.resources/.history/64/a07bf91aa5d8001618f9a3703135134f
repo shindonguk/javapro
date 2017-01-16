@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var dailyWeather={};
+	var weekWeather =[];
+	for(var a=12;a<=18;a++);
+</script>
+</head>
+<body>
+
+</body>
+</html>

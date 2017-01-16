@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        window.onload = function() {
+            
+        }
+        var greeting = "Hello, Good day!!";
+        console.log( greeting.toLowerCase() );
+        console.log( greeting.toUpperCase() );
+
+        console.log( greeting.substring(8) );       // Good day!!
+        console.log( greeting.substring(8, 12) );   // Good
+
+        console.log( greeting.replace(/o/g, "i"));
+
+        var list = greeting.split(",");
+        for (var i in list) {
+            console.log(list[i]);
+        }
+
+        function reg() {
+            var data = document.getElementById("data");
+            var list = data.value.split(",");
+            var table = document.getElementById("table");
+            var rowLen = table.rows.length;
+            var row = table.insertRow(rowLen);
+
+            row.insertCell(0).innerHTML = list[0];
+            row.insertCell(1).innerHTML = list[1].substring(0, 3);
+            row.insertCell(2).innerHTML = list[1].substring(3, 4) == "M" ? "남자" : "여자";
+            row.insertCell(3).innerHTML = list[2];
+            row.insertCell(4).innerHTML = list[3];
+            row.insertCell(5).innerHTML = list[4];
+        }
+        
+    </script>
+</head>
+<body>
+    입력데이터 : <input type="text" id="data"><input type="button" value="등록" onclick="reg()"><br>
+
+    <table border="1" id="table">
+        <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>성별</th>
+            <th>국어</th>
+            <th>영어</th>
+            <th>수학</th>
+        </tr>
+    </table>
+
+
+</body>
+</html>

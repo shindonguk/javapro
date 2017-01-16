@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script>
+    localStorage.clear();
+	var inputRank1 = { name:"강감찬", sec:157 };
+	var inputRank2 = { name:"이순신", sec:30 };
+	var inputRank3 = { name:"을지문덕", sec:162 };
+	var inputRank4 = { name:"신립", sec:1780 };
+	var inputRank5 = { name:"원균", sec:3290 };
+	var inputRankList1 = [];
+	inputRankList1.push(inputRank1);
+	inputRankList1.push(inputRank2);
+	inputRankList1.push(inputRank3);
+	inputRankList1.push(inputRank4);
+	inputRankList1.push(inputRank5);
+
+	var inputRank6 = { name:"아이린", sec:152 };
+	var inputRank7 = { name:"슬기", sec:276 };
+	var inputRank8 = { name:"조이", sec:277 };
+	var inputRank9 = { name:"웬디", sec:343 };
+	var inputRank10 = { name:"예리", sec:353 };
+	var inputRankList2 = [];
+	inputRankList2.push(inputRank6);
+	inputRankList2.push(inputRank7);
+	inputRankList2.push(inputRank8);
+	inputRankList2.push(inputRank9);
+	inputRankList2.push(inputRank10);
+
+	localStorage.setItem("2", JSON.stringify(inputRankList1));
+	localStorage.setItem("3", JSON.stringify(inputRankList2));
+
+
+</script>
+<body>
+
+</body>
+</html>

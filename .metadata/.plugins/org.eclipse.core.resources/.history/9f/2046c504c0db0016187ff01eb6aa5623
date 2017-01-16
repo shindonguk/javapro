@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=function{
+		
+	}
+	
+	/*
+	이벤트: 마우스, 키보드 등으로 특정 모션으로 해당 처리 함수를 호출하여 동적인 처리를 가능하게 하는 기능
+	
+	1.화면 로딩과 화면 닫힐때
+		body onLoad
+	*/
+	function welcome() {
+		alert("시작합니다.");
+		
+	}
+	function goobye () {
+		alert("안녕히 가세요.");
+		
+	}
+</script>
+</head>
+<!-- html 안에 onxxxx="javascript:호출할 함수명()"
+xxx이벤트가 처리될때, 해당함수를 호출
+ -->
+ <body onload="javascript:welcome();" onunload="javascript:goobye()">
+
+</body>
+</html>

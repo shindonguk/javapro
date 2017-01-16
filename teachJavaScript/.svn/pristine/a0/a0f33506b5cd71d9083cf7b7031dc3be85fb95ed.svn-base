@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>project</title>
+
+<script type="text/javascript">
+	
+/* 오디오 테스트 스크립트 	
+function play() { 
+    var audio = document.getElementById('audio1'); 
+    if (audio.paused) { 
+        audio.play(); 
+    }else{ 
+        audio.pause(); 
+        audio.currentTime = 0 
+    } 
+}  */
+
+//사용 골드
+var usegold=0;
+//보유 골드
+var bank=parent.gold.bank;
+//포션 구매
+function buypotion1(price){
+	// 가격을 사용 골드로 저장
+	usegold = price; 
+	//사용 골드를 gold.html에서 차감 및 재고량 증가
+	parent.gold.goldMinus();
+}
+function buypotion2(price){
+	usegold = price;
+	parent.gold.goldMinus();
+}
+function buypotion3(price){
+	usegold = price;
+	parent.gold.goldMinus();
+}
+
+function buyupgrade3(price){
+	usegold = price;
+	parent.gold.goldMinus();
+}
+
+function buyupgrade5(price){
+	usegold = price;
+	parent.gold.goldMinus();
+}
+
+function buyupgrade7(price){
+	usegold = price;
+	parent.gold.goldMinus();
+}
+
+function buyscroll1(price){
+	usegold = price;
+	parent.gold.goldMinus();
+}
+
+function buyscroll2(price){
+	usegold = price;
+	parent.gold.goldMinus();
+}
+
+
+</script>
+
+</head>
+<style type="text/css">
+.tg {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.tg td {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	padding: 10px 5px;
+	border-style: groove;
+	border-width: 1px;
+	overflow: hidden;
+	word-break: normal;
+	background-color:;
+	background-image:url('./imgs/gra2.jpg');
+	color: white;
+}
+
+.tg th {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	padding: 10px 5px;
+	border-style: groove;
+	border-width: 1px;
+	overflow: hidden;
+	word-break: normal;
+	background-color: silver;
+	background-image:url('./imgs/gra2.jpg');
+	color: white;
+}
+
+.button{
+background-image: url('./imgs/gra2.jpg');
+color:white;
+font-weight:700;
+
+
+}
+
+
+</style>
+
+<body bgcolor="black">
+	<div align="center">
+	
+<!-- <h1>상점</h1> -->
+
+		<table class="tg" style="table-layout: fixed; width: 115px">
+			<colgroup>
+				<col style="width: 41px">
+				<col style="width: 110px">
+				<col style="width: 90px">
+				<col style="width: 90px">
+			</colgroup>
+			<tr>
+				<th class="tg-yw4l" colspan="3"   align="center" >Item</th>
+			</tr>
+			
+			<!-- 1번째 줄 -->
+			<tr align="center">
+				<td class="tg-yw4l"><input type="image"
+					src="./imgs/potion_icon.jpg" width="30px" height="30px"></td>
+				<td class="tg-yw4l"><b>100 회복 물약</b></td>
+				<td class="tg-yw4l"><font color=white><b>50 Gold</b></font></td>
+				<td> <input onclick="buypotion1(50)"
+						type="button" width="15px" height="15px" value="구매" class="button"></td>		
+						
+			</tr>
+			
+			<!-- 2번째 줄 -->
+			<tr align="center">
+				<td class="tg-yw4l"><input type="image"
+					src="./imgs/potion_icon.jpg" width="30px" height="30px"></td>
+				<td class="tg-yw4l"><b>200 회복 물약</b></td>
+				<td class="tg-yw4l"><font color=white><b>100 Gold</b></font></td>
+				<td> <input onclick="buypotion2(100)"
+						type="button" width="15px" height="15px" value="구매" class="button"></td>		
+						
+			</tr>
+			
+			<!-- 3번째 줄 -->
+			<tr align="center">
+				<td class="tg-yw4l"><input type="image"
+					src="./imgs/potion_icon.jpg" width="30px" height="30px"></td>
+				<td class="tg-yw4l"><b>300 회복 물약</b></td>
+				<td class="tg-yw4l"><font color=white><b>150 Gold</b></font></td>
+				<td> <input onclick="buypotion3(150)"
+						type="button" width="15px" height="15px" value="구매" class="button"></td>		
+						
+			</tr>
+			
+			<!-- 4번째 줄 -->
+			<tr align="center">
+				<td class="tg-yw4l"><input type="image"
+					src="./imgs/upgrade.png" width="30px" height="30px"></td>
+				<td class="tg-yw4l"><b>무기 3강 강화</b></td>
+				<td class="tg-yw4l"><font color=white><b>2000 Gold</b></font></td>
+				<td> <input onclick="buyupgrade3(2000)"
+						type="button" width="15px" height="15px" value="구매" class="button"></td>		
+						
+			</tr>
+
+			<!-- 5번째 줄 -->
+			<tr align="center">
+				<td class="tg-yw4l"><input type="image"
+					src="./imgs/upgrade2.png" width="30px" height="30px"></td>
+				<td class="tg-yw4l"><b>무기 5강 강화</b></td>
+				<td class="tg-yw4l"> <font color="white"><b>5000 Gold</b></font></td> 
+				<td> <input onclick="buyupgrade5(5000)"
+						type="button" width="15px" height="15px" value="구매" class="button"></td>
+			</tr>
+
+			<!-- 6번째 줄 -->
+			<tr align="center">
+				<td class="tg-yw4l"><input type="image"
+					src="./imgs/upgrade3.png" width="30px" height="30px"></td>
+				<td class="tg-yw4l"><b>무기 7강 강화</b></td>
+				<td class="tg-yw4l"> <font color="white"><b>10000 Gold</b></font> </td>
+				<td> <input onclick="buyupgrade7(10000)"
+						type="button" width="15px" height="15px" value="구매" class="button"></td>
+			</tr>
+
+			<!-- 7번째 줄 -->
+			<tr align="center">
+				<td class="tg-yw4l"><input type="image"
+					src="./imgs/scroll1.png" width="30px" height="30px"></td>	
+				<td class="tg-yw4l"><b>스크롤1</b></td>
+				<td class="tg-yw4l"> <font color="white"><b>15000 Gold</b></font></td>
+				<td> <input onclick="buyscroll1(15000)"
+						type="button" width="15px" height="15px" value="구매" class="button"></td>
+			</tr>
+
+
+			<!-- 8번째 줄 -->
+			<tr align="center">
+				<td class="tg-yw4l"><input type="image"
+					src="./imgs/scroll2.png" width="30px" height="30px"></td>
+				<td class="tg-yw4l"><b>스크롤2</b></td>
+				<td class="tg-yw4l"> <font color="white"><b>20000 Gold</b></font></td>
+				<td> <input onclick="buyscroll1(20000)"
+						 type="button" width="15px" height="15px" value="구매" class="button" ></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

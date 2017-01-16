@@ -1,0 +1,15 @@
+package javastart.C02_static;
+
+
+/*
+ * static: 변수나 메서드에 주로 쓰이는 키워드로 해당 변수나 메서드를 객체 참조 범위에 있진 않고,
+ * 객체의 공유 메모리 영역으로 처리되어, 객체 간 공유하는 변수나 메서드에서 주로 활용 된다.
+ */
+public class A01_basic {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

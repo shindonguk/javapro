@@ -1,0 +1,19 @@
+package javastart.D01_inherit;
+	abstract class Robot{
+		String kind;
+		int attpt;
+		public Robot01(){
+			
+		}
+		public void attack(){
+			
+		}
+		public abstract void spattack();
+	}
+
+public class B01_Robot {
+	public static void main(String[] args) {
+		
+		Ro
+	}
+}

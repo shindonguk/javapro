@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<frameset rows="20%,60%,20%">
+<frameset cols="20%,60%,20%">
+<frame src ="a10_2.html" />
+<frame src ="a10_3.html" />
+<frame src ="a10_4.html" />
+</frameset>
+
+
+<frameset cols="20%,60%,20%">
+<frame src ="a10_5.html" />
+<frame src ="a10_6.html" name="hello"/>
+<frame src ="a10_7.html" />
+</frameset>
+
+<frameset cols="20%,60%,20%">
+<frame src ="a10_8.html" />
+<frame src ="a10_9.html" />
+<frame src ="a10_10.html"/>
+</frameset>
+
+</frameset>
+
+
+</html>

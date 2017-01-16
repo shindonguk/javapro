@@ -1,0 +1,100 @@
+
+
+
+/**-----케릭터 선택창-----**/
+
+	#zero{position:absolute;visibility:hidden;}
+
+/* 버튼 color */
+	button.css3button {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 14px;
+		color: #ffffff;
+		padding: 10px 20px;
+		background: -moz-linear-gradient(top, #61b31e 0%, #029429);
+		background: -webkit-gradient(linear, left top, left bottom,	from(#61b31e), to(#029429));
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+		border-radius: 10px;
+		border: 1px solid #22ff00;
+			-moz-box-shadow: 0px 1px 3px rgba(255,255,255,0.5),	inset 0px 0px 1px rgba(255,255,255,0.5);
+			-webkit-box-shadow:	0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 1px rgba(255,255,255,0.5);
+		box-shadow:	0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 1px rgba(255,255,255,0.5);
+		text-shadow: 0px -1px 0px rgba(255,255,255,0.7), 0px 1px 0px rgba(255,255,255,0.3);
+	}
+	#select{position:absolute; left:1270px;top:100px;}
+
+/* 캐릭터 선택 페이지 */
+
+  #zero{width:100%; height:780px; background:url('img/ppp.png') no-repeat; background-size:cover; overflow:hidden; margin:0; padding:0;}
+
+  /*(플레이어 선택)*/
+  #pp1 {position:absolute; top:140px; left:340px; z-index:700;}
+  #pp2 {position:absolute; top:140px; left:596px; z-index:700;}
+  #pp3 {position:absolute; top:140px; left:860px; z-index:700;}
+  #pp4 {position:absolute; top:140px; left:1120px; z-index:700;}
+  
+  /*(별명 입력)*/
+  #nickName1{position:absolute; left:350px; top:305px; z-index:999;}
+  #nickName2{position:absolute; left:605px; top:305px; z-index:999;}
+  #nickName3{position:absolute; left:870px; top:305px; z-index:999;}
+  #nickName4{position:absolute; left:1130px; top:305px; z-index:999;}
+  
+  /*(순번 결정)*/
+  #no1{position:absolute; left:435px; top:152px; color:white; z-index:999;}
+  #no2{position:absolute; left:690px; top:152px; color:white; z-index:999;}
+  #no3{position:absolute; left:955px; top:152px; color:white; z-index:999;}
+  #no4{position:absolute; left:1215px; top:152px; color:white; z-index:999;}
+
+  /*(선택 및 취소)*/
+  #startImg {position:absolute; left:658px; bottom:70px;}
+  #resetImg {position:absolute; left:840px; bottom:70px;}
+
+
+
+/**-----화면 배경-----**/
+
+/*제목*/		h1{position:absolute; left:30px; top:45px;}  
+/*배경*/		body{margin:0; padding:0;}		
+				#one{width:100%; height:794px; background: url('img/bg.png') no-repeat; background-size:cover; overflow:hidden; margin:0; padding:0;}
+/*도로*/		#mainimg{position:absolute; left:250px; top:165px;} 
+/*사다리1*/		#s01{position:absolute; left:935px; top:253px;}
+/*사다리2*/		#s02{position:absolute; left:590px; top:342px;}
+/*사다리3*/		#s03{position:absolute; left:750px; top:440px;}
+/*사다리4*/		#s04{position:absolute; left:450px; top:545px;}
+
+
+
+/**-----전광판-----**/
+
+/*스코어*/		#scoretable{position:absolute; left:50px; top:300px; color:white;}
+
+
+
+/**-----주사위-----**/
+
+/*주사위*/		#marble{ position:absolute; left:1300px; top:220px; width:50px; height:50px;z-index:999;}
+/*던지기버튼*/	#btn{width:120px; height:30px; text-align:center; border-radius:50px;}
+/*주사위 값*/	#dValue{color: white;, font-size: 500px;} 
+
+
+
+/**-----플레이어 말-----**/
+
+	#div01{position:absolute; left:120px; top:255px;}
+	#div02{position:absolute; left:90px; top:233px;}	
+	#div03{position:absolute; left:60px; top:255px;}	
+	#div04{position:absolute; left:30px; top:233px;}
+
+	
+
+/**-----랭킹화면-----**/
+
+	#title{position:absolute; left:30px; top:45px;}  
+	#two{position:absolute; top:0;width:100%; height:794px; visibility:hidden; background:url('img/ranking.png') no-repeat; visibility:hidden; background-size:cover; overflow:hidden; z-index:999; margin:0; padding:0;}
+	#title{position:absolute; left:30px; top:45px;}
+	#ranktable {width:693px; height:330px; position:relative; left:462px; top:175px; border-radius:10px; }
+	#ranktable th {width:350px; height:30px; color:black; padding:15px; font:15px;}
+	#ranktable td img {width:30px; padding:18px; height:35px;}
+	#ranktable td {width:350px; height:30px; color:white; text-align:center;}
+	#restartImg {position:absolute; left:658px; bottom:40px;}

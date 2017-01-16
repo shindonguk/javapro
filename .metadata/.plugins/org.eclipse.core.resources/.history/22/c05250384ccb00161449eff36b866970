@@ -1,0 +1,32 @@
+package javastart.a02_operator;
+
+public class A02_avr {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub	
+		/* 
+		 * 아래형식의 내용을 args값으로 받아서 처리하세요.
+		 * @@@: args변수를 받아서 처리
+		 * ### : 연산처리해서 나타나는 부분
+		 * 
+		 * 			성적관리 프로그램
+		 * 					 					반: ??  3 - 4반, 영어영문학과
+		 * NO	 이름	 국어	 수학	 영어	 총점 평균(실수)
+		 *  
+		 */
+		 int classnum1  = Integer.parseInt(args[0]);
+		 String  name1 = args[1];
+		 int kor1  = Integer.parseInt(args[2]);
+		 int mat1  = Integer.parseInt(args[3]);
+		 int eng1  = Integer.parseInt(args[4]);
+		 int sum1 = kor1 + mat1+ eng1;
+		 double avg1  = (double)sum1/3;
+		 //sysout+ctrl+space : 단축기를 외우기 전에 풀코드 암기
+		 
+		 System.out.println("NO    이름    국어    수학    영어    총점    평균");
+		 System.out.print(" "+classnum1+ "     " +name1+ "    " +kor1+ "      " +mat1+ "       " +eng1+ "        "+sum1+ "    " +avg1);
+		 System.out.print(" "+classnum2+ "     " +name2+ "    " +kor2+ "      " +mat2+ "       " +eng2+ "        "+sum2+ "    " +avg2);
+		
+	}
+
+}

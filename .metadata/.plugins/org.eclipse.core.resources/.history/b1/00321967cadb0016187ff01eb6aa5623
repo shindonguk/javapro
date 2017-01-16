@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+  <script type="text/javascript">
+ 
+	window.onload=function(){
+		var tds=document.getElementsByTagName("td");
+		tds.forEach(function(obj,idx){
+			obj.onMouseOver=call;
+		});
+	};
+
+	function call(){
+		// 전체내용이 나타나고 클릭한 내용만, 없어지게..
+		for(var idx in tds){
+			tds[idx].width="33%";
+			tds[idx].height="100";
+			tds[idx].bgColor="yellow";
+			tds[idx].innerHTML="<font size='20'>★</font>";
+			tds[idx].onclick=change01;
+		}
+
+	}
+	function change01(){
+		call();
+		// 클릭한 부분만 없어짐..
+		this.innerHTML="";
+		this.bgColor="";	}
+
+  </script>
+ </head>
+ <body><center>
+<table border width="400" height="200">
+	<tr><td ></td><td ></td><td ></td></tr>
+	<tr><td ></td><td ></td><td ></td></tr>
+	<tr><td ></td><td ></td><td ></td></tr>
+</table>
+ </body>
+</html>

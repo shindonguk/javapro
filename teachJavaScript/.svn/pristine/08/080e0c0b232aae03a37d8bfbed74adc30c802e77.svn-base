@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body bgcolor="yellow">
+
+<a href="col3.html" target="main">노랑</a>
+
+</body>
+</html>

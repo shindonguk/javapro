@@ -1,0 +1,33 @@
+package javastart.a02_operator;
+
+public class A02_avr {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub	
+		/* 
+		 * 아래형식의 내용을 args값으로 받아서 처리하세요.
+		 * @@@: args변수를 받아서 처리
+		 * ### : 연산처리해서 나타나는 부분
+		 * 
+		 * 			성적관리 프로그램
+		 * 					 					반: ??  3 - 4반, 영어영문학과
+		 * NO	 이름	 국어	 수학	 영어	 총점 평균(실수)
+		 *  
+		 */
+		
+		 String kfruit  = args[0];
+		 int cfruit  = Integer.parseInt(args[1]);
+		 int sharep =  Integer.parseInt(args[2]);
+		 //sysout+ctrl+space : 단축기를 외우기 전에 풀코드 암기
+		 
+		 
+		System.out.print("과일 종류 ="+kfruit);
+		System.out.println("과일 갯수 ="+cfruit);
+		System.out.println("나누어줄 인원 ="+sharep);
+		System.out.println("1명당 나누어 줄 과일 갯수 ="+(cfruit/sharep));
+		System.out.println("나머지 갯수 ="+(cfruit%sharep));
+		
+		
+	}
+
+}

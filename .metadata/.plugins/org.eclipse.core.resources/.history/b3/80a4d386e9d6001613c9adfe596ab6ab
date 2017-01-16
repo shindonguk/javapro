@@ -1,0 +1,82 @@
+package javastart.D01_inherit;
+/*
+ * 상속: is a(is a kind of)관계로 상위에 있는 클래스를 
+ * 하위에 있는 클래스가 접근제어자 범위 안에서 재활용 하게 한다.
+ * cf)접근제어자 범위가 벗어나면 쓸 수 없게 된다.
+ * 	has a 관계: 클래스내에서 다른 클래스 호출하여 포함 관계를 의미한다.
+ */
+
+/*class Father{
+	private String name;
+	int age;
+	public void setDate(String name, int age) {
+		this.name = name;
+		this.age = age;
+		
+	}
+	public void show(){
+		System.out.println("아버지 클래스");
+		System.out.println("이름: "+name+",\t 나이"+age);
+	}
+}
+class son extends Father{}
+*/
+
+class job{
+	 String name;
+	 String job;
+		public void setDate(String name, String job) {
+			this.name = name;
+			this.job = job;
+	}
+		public void working(){
+			System.out.println(name+"이 "+job+"일을 한다.");
+		}
+/*		public void spWorking(){
+			System.out.println(job+"인 "+name+"이 도둑을 잡았다.");
+		}*/
+}
+class Policeman extends job{
+
+}
+class FirMan extends job{
+	
+}
+class Developer extends job{
+	
+}
+public class A01_basic {
+
+	public static void main(String[] args) {
+		Policeman p = new Policeman("");
+		FirMan p = new FirMan("");
+		Developer p = new Developer("");
+		p.setDate("강철중","경찰");
+		p.setDate("잡스가","개발");
+		p.setDate("","경찰");
+		p.working();
+		//p.spWorking();
+		// TODO Auto-generated method stub
+		/*son s1 = new son();
+		s1.setDate("홍",27);
+		s1.show();*/
+	}
+	/*
+	 * 확인 예제
+	 * 1단계
+	 * 상위: 
+	 * 		jop 변수: 이름
+	 * 		매서드: working()
+	 * 				???가 일을 하다
+	 * 		policeMan
+	 * 			변수: kind="경찰"
+	 * 			매서드: spWorking()
+	 * 					경찰인 ???가 도둑을 잡다.
+	 * 2단계
+	 * 		위 1단계 내용을 변수와 매서드로 정리
+	 * 		상위에 필요한 공통변수 설정, 하위에 working()으로 
+	 * 		통일해서 처리(재정 추가 클래스)
+	 * 		FirMan, Developer
+	 */
+
+}

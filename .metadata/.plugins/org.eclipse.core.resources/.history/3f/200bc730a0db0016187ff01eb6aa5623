@@ -1,0 +1,45 @@
+package javastart.F01_api;
+
+import java.util.Random;
+
+public class A02_Random {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * Random
+		 * nextInt(범위): 1부터 범위까지의 임의의 정수값 return
+		 * nextfloat(범위): 0.0~부터 범위까지의 임의의 실수값 return
+		 * nextBoolean(): 임의의 논리값(true/false)값 return
+		 */
+		
+		
+		Random rand = new Random();
+		// 1~100까지 범위의 임의의 수 return
+		int ranInt=rand.nextInt(100);
+		System.out.println("1~100까지의 임의의 수 return:"+ranInt);
+		float raFlat=rand.nextFloat();
+		System.out.println("1~100까지의 임의의 수 return:"+raFlat);
+		boolean ranBoolean=rand.nextBoolean();
+		System.out.println("1~100까지의 임의의 수 return:"+ranBoolean);
+		/*
+		 * 확인예제
+		 * 1. 1~6까지 임의의 주사위 두개 값 출력 합산
+		 * 2. Boolean을 이용해서 동전 앞/뒷면 임의로 출력하기
+		 * 3. 배열에 값을 할당하고 가위, 바위, 보 임의로 두개 값 출력하기
+		 * 		A:가위 B:바위
+		 */
+		String co = new String();
+		int dise1 = rand.nextInt(6);
+		int dise2 = rand.nextInt(6);
+		System.out.println("홀 & 짝"+(dise1+dise2));
+		
+		boolean coin =rand.nextBoolean();
+		if(coin == false){ co ="앞";}else
+		if(coin == true){ co ="뒤";};
+		System.out.println("앞 & 뒤"+co);
+		
+
+	}
+
+}

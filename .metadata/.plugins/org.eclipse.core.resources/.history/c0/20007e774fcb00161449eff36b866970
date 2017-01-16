@@ -1,0 +1,41 @@
+package javastart.a02_operator;
+
+public class A01_calcu2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//산술연산자: +, -, *,  /,  %
+//%: 나머지 연사자: 해당 데이터의 몫을 제외한 나머지 부분 처리
+		
+	System.out.println("20%7="+(20%7));
+	/*
+	 * 사과 50개를 3명에게 나누어 주기로 했습니다. 
+	 * 1명당 몇개를 나누어 주고, 나머지 ??개가 남은 것을 프로그램 할려고 한다.
+	 * 이때, 과일 종류와 총갯수 그리고 나누어 줘야할 사람수를 args를 받아서 변동적으로 처리하는 프로그램을 만드시오.
+	 * 
+	 * 출력-------
+	 * 과일 종류: ??? 
+	 * 과일 갯수: ?? 
+	 * 나누어줄 인원: ???
+	 * 1명당 나누어 줄 과일 갯수: ??
+	 * 나머지 갯수:???
+	 */
+	 String kfruit  = args[0];
+	 int cfruit  = Integer.parseInt(args[1]);
+	 int sharep =  Integer.parseInt(args[2]);
+	 //sysout+ctrl+space : 단축기를 외우기 전에 풀코드 암기
+	 
+	 
+	System.out.println("과일 종류 ="+kfruit);
+	System.out.println("과일 갯수 ="+cfruit);
+	System.out.println("나누어줄 인원 ="+sharep);
+	System.out.println("1명당 나누어 줄 과일 갯수 ="+(cfruit/sharep));
+	System.out.println("나머지 갯수 ="+(cfruit%sharep));
+	
+	
+	
+	
+	
+	}
+
+}

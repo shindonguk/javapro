@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>Login</title>
+
+<!--
+    floater  = 빈칸만들기용
+    box      = 로그인 입력창
+    loginBtn = 로그인버튼
+-->
+
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+.floater    { float: left; height: 30%; margin-bottom: -120px;}
+.box        { clear: both; width:326px; position:relative;}
+.box .iText { width:300px; margin:3px 0; padding:10px 12px; border:1px solid #aaa }
+.btn        { padding:10px; border-radius:7px; font-size:20px; font-family: 'Jeju Hallasan';
+              color: white; text-align:center; background:#0066ff}
+body      {font-size:150px; font-family: 'Jeju Hallasan', cursive;}              
+              
+</style>
+
+<script>
+
+/*
+  로그인 정보 저장. 현재 접속한 아이디는 로컬스토리지의 currentId 에 저장.
+  아이디에 해당하는 정보들은 따로 저장되어 있음
+  예를 들어 ID가 '안녕'이라면 안녕의 rank는
+  localStorage.getItem('안녕').user_rank 에 있다.
+*/
+
+
+if(localStorage.getItem('currentId') != null) {
+    userDataCheck(currentId);
+    document.location.href="mainMenu.html";
+    //아래 문구는 테스트용
+    alert("로그인 정보가 있으므로 바로 메인메뉴로 이동합니다. \n저장된 로그인 아이디 : "+localStorage.getItem('currentId'));
+}
+
+
+//아이디 검증 메서드. 빈칸이나 특수문자 사용 불가.
+function idCheck(input_id) {
+    var id = input_id;
+    var special = id.search(/[`~!@@#$%^&*|₩\₩'"";:₩/?]/gi);
+	 
+    if(id.length < 5 || id.length > 15) {
+        alert("아이디는 5~15자리 이내로 입력해주세요");
+        return false;
+    }else if(id.search(/\s/) != -1) {
+        alert("아이디는 공백 없이 입력해주세요");
+        return false;
+    }else if(special > 0 ) {
+        alert("아이디에는 특수문자를 사용할 수 없습니다");
+        return false;
+    }else {
+        return true
+	}
+}
+
+
+function userDataCheck(currentId){
+    if(localStorage.getItem(currentId) != null){
+        return;
+    }else{
+        alert("유저 데이터가 없습니다.\n유저 정보를 새로 생성합니다.")
+        var rankData = "0,0,0"
+        /*rankData의 첫번째 값은 rank(랭크)
+                     두번째 값은 bestTime(최고기록) 
+                     세번째 값은 currentSkin(현재스킨번호)
+          요렇게 하면 어떨까 싶습니다. 객체로 저장하고 싶은데 객체인식을 못하네요... 문자열로만 된대요.
+          객체를 쓰려면 스토리지 인터페이스를 확장시켜야된다는데 굳이 그래야 하나 싶어서 그냥 숫자로...
+          받아서 쓸때는 split 활용해서 하면 될거같습니다.
+          예를 들어 var userData = localStorage.getItem(ID).split(","); 요런식으로... 
+        */
+        localStorage.setItem(currentId,rankData);
+    }
+}
+
+//로그인 메서드. 버튼을 누를 시 동작한다.
+function login() {
+    var input_id = idForm.input_id.value;
+
+    if(idCheck(input_id)){
+        localStorage.setItem('currentId', idForm.input_id.value);
+        userDataCheck(idForm.input_id.value);
+        document.location.href="mainMenu.html";
+    }
+}
+
+/*localStorage 사용 예제
+localStorage.test = '123;';
+localStorage.setItem('test2','456');
+*/
+</script>
+ 
+</head>
+<body>
+<center>지뢰 찾기</center>
+
+
+<!--사용자 이름을 입력받는 폼. 입력받은 값을 쿠키에 저장하고 메인메뉴 페이지로 넘어간다.-->
+
+<center>
+    <form name="idForm" action="mainMenu.html" method="POST">
+        <div class="floater"></div>
+        <div class="box">
+            <input type="text" class="iText" name="input_id" placeholder="아이디를 입력하세요" maxlength="15">
+        <input type="button" class="btn" value="로그인" onclick="login()" style="width:100px; height:50px;">
+        </div>
+    </form>
+    
+</center>
+
+</body>
+</html>

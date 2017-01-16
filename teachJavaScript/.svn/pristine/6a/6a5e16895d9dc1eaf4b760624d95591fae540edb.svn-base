@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Coda+Caption:800|Galindo|Holtwood+One+SC|Baloo+Paaji" rel="stylesheet">
+		<title>baseball main</title>
+
+		<script>
+			function showFrontLayer(obj1, obj2) {
+				obj1.style.visibility = 'visible';
+				obj2.style.visibility = 'visible';
+
+			}
+
+			function hideFrontLayer(obj1, obj2) {
+				obj1.style.visibility = 'hidden';
+				obj2.style.visibility = 'hidden';
+			}
+		</script>
+		<style>
+			html, body {
+				height: 100%;
+				padding: 40px 50px 0px 50px;
+				margin: 0;
+				overflow: hidden;
+			}
+			.container_1 {
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				position: relative;
+				width: 960px;
+				height: 540px;
+				margin: 0 auto;
+				padding: 30px 35px 30px 35px;
+				background-color: white;
+				background-image: url('image/main_back1.jpg');
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+			}
+
+			.level_div {
+				position: relative;
+				width: 240px;
+				height: 240px;
+				margin: 12.5px 37.5px 12.5px 37.5px;
+				color: #ffffff;
+				font-family: 'Baloo Paaji', cursive;
+				/*font-family: 'Holtwood One SC', serif;*/
+				/*font-family: 'Galindo';*/
+				text-align: center;
+				/*font-family: 'Rubik Mono One', sans-serif;*/
+				/*font-family: 'Bungee Shade', cursive;*/
+
+			}
+
+			.bg_mask {
+				width: 240px;
+				height: 240px;
+				z-index: 0;
+				visibility: hidden;
+			}
+
+			.frontlayer {
+				width: 240px;
+				height: 240px;
+				z-index: 0;
+				visibility: hidden;
+			}
+
+			.Play_btn {
+				font-weight: bold;
+				text-decoration: none;
+				font-family: Arial;
+				box-shadow: inset #ffffff 0px 5px 8px -1px;
+				o-box-shadow: inset #ffffff 0px 5px 8px -1px;
+				-moz-box-shadow: inset #ffffff 0px 5px 8px -1px;
+				-webkit-box-shadow: inset #ffffff 0px 5px 8px -1px;
+				background: #4cdbff;
+				background: -o-linear-gradient(90deg, #4cdbff, #26a8ff);
+				background: -moz-linear-gradient( center top, #4cdbff 5%, #26a8ff 100% );
+				background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4cdbff), color-stop(1, #26a8ff) );
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4cdbff', endColorstr='#26a8ff');
+				background: -webkit-linear-gradient(#4cdbff, #26a8ff);
+				background: -ms-linear-gradient(#4cdbff, #26a8ff);
+				background: linear-gradient(#4cdbff, #26a8ff);
+				text-indent: 0px;
+				line-height: 14px;
+				-moz-border-radius: 100px;
+				-webkit-border-radius: 100px;
+				border-radius: 100px;
+				text-align: center;
+				vertical-align: middle;
+				display: inline-block;
+				font-size: 30px;
+				color: #ffffff;
+				width: 14px;
+				height: 14px;
+				padding: 13px;
+				border-color: #ffffff;
+				border-width: 2px;
+				border-style: solid;
+			}
+
+			.Play_btn:active {
+				position: relative;
+				top: 3px
+			}
+
+			.Play_btn:hover {
+				background: #26a8ff;
+				background: -o-linear-gradient(90deg, #26a8ff, #4cdbff);
+				background: -moz-linear-gradient( center top, #26a8ff 5%, #4cdbff 100% );
+				background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #26a8ff), color-stop(1, #4cdbff) );
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#26a8ff', endColorstr='#4cdbff');
+				background: -webkit-linear-gradient(#26a8ff, #4cdbff);
+				background: -ms-linear-gradient(#26a8ff, #4cdbff);
+				background: linear-gradient(#26a8ff, #4cdbff);
+			}
+
+			.Info_btn {
+				font-weight: bold;
+				text-decoration: none;
+				font-family: Verdana;
+				box-shadow: inset #ffffff 0px 5px 8px -1px;
+				o-box-shadow: inset #ffffff 0px 5px 8px -1px;
+				-moz-box-shadow: inset #ffffff 0px 5px 8px -1px;
+				-webkit-box-shadow: inset #ffffff 0px 5px 8px -1px;
+				background: #4cdbff;
+				background: -o-linear-gradient(90deg, #4cdbff, #26a8ff);
+				background: -moz-linear-gradient( center top, #4cdbff 5%, #26a8ff 100% );
+				background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4cdbff), color-stop(1, #26a8ff) );
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4cdbff', endColorstr='#26a8ff');
+				background: -webkit-linear-gradient(#4cdbff, #26a8ff);
+				background: -ms-linear-gradient(#4cdbff, #26a8ff);
+				background: linear-gradient(#4cdbff, #26a8ff);
+				text-indent: 0px;
+				line-height: 14px;
+				-moz-border-radius: 100px;
+				-webkit-border-radius: 100px;
+				border-radius: 100px;
+				text-align: center;
+				vertical-align: middle;
+				display: inline-block;
+				font-size: 25px;
+				color: #ffffff;
+				width: 14px;
+				height: 14px;
+				padding: 13px;
+				border-color: #ffffff;
+				border-width: 2px;
+				border-style: solid;
+			}
+
+			.Info_btn:active {
+				position: relative;
+				top: 3px
+			}
+
+			.Info_btn:hover {
+				background: #26a8ff;
+				background: -o-linear-gradient(90deg, #26a8ff, #4cdbff);
+				background: -moz-linear-gradient( center top, #26a8ff 5%, #4cdbff 100% );
+				background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #26a8ff), color-stop(1, #4cdbff) );
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#26a8ff', endColorstr='#4cdbff');
+				background: -webkit-linear-gradient(#26a8ff, #4cdbff);
+				background: -ms-linear-gradient(#26a8ff, #4cdbff);
+				background: linear-gradient(#26a8ff, #4cdbff);
+			}
+			.closeBtn {
+				font-weight: bold;
+				text-decoration: none;
+				font-family: Arial;
+				box-shadow: inset #787878 0px 5px 8px -1px, #333333 0px 5px 0px;
+				o-box-shadow: inset #787878 0px 5px 8px -1px, #333333 0px 5px 0px;
+				-moz-box-shadow: inset #787878 0px 5px 8px -1px, #333333 0px 5px 0px;
+				-webkit-box-shadow: inset #787878 0px 5px 8px -1px, #333333 0px 5px 0px;
+				background: #4f4f4f;
+				background: -o-linear-gradient(90deg, #4f4f4f, #5e5e5e);
+				background: -moz-linear-gradient( center top, #4f4f4f 5%, #5e5e5e 100% );
+				background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4f4f4f), color-stop(1, #5e5e5e) );
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4f4f4f', endColorstr='#5e5e5e');
+				background: -webkit-linear-gradient(#4f4f4f, #5e5e5e);
+				background: -ms-linear-gradient(#4f4f4f, #5e5e5e);
+				background: linear-gradient(#4f4f4f, #5e5e5e);
+				text-indent: 0px;
+				line-height: 17px;
+				-moz-border-radius: 10px;
+				-webkit-border-radius: 10px;
+				border-radius: 10px;
+				text-align: center;
+				float: right;
+				margin-right: 20px;
+				vertical-align: middle;
+				display: inline-block;
+				font-size: 20px;
+				color: #ffffff;
+				width: 33px;
+				height: 17px;
+				padding: 12px;
+				text-shadow: #7d7d7d 0px 1px 0px;
+				border-color: #ffffff;
+				border-width: 0px;
+				border-style: solid;
+			}
+
+			.closeBtn:active {
+				box-shadow: inset #787878 0px 5px 8px -1px, #333333 0px 0 0px;
+				o-box-shadow: inset #787878 0px 5px 8px -1px, #333333 0px 0 0px;
+				-moz-box-shadow: inset #787878 0px 5px 8px -1px, #333333 0px 0 0px;
+				-webkit-box-shadow: inset #787878 0px 5px 8px -1px, #333333 0px 0 0px;
+				position: relative;
+				top: 5px
+			}
+
+			.closeBtn:hover {
+				background: #5e5e5e;
+				background: -o-linear-gradient(90deg, #5e5e5e, #4f4f4f);
+				background: -moz-linear-gradient( center top, #5e5e5e 5%, #4f4f4f 100% );
+				background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5e5e5e), color-stop(1, #4f4f4f) );
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5e5e5e', endColorstr='#4f4f4f');
+				background: -webkit-linear-gradient(#5e5e5e, #4f4f4f);
+				background: -ms-linear-gradient(#5e5e5e, #4f4f4f);
+				background: linear-gradient(#5e5e5e, #4f4f4f);
+			}
+		</style>
+		</style>
+	</head>
+
+	<body style="background-image: url('image/game_back.jpg'); background-size: 100% 100%; background-repeat: no-repeat;">
+		<div class="container_1" id="container_1" >
+			<div class="level_div" align="center" style="background-image: url('image/level1.png');
+			background-size: 100% 100%;
+			background-repeat: no-repeat;">
+				<div id="bg_mask1" class="bg_mask" style="position: absolute;">
+					<div id="flayer1" class="frontlayer" style="background-image: url(image/1-detail.png)">
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<a class="closeBtn" onclick="hideFrontLayer(bg_mask1,flayer1);"> X </a>
+					</div>
+				</div>
+				<br>
+				<br>
+				<b style="font-size: 50px;"> level 1 </b>
+				<br>
+				<a href="level_1.html" class="Play_btn">></a>&nbsp;&nbsp;&nbsp; <a class="Info_btn" onclick="showFrontLayer(bg_mask1,flayer1);">i</a>
+
+			</div>
+			<div class="level_div" align="center"
+			style="left: 325px; top: -252.5px; background-image: url('image/level2.png');
+			background-size: 100% 100%;
+			background-repeat: no-repeat;">
+				<div id="bg_mask2" class="bg_mask" style="position: absolute;">
+					<div id="flayer2" class="frontlayer" style="background-image: url(image/2-detail.png)">
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<a class="closeBtn" onclick="hideFrontLayer(bg_mask2,flayer2);"> X </a>
+					</div>
+				</div>
+				<br>
+				<br>
+				<b style="font-size: 50px;"> level 2 </b>
+				<br>
+				<a href="level_2.html" class="Play_btn">></a>&nbsp;&nbsp;&nbsp; <a class="Info_btn" onclick="showFrontLayer(bg_mask2,flayer2);">i</a>
+
+			</div>
+			<div class="level_div" align="center"
+			style="left: 650px; top: -505px; background-image: url('image/level3.png');
+			background-size: 100% 100%;
+			background-repeat: no-repeat;">
+				<div id="bg_mask3" class="bg_mask" style="position: absolute;">
+					<div id="flayer3" class="frontlayer" style="background-image: url(image/3-detail.png)">
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<a class="closeBtn" onclick="hideFrontLayer(bg_mask3,flayer3);"> X </a>
+					</div>
+				</div>
+				<br>
+				<br>
+				<b style="font-size: 50px;"> level 3 </b>
+				<br>
+				<a href="level_3.html" class="Play_btn">></a>&nbsp;&nbsp;&nbsp; <a class="Info_btn" onclick="showFrontLayer(bg_mask3,flayer3);">i</a>
+
+			</div>
+			<div class="level_div" align="center"
+			style="top: -505px; background-image: url('image/level4.png');
+			background-size: 100% 100%;
+			background-repeat: no-repeat;">
+				<div id="bg_mask4" class="bg_mask" style="position: absolute;">
+					<div id="flayer4" class="frontlayer" style="background-image: url(image/4-detail.png)">
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<a class="closeBtn" onclick="hideFrontLayer(bg_mask4,flayer4);"> X </a>
+					</div>
+				</div>
+				<br>
+				<br>
+				<b style="font-size: 50px;"> level 4 </b>
+				<br>
+				<a href="level_4.html" class="Play_btn">></a>&nbsp;&nbsp;&nbsp; <a class="Info_btn" onclick="showFrontLayer(bg_mask4,flayer4);">i</a>
+
+			</div>
+			<div class="level_div" align="center"
+			style="left: 325px; top: -757.5px; background-image: url('image/level5.png');
+			background-size: 100% 100%;
+			background-repeat: no-repeat;">
+				<div id="bg_mask5" class="bg_mask" style="position: absolute;">
+					<div id="flayer5" class="frontlayer" style="background-image: url(image/5-detail.png)">
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<a class="closeBtn" onclick="hideFrontLayer(bg_mask5,flayer5);"> X </a>
+					</div>
+				</div>
+				<br>
+				<br>
+				<b style="font-size: 50px;"> level 5 </b>
+				<br>
+				<a href="level_5.html" class="Play_btn">></a>&nbsp;&nbsp;&nbsp; <a class="Info_btn" onclick="showFrontLayer(bg_mask5,flayer5);">i</a>
+
+			</div>
+			<div class="level_div" align="center"
+			style="left: 650px; top: -1010px; background-image: url('image/level6.png');
+			background-size: 100% 100%;
+			background-repeat: no-repeat;">
+				<div id="bg_mask6" class="bg_mask" style="position: absolute;">
+					<div id="flayer6" class="frontlayer" style="background-image: url(image/6-detail.png)">
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<a class="closeBtn" onclick="hideFrontLayer(bg_mask6,flayer6);"> X </a>
+					</div>
+				</div>
+				<br>
+				<br>
+				<b style="font-size: 50px;"> level 6 </b>
+				<br>
+				<a href="level_6.html" class="Play_btn">></a>&nbsp;&nbsp;&nbsp; <a class="Info_btn" onclick="showFrontLayer(bg_mask6,flayer6);">i</a>
+
+			</div>
+
+		</div>
+	</body>
+</html>

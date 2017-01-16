@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Project Marble(최종)/Project Marble/Marble Game!!!.html&apos; to &apos;Marble Game main.html&apos;" description="Rename resource &apos;Marble Game!!!.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Project Marble/Marble Game!!!.html" name="Marble Game main.html" stamp="1484293521142" updateReferences="true"/>
+</session>

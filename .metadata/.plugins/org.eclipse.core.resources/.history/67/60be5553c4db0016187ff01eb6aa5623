@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+	<tr>
+		<td id="yello1"></td>
+		<td id="yello2"></td>
+	</tr>
+	<tr>
+		<td id="star1"></td>
+		<td id="star2"></td>
+	</tr>
+
+</table>
+</body>
+</html>
